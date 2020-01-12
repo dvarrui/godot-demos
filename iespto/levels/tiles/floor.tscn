@@ -1,0 +1,321 @@
+[gd_scene load_steps=54 format=2]
+
+[ext_resource path="res://assets/tiles/grey_floor/tile_0008.png" type="Texture" id=1]
+[ext_resource path="res://assets/tiles/grey_floor/tile_0009.png" type="Texture" id=2]
+[ext_resource path="res://assets/tiles/grey_floor/tile_0010.png" type="Texture" id=3]
+[ext_resource path="res://assets/tiles/grey_floor/tile_0011.png" type="Texture" id=4]
+[ext_resource path="res://assets/tiles/grey_floor/tile_0012.png" type="Texture" id=5]
+[ext_resource path="res://assets/tiles/grey_floor/tile_0013.png" type="Texture" id=6]
+[ext_resource path="res://assets/tiles/grey_floor/tile_0014.png" type="Texture" id=7]
+[ext_resource path="res://assets/tiles/grey_floor/tile_0015.png" type="Texture" id=8]
+[ext_resource path="res://assets/tiles/grey_floor/tile_0035.png" type="Texture" id=9]
+[ext_resource path="res://assets/tiles/grey_floor/tile_0036.png" type="Texture" id=10]
+[ext_resource path="res://assets/tiles/grey_floor/tile_0037.png" type="Texture" id=11]
+[ext_resource path="res://assets/tiles/grey_floor/tile_0038.png" type="Texture" id=12]
+[ext_resource path="res://assets/tiles/grey_floor/tile_0039.png" type="Texture" id=13]
+[ext_resource path="res://assets/tiles/grey_floor/tile_0040.png" type="Texture" id=14]
+[ext_resource path="res://assets/tiles/grey_floor/tile_0041.png" type="Texture" id=15]
+[ext_resource path="res://assets/tiles/grey_floor/tile_0042.png" type="Texture" id=16]
+[ext_resource path="res://assets/tiles/grey_floor/tile_0062.png" type="Texture" id=17]
+[ext_resource path="res://assets/tiles/grey_floor/tile_0063.png" type="Texture" id=18]
+[ext_resource path="res://assets/tiles/grey_floor/tile_0064.png" type="Texture" id=19]
+[ext_resource path="res://assets/tiles/grey_floor/tile_0065.png" type="Texture" id=20]
+[ext_resource path="res://assets/tiles/grey_floor/tile_0066.png" type="Texture" id=21]
+[ext_resource path="res://assets/tiles/grey_floor/tile_0067.png" type="Texture" id=22]
+[ext_resource path="res://assets/tiles/grey_floor/tile_0068.png" type="Texture" id=23]
+[ext_resource path="res://assets/tiles/grey_floor/tile_0069.png" type="Texture" id=24]
+[ext_resource path="res://assets/tiles/street/tile_0405.png" type="Texture" id=25]
+[ext_resource path="res://assets/tiles/street/tile_0406.png" type="Texture" id=26]
+[ext_resource path="res://assets/tiles/street/tile_0407.png" type="Texture" id=27]
+[ext_resource path="res://assets/tiles/street/tile_0412.png" type="Texture" id=28]
+[ext_resource path="res://assets/tiles/street/tile_0413.png" type="Texture" id=29]
+[ext_resource path="res://assets/tiles/street/tile_0414.png" type="Texture" id=30]
+[ext_resource path="res://assets/tiles/street/tile_0415.png" type="Texture" id=31]
+[ext_resource path="res://assets/tiles/street/tile_0432.png" type="Texture" id=32]
+[ext_resource path="res://assets/tiles/street/tile_0433.png" type="Texture" id=33]
+[ext_resource path="res://assets/tiles/street/tile_0434.png" type="Texture" id=34]
+[ext_resource path="res://assets/tiles/street/tile_0435.png" type="Texture" id=35]
+[ext_resource path="res://assets/tiles/street/tile_0436.png" type="Texture" id=36]
+[ext_resource path="res://assets/tiles/street/tile_0437.png" type="Texture" id=37]
+[ext_resource path="res://assets/tiles/street/tile_0438.png" type="Texture" id=38]
+[ext_resource path="res://assets/tiles/street/tile_0439.png" type="Texture" id=39]
+[ext_resource path="res://assets/tiles/street/tile_0440.png" type="Texture" id=40]
+[ext_resource path="res://assets/tiles/street/tile_0441.png" type="Texture" id=41]
+[ext_resource path="res://assets/tiles/street/tile_0442.png" type="Texture" id=42]
+[ext_resource path="res://assets/tiles/street/tile_0459.png" type="Texture" id=43]
+[ext_resource path="res://assets/tiles/street/tile_0460.png" type="Texture" id=44]
+[ext_resource path="res://assets/tiles/street/tile_0461.png" type="Texture" id=45]
+[ext_resource path="res://assets/tiles/street/tile_0462.png" type="Texture" id=46]
+[ext_resource path="res://assets/tiles/street/tile_0463.png" type="Texture" id=47]
+[ext_resource path="res://assets/tiles/street/tile_0464.png" type="Texture" id=48]
+[ext_resource path="res://assets/tiles/street/tile_0465.png" type="Texture" id=49]
+[ext_resource path="res://assets/tiles/street/tile_0466.png" type="Texture" id=50]
+[ext_resource path="res://assets/tiles/street/tile_0467.png" type="Texture" id=51]
+[ext_resource path="res://assets/tiles/street/tile_0468.png" type="Texture" id=52]
+[ext_resource path="res://assets/tiles/street/tile_0469.png" type="Texture" id=53]
+
+[node name="floor" type="Node2D"]
+
+[node name="t0008" type="Sprite" parent="."]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+
+[node name="t0009" type="Sprite" parent="."]
+position = Vector2( 64, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 2 )
+
+[node name="t0010" type="Sprite" parent="."]
+position = Vector2( 128, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+
+[node name="t0011" type="Sprite" parent="."]
+position = Vector2( 192, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 4 )
+
+[node name="t0012" type="Sprite" parent="."]
+position = Vector2( 256, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+
+[node name="t0013" type="Sprite" parent="."]
+position = Vector2( 320, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 6 )
+
+[node name="t0014" type="Sprite" parent="."]
+position = Vector2( 384, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 7 )
+
+[node name="t0015" type="Sprite" parent="."]
+position = Vector2( 448, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 8 )
+
+[node name="t0035" type="Sprite" parent="."]
+position = Vector2( 0, 64 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 9 )
+
+[node name="t0036" type="Sprite" parent="."]
+position = Vector2( 64, 64 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 10 )
+
+[node name="t0037" type="Sprite" parent="."]
+position = Vector2( 128, 64 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 11 )
+
+[node name="t0038" type="Sprite" parent="."]
+position = Vector2( 192, 64 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 12 )
+
+[node name="t0039" type="Sprite" parent="."]
+position = Vector2( 256, 64 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 13 )
+
+[node name="t0040" type="Sprite" parent="."]
+position = Vector2( 320, 64 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 14 )
+
+[node name="t0041" type="Sprite" parent="."]
+position = Vector2( 384, 64 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 15 )
+
+[node name="t0042" type="Sprite" parent="."]
+position = Vector2( 448, 64 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 16 )
+
+[node name="t0062" type="Sprite" parent="."]
+position = Vector2( 0, 128 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 17 )
+
+[node name="t0063" type="Sprite" parent="."]
+position = Vector2( 64, 128 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 18 )
+
+[node name="t0064" type="Sprite" parent="."]
+position = Vector2( 128, 128 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 19 )
+
+[node name="t0065" type="Sprite" parent="."]
+position = Vector2( 192, 128 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 20 )
+
+[node name="t0066" type="Sprite" parent="."]
+position = Vector2( 256, 128 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 21 )
+
+[node name="t0067" type="Sprite" parent="."]
+position = Vector2( 320, 128 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 22 )
+
+[node name="t0068" type="Sprite" parent="."]
+position = Vector2( 384, 128 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 23 )
+
+[node name="t0069" type="Sprite" parent="."]
+position = Vector2( 448, 128 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 24 )
+
+[node name="t0405" type="Sprite" parent="."]
+position = Vector2( 0, 192 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 25 )
+
+[node name="t0406" type="Sprite" parent="."]
+position = Vector2( 64, 192 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 26 )
+
+[node name="t0407" type="Sprite" parent="."]
+position = Vector2( 128, 192 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 27 )
+
+[node name="t0412" type="Sprite" parent="."]
+position = Vector2( 448, 192 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 28 )
+
+[node name="t0413" type="Sprite" parent="."]
+position = Vector2( 512, 192 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 29 )
+
+[node name="t0414" type="Sprite" parent="."]
+position = Vector2( 576, 192 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 30 )
+
+[node name="t0415" type="Sprite" parent="."]
+position = Vector2( 640, 192 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 31 )
+
+[node name="t0432" type="Sprite" parent="."]
+position = Vector2( 0, 256 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 32 )
+
+[node name="t0433" type="Sprite" parent="."]
+position = Vector2( 64, 256 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 33 )
+
+[node name="t0434" type="Sprite" parent="."]
+position = Vector2( 128, 256 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 34 )
+
+[node name="t0435" type="Sprite" parent="."]
+position = Vector2( 192, 256 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 35 )
+
+[node name="t0436" type="Sprite" parent="."]
+position = Vector2( 256, 256 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 36 )
+
+[node name="t0437" type="Sprite" parent="."]
+position = Vector2( 320, 256 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 37 )
+
+[node name="t0438" type="Sprite" parent="."]
+position = Vector2( 384, 256 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 38 )
+
+[node name="t0439" type="Sprite" parent="."]
+position = Vector2( 448, 256 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 39 )
+
+[node name="t0440" type="Sprite" parent="."]
+position = Vector2( 512, 256 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 40 )
+
+[node name="t0441" type="Sprite" parent="."]
+position = Vector2( 576, 256 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 41 )
+
+[node name="t0442" type="Sprite" parent="."]
+position = Vector2( 640, 256 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 42 )
+
+[node name="t0459" type="Sprite" parent="."]
+position = Vector2( 0, 320 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 43 )
+
+[node name="t0460" type="Sprite" parent="."]
+position = Vector2( 64, 320 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 44 )
+
+[node name="t0461" type="Sprite" parent="."]
+position = Vector2( 128, 320 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 45 )
+
+[node name="t0462" type="Sprite" parent="."]
+position = Vector2( 192, 320 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 46 )
+
+[node name="t0463" type="Sprite" parent="."]
+position = Vector2( 256, 320 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 47 )
+
+[node name="t0464" type="Sprite" parent="."]
+position = Vector2( 320, 320 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 48 )
+
+[node name="t0465" type="Sprite" parent="."]
+position = Vector2( 384, 320 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 49 )
+
+[node name="t0466" type="Sprite" parent="."]
+position = Vector2( 448, 320 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 50 )
+
+[node name="t0467" type="Sprite" parent="."]
+position = Vector2( 512, 320 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 51 )
+
+[node name="t0468" type="Sprite" parent="."]
+position = Vector2( 576, 320 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 52 )
+
+[node name="t0469" type="Sprite" parent="."]
+position = Vector2( 640, 320 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 53 )
