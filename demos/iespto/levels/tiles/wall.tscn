@@ -1,0 +1,227 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://assets/tiles/blue_wall/tile_0081.png" type="Texture" id=1]
+[ext_resource path="res://assets/tiles/blue_wall/tile_0082.png" type="Texture" id=2]
+[ext_resource path="res://assets/tiles/blue_wall/tile_0083.png" type="Texture" id=3]
+[ext_resource path="res://assets/tiles/blue_wall/tile_0084.png" type="Texture" id=4]
+[ext_resource path="res://assets/tiles/blue_wall/tile_0085.png" type="Texture" id=5]
+[ext_resource path="res://assets/tiles/blue_wall/tile_0086.png" type="Texture" id=6]
+[ext_resource path="res://assets/tiles/blue_wall/tile_0087.png" type="Texture" id=7]
+[ext_resource path="res://assets/tiles/blue_wall/tile_0088.png" type="Texture" id=8]
+[ext_resource path="res://assets/tiles/blue_wall/tile_0108.png" type="Texture" id=9]
+[ext_resource path="res://assets/tiles/blue_wall/tile_0109.png" type="Texture" id=10]
+[ext_resource path="res://assets/tiles/blue_wall/tile_0110.png" type="Texture" id=11]
+[ext_resource path="res://assets/tiles/blue_wall/tile_0111.png" type="Texture" id=12]
+[ext_resource path="res://assets/tiles/blue_wall/tile_0112.png" type="Texture" id=13]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2.03157, 8.26859 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8.3601, 3.04557 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 1.75019, 8.26859 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 2.10108, 2.96949 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 2.03801, 3.22616 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 7.71654, 8.10799 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 2.14208, 8.26859 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 2.03157, 8.26859 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 8.3601, 3.04557 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 2.03157, 8.26859 )
+
+[node name="wall" type="Node2D"]
+
+[node name="t0081" type="Sprite" parent="."]
+editor/display_folded = true
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+
+[node name="body" type="StaticBody2D" parent="t0081"]
+
+[node name="shapev" type="CollisionShape2D" parent="t0081/body"]
+position = Vector2( -6, 0 )
+shape = SubResource( 1 )
+
+[node name="shapeh" type="CollisionShape2D" parent="t0081/body"]
+position = Vector2( 0, -5 )
+shape = SubResource( 2 )
+
+[node name="t0082" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 64, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 2 )
+
+[node name="body" type="StaticBody2D" parent="t0082"]
+
+[node name="shapeh" type="CollisionShape2D" parent="t0082/body"]
+position = Vector2( 0, -5 )
+shape = SubResource( 2 )
+
+[node name="t0083" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 128, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+
+[node name="body" type="StaticBody2D" parent="t0083"]
+
+[node name="shapeh" type="CollisionShape2D" parent="t0083/body"]
+position = Vector2( 0, -5 )
+shape = SubResource( 2 )
+
+[node name="shapevr" type="CollisionShape2D" parent="t0083/body"]
+position = Vector2( 6, 0 )
+shape = SubResource( 3 )
+
+[node name="t0084" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 192, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 4 )
+
+[node name="body" type="StaticBody2D" parent="t0084"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="shapev" type="CollisionShape2D" parent="t0084/body"]
+position = Vector2( -6, 0 )
+shape = SubResource( 1 )
+
+[node name="shapeh" type="CollisionShape2D" parent="t0084/body"]
+position = Vector2( 0, -5 )
+shape = SubResource( 2 )
+
+[node name="t0085" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 256, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+
+[node name="body" type="StaticBody2D" parent="t0085"]
+
+[node name="shapeh" type="CollisionShape2D" parent="t0085/body"]
+position = Vector2( 0, -5 )
+shape = SubResource( 2 )
+
+[node name="shapevr" type="CollisionShape2D" parent="t0085/body"]
+position = Vector2( 6, 0 )
+shape = SubResource( 3 )
+
+[node name="t0086" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 320, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 6 )
+
+[node name="body" type="StaticBody2D" parent="t0086"]
+
+[node name="shape" type="CollisionShape2D" parent="t0086/body"]
+position = Vector2( 6, 5 )
+shape = SubResource( 4 )
+
+[node name="t0087" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 384, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 7 )
+
+[node name="body" type="StaticBody2D" parent="t0087"]
+
+[node name="shape" type="CollisionShape2D" parent="t0087/body"]
+position = Vector2( -6, 5 )
+shape = SubResource( 5 )
+
+[node name="t0088" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 448, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 8 )
+
+[node name="body" type="StaticBody2D" parent="t0088"]
+
+[node name="shape" type="CollisionShape2D" parent="t0088/body"]
+shape = SubResource( 6 )
+
+[node name="t0108" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 0, 64 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 9 )
+
+[node name="body" type="StaticBody2D" parent="t0108"]
+
+[node name="shapev" type="CollisionShape2D" parent="t0108/body"]
+position = Vector2( -6, 0 )
+shape = SubResource( 7 )
+
+[node name="t0109" type="Sprite" parent="."]
+position = Vector2( 64, 64 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 10 )
+
+[node name="t0110" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 128, 64 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 11 )
+
+[node name="body" type="StaticBody2D" parent="t0110"]
+
+[node name="shapevr" type="CollisionShape2D" parent="t0110/body"]
+position = Vector2( 6, 0 )
+shape = SubResource( 3 )
+
+[node name="t0111" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 192, 64 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 12 )
+
+[node name="body" type="StaticBody2D" parent="t0111"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="shapev" type="CollisionShape2D" parent="t0111/body"]
+position = Vector2( -6, 0 )
+shape = SubResource( 8 )
+
+[node name="shapeh" type="CollisionShape2D" parent="t0111/body"]
+position = Vector2( 0, 5 )
+shape = SubResource( 9 )
+
+[node name="t0112" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 256, 64 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 13 )
+
+[node name="body" type="StaticBody2D" parent="t0112"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="shapev" type="CollisionShape2D" parent="t0112/body"]
+position = Vector2( 6, 0 )
+shape = SubResource( 10 )
+
+[node name="shapeh" type="CollisionShape2D" parent="t0112/body"]
+position = Vector2( 0, 5 )
+shape = SubResource( 9 )
