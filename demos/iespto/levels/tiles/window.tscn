@@ -1,0 +1,144 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://assets/tiles/doors/tile_0258.png" type="Texture" id=1]
+[ext_resource path="res://assets/tiles/doors/tile_0257.png" type="Texture" id=2]
+[ext_resource path="res://assets/tiles/doors/tile_0285.png" type="Texture" id=3]
+[ext_resource path="res://assets/tiles/doors/tile_0255.png" type="Texture" id=4]
+[ext_resource path="res://assets/tiles/doors/tile_0256.png" type="Texture" id=5]
+[ext_resource path="res://assets/tiles/doors/tile_0282.png" type="Texture" id=6]
+[ext_resource path="res://assets/tiles/doors/tile_0283.png" type="Texture" id=7]
+[ext_resource path="res://assets/tiles/doors/tile_0284.png" type="Texture" id=8]
+[ext_resource path="res://assets/tiles/doors/tile_0311.png" type="Texture" id=9]
+[ext_resource path="res://assets/tiles/doors/tile_0309.png" type="Texture" id=10]
+[ext_resource path="res://assets/tiles/doors/tile_0308.png" type="Texture" id=11]
+[ext_resource path="res://assets/tiles/doors/tile_0310.png" type="Texture" id=12]
+[ext_resource path="res://assets/tiles/doors/tile_0312.png" type="Texture" id=13]
+[ext_resource path="res://assets/tiles/doors/tile_0281.png" type="Texture" id=14]
+[ext_resource path="res://assets/tiles/windows/tile_0336.png" type="Texture" id=15]
+[ext_resource path="res://assets/tiles/doors/tile_0366.png" type="Texture" id=16]
+[ext_resource path="res://assets/tiles/windows/tile_0335.png" type="Texture" id=17]
+[ext_resource path="res://assets/tiles/doors/tile_0339.png" type="Texture" id=18]
+[ext_resource path="res://assets/tiles/windows/tile_0337.png" type="Texture" id=19]
+[ext_resource path="res://assets/tiles/windows/tile_0338.png" type="Texture" id=20]
+
+[node name="window" type="Node2D"]
+
+[node name="t0255" type="Sprite" parent="."]
+position = Vector2( 256, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="t0256" type="Sprite" parent="."]
+position = Vector2( 320, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="t0257" type="Sprite" parent="."]
+position = Vector2( 384, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="t0258" type="Sprite" parent="."]
+position = Vector2( 448, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="t0281" type="Sprite" parent="."]
+position = Vector2( 192, 64 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="t0282" type="Sprite" parent="."]
+position = Vector2( 256, 64 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="t0283" type="Sprite" parent="."]
+position = Vector2( 320, 64 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="t0284" type="Sprite" parent="."]
+position = Vector2( 384, 64 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="t0285" type="Sprite" parent="."]
+position = Vector2( 448, 64 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="t0308" type="Sprite" parent="."]
+position = Vector2( 192, 128 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 11 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="t0309" type="Sprite" parent="."]
+position = Vector2( 256, 128 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="t0310" type="Sprite" parent="."]
+position = Vector2( 320, 128 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="t0311" type="Sprite" parent="."]
+position = Vector2( 384, 128 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="t0312" type="Sprite" parent="."]
+position = Vector2( 448, 128 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="t0335" type="Sprite" parent="."]
+position = Vector2( 192, 192 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 17 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="t0336" type="Sprite" parent="."]
+position = Vector2( 256, 192 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="t0337" type="Sprite" parent="."]
+position = Vector2( 320, 192 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 19 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="t0338" type="Sprite" parent="."]
+position = Vector2( 384, 192 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 20 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="t0339" type="Sprite" parent="."]
+position = Vector2( 448, 192 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 18 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="t0366" type="Sprite" parent="."]
+position = Vector2( 448, 256 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 16 )
+region_rect = Rect2( 0, 0, 32, 32 )

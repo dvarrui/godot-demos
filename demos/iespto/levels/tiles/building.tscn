@@ -60,7 +60,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.02033, 8.28199 )
 
-[node name="floor" type="Node2D"]
+[node name="building" type="Node2D"]
 
 [node name="t0016" type="Sprite" parent="."]
 scale = Vector2( 4, 4 )
