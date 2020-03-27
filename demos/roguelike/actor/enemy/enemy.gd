@@ -21,6 +21,15 @@ func _process(delta):
 			speed.x *= -1
 		if position.x < (origin.x - min_limit.x):
 			speed.x *= -1
+	if speed.x > 0:
+		self.get_node("sprite").flip_h=true
+	else:
+		self.get_node("sprite").flip_h=false
+	if speed.y > 0:
+		self.get_node("sprite").flip_v=true
+	else:
+		self.get_node("sprite").flip_v=false
+		
 
 func _on_enemy_area_entered(area):
 	var parent = area.get_parent()
