@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tile_0017.png-abc75fce4b942e2000970a0b3b5b4b72.stex"
+path="res://.import/tile_0039.png-c679d29396145dd8a3f8a44011e44500.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://actor/enemy/sprites/tile_0017.png"
-dest_files=[ "res://.import/tile_0017.png-abc75fce4b942e2000970a0b3b5b4b72.stex" ]
+source_file="res://assets/objects/tile_0039.png"
+dest_files=[ "res://.import/tile_0039.png-c679d29396145dd8a3f8a44011e44500.stex" ]
 
 [params]
 

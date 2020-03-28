@@ -2,13 +2,13 @@ extends KinematicBody2D
 
 export var speed = 12000 # Pixels/second
 export var initial_pos = Vector2(80,127) # Initial position
+var keys = 0
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 func _physics_process(delta):
-	z_index = position.y
+	z_index = 20
 	update_motion(delta)
 
 func update_motion(delta):
@@ -28,3 +28,7 @@ func update_motion(delta):
 
 func reset():
 	position = initial_pos
+
+func take_key():
+	keys += 1
+	get_parent().get_node("door").open_with(keys)
