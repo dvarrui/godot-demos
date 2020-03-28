@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://level/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://actor/player/player.tscn" type="PackedScene" id=2]
@@ -6,11 +6,14 @@
 [ext_resource path="res://object/exit_zone/exit_zone.tscn" type="PackedScene" id=4]
 [ext_resource path="res://actor/enemy/enemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://object/door/door.tscn" type="PackedScene" id=6]
+[ext_resource path="res://level/level.gd" type="Script" id=7]
 
-[node name="map2" type="Node2D"]
+[node name="level" type="Node2D"]
+position = Vector2( 0, 2 )
 scale = Vector2( 4, 4 )
+script = ExtResource( 7 )
 
-[node name="tilemap" type="TileMap" parent="."]
+[node name="map" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 8, 8 )
 cell_quadrant_size = 8
@@ -21,7 +24,9 @@ tile_data = PoolIntArray( 0, 5, 0, 1, 5, 0, 2, 5, 0, 3, 5, 0, 4, 5, 0, 5, 5, 0, 
 position = Vector2( 92, 52 )
 gravity_vec = Vector2( 0, 0 )
 
-[node name="door" parent="." instance=ExtResource( 6 )]
+[node name="doors" type="Node2D" parent="."]
+
+[node name="door" parent="doors" instance=ExtResource( 6 )]
 position = Vector2( 92, 52 )
 
 [node name="keys" type="Node2D" parent="."]
@@ -80,4 +85,3 @@ speed = Vector2( 35, 0 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 90, 127 )
-initial_pos = Vector2( 90, 127 )

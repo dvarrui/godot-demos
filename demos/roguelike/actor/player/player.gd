@@ -1,11 +1,11 @@
 extends KinematicBody2D
 
 export var speed = 12000 # Pixels/second
-export var initial_pos = Vector2(80,127) # Initial position
+var origin = Vector2(0,127) # Initial position
 var keys = 0
 
 func _ready():
-	pass # Replace with function body.
+	origin = position
 
 func _physics_process(delta):
 	z_index = 20
@@ -29,8 +29,10 @@ func update_motion(delta):
 	move_and_slide(motion)
 
 func reset():
-	position = initial_pos
+	position = origin
+	keys = 0
+	get_parent().reset()
 
 func take_key():
 	keys += 1
-	get_parent().get_node("door").open_with(keys)
+	get_parent().open_doors_with(keys)

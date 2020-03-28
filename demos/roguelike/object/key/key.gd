@@ -11,3 +11,7 @@ func _on_key_area_entered(area):
 		visible = false
 		position = Vector2(0,0)
 		node.take_key()
+
+func reset():
+	position = origin
+	visible = true

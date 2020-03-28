@@ -1,16 +1,18 @@
 extends StaticBody2D
 
 export var required_keys = 3
+var origin = Vector2(0,0)
 
 func _ready():
-	pass # Replace with function body.
+	origin = position
 
 func open_with(keys):
 	if keys == required_keys:
-		get_node('sprite').visible = false 
-		get_node("shape").disabled = true
-		position = Vector2(0,0)
+		get_node('sprite').visible = false
+		collision_layer = 2
+		position = Vector2(-100,-100)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func reset():
+	get_node('sprite').visible = true
+	collision_layer = 1 
+	position = origin
