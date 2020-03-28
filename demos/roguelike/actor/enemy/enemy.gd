@@ -4,8 +4,10 @@ var origin = Vector2(0,0)
 export var max_limit = Vector2(0,0)
 export var min_limit = Vector2(0,0)
 export var speed = Vector2(0,0)
+export var face = 'snake'
 
 func _ready():
+	get_node("sprite/" + face ).visible = true
 	origin = position
 
 func _process(delta):
@@ -33,6 +35,6 @@ func update_position(delta):
 
 func update_sprite():
 	if speed.x > 0:
-		self.get_node("sprite").flip_h=true
+		self.get_node("sprite/" + face).flip_h=true
 	else:
-		self.get_node("sprite").flip_h=false	
+		self.get_node("sprite/" + face).flip_h=false	

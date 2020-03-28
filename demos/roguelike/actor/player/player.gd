@@ -22,6 +22,8 @@ func update_motion(delta):
 		motion += Vector2(-1, 0)
 	if Input.is_action_pressed("player_right"):
 		motion += Vector2(1, 0)
+	if Input.is_action_pressed("goto_next_level"):
+		self.take_key()
 	
 	motion = motion.normalized() * speed * delta
 	move_and_slide(motion)
