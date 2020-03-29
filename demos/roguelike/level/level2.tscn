@@ -23,6 +23,7 @@ tile_data = PoolIntArray( 0, 5, 0, 1, 5, 0, 2, 5, 0, 3, 5, 0, 4, 5, 0, 5, 5, 0, 
 [node name="exit_zone" parent="." instance=ExtResource( 4 )]
 position = Vector2( 92, 52 )
 gravity_vec = Vector2( 0, 0 )
+next_level = "level3"
 
 [node name="doors" type="Node2D" parent="."]
 
@@ -39,6 +40,9 @@ position = Vector2( 241.821, 15.212 )
 
 [node name="key3" parent="keys" instance=ExtResource( 3 )]
 position = Vector2( 163.32, 56.4124 )
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 90, 127 )
 
 [node name="enemies" type="Node2D" parent="."]
 
@@ -82,6 +86,3 @@ speed = Vector2( 30, 0 )
 position = Vector2( 15.5488, 111.082 )
 max_limit = Vector2( 20, 0 )
 speed = Vector2( 35, 0 )
-
-[node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 90, 127 )
