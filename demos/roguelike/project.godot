@@ -19,6 +19,10 @@ config/name="Roguelike"
 run/main_scene="res://level/level1.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/resizable=false
+
 [input]
 
 player_up={

@@ -1,39 +1,24 @@
 
-* Instalar Godot 3
-* Descargar Assets de la web de Kenney
 
----
-# Actor Player
+# demo/roguelike
 
-Estructura de directorios:
-```
-> tree -d
-.
-├── actor
-│   └── player
-├── assets
-│   └── tiles
-├── docs
-└── level
-```
+Es es un proyecto para aprender a crear juegos 2D con GodotEngine.
 
-* Crear scena/nodos de actor/player
-    * player(knimatic)
-    * sprite imagen
-    * shape círculo
-* Crear mapa entrada de teclado
-* Crear script
-* F6 probar escena
-* F5 probar juego
+![](images/aspecto.png)
 
----
-# Level 1 mapa 1
+Roguelike es un juego de mapas 2D, con laberintos donde tenemos que encontrar las llaves para poder abrir el cofre y escapar de la mazmorra.
 
-Scene tiles:
-* Crear una escena con todos los tiles del mapa.
-* Cada tile será: sprite -> body -> shape.
-Scene map1:
-* Escena que representa el primer nivel o mapa.
-* Node2D con:
-    * tilemap de (tiles)
-    * actor/player
+Además debemos tener cuidado con serpientes, ratas, perros y todo tipo de animales que nos tratarán de impedir conseguir nuestro objetivo de escapar.
+
+## Objetivos
+
+Esto es lo que vamos a aprender creando este juego (demo):
+* Instalar el software necesario y obtener los assets.
+* Organizar nuestros proyectos. Escenas y nodos.
+* Nodos: node2d, sprite, kinematicBody2D, staticBody2D, collisionShape, area2d.
+* Programación con GDPython.
+* El uso de las señales.
+
+## Documentación
+
+* [Preparativos](01-preparativos.md)
