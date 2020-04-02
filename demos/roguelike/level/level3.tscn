@@ -24,6 +24,7 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 35, 0,
 [node name="exit_zone" parent="." instance=ExtResource( 6 )]
 position = Vector2( 19, 69 )
 gravity_vec = Vector2( 0, 0 )
+next_level = "level4"
 
 [node name="doors" type="Node2D" parent="."]
 

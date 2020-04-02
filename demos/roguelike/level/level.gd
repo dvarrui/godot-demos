@@ -10,6 +10,8 @@ func reset():
 	# Reset doors
 	for door in get_node('doors').get_children():
 		door.reset()
+	for enemy in get_node('enemies').get_children():
+		enemy.reset()
 
 func open_doors_with(keys):
 	# Try to open every door

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://actor/enemy/is_near.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 22.0868, 8.26389 )
+
+[node name="is_near" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="shape" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+[connection signal="body_shape_entered" from="." to="." method="_on_is_near_body_shape_entered"]
+[connection signal="body_shape_exited" from="." to="." method="_on_is_near_body_shape_exited"]
