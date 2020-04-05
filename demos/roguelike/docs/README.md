@@ -1,6 +1,5 @@
 
-
-# demo/roguelike
+# Demo: Roguelike
 
 Es es un proyecto para aprender a crear juegos 2D con GodotEngine.
 
@@ -12,13 +11,15 @@ Además debemos tener cuidado con serpientes, ratas, perros y todo tipo de anima
 
 ## Objetivos
 
-Esto es lo que vamos a aprender creando este juego (demo):
+Esto es lo que vamos a ver en esta demo:
 * Instalar el software necesario y obtener los assets.
-* Organizar nuestros proyectos. Escenas y nodos.
-* Nodos: node2d, sprite, kinematicBody2D, staticBody2D, collisionShape, area2d.
+* Organizar nuestro proyecto.
+* Usar escenas y nodos.
+* Usar los Nodos: node2d, sprite, kinematicBody2D, staticBody2D, collisionShape, area2d.
 * Programación con GDPython.
 * El uso de las señales.
 
 ## Documentación
 
 * [Preparativos](01-preparativos.md)
+* [Mover](02-mover.md)

@@ -5,16 +5,17 @@
 ## Instalar software
 
 Vamos a instalar el motor GodotEngine (versión 3.2)
+* Creamos una carpeta `godot`
 * Descargamos un fichero zip de la web godotengine.org.
-* Creamos una carpeta `godot/bin` y descomprimos el fichero.
-* Como resultado tendremos un ejecutable que ya se puede usar.
+* Creamos la carpeta `godot/bin` y descomprimos el fichero.
+* Como resultado tendremos el ejecutable de Godot, que ya se puede usar.
 
 Otro software recomendado:
 * Instalar GIMP (Software de edición de gráficos). Lo podemos descargar de la página web de www.gimp.org.
 
 ## Roles
 
-Para crear un videojuegos hay muchos caminos. Podemos hacer un desarrollo indie, donde nos encargamos de hacerlo todo sin ayuda de nadie. O también podemos estar en una gran empresa de creación de juegos donde formamos parte de un gran equipo y cada uno se encarga de una pequeña parte. De hecho hay muchas funciones diferentes a la hora de crear un juego, pero nosotros lo vamos a simplificar en 3 roles:
+Para crear un videojuegos hay muchos caminos. Podemos hacer un desarrollo Indie, donde nos encargamos de hacerlo todo sin ayuda de nadie. O también podemos estar en una gran empresa de creación de juegos donde formamos parte de un gran equipo y cada uno se encarga de una pequeña parte. De hecho hay muchas funciones diferentes a la hora de crear un juego, pero nosotros lo vamos a simplificar en 3 roles:
 1. Rol del artista
 1. Rol del programador
 1. Rol del diseñador del juego
@@ -30,14 +31,21 @@ Los assets son los recursos tanto gráficos como de sonido o música que hacen l
 * [Game-Icons.net](https://game-icons.net/)
 * spriter-resource
 * itch.io
+* vg-resource
 
-Nosotros vamos descargar de la web de Kenney los assets de "miniroguelike".
+
+Nosotros vamos descargar loas assets de la web de Kenney:
+* Crear la carpeta `godot/assets`.
+* Descargar de la web de Kenney, los assets de "miniroguelike" en la carpeta anterior.
 
 ## Organizando las carpetas
 
 * Creamos el siguiente directorio `godot/demo/roguelike`.
-* Dentro vamos a crear la siguiente estructura de directorio:
-
+* Iniciamos `godot -> Nuevo proyecto`.
+* `Examinar` para buscar la carpeta `godot/demo/roguelike` y `Seleccionar carpeta`
+* Poner nombre al proyecto `roguelikeXX` (NOTA: XX es el número asignado a cada alumno).
+* `Crear y editar`
+* Usando el propio editor de Godot, vamos a crear la siguiente estructura de directorios para nuestro proyecto:
 ```
 ├── actor
 │   ├── enemy
@@ -49,10 +57,6 @@ Nosotros vamos descargar de la web de Kenney los assets de "miniroguelike".
 ├── level
 └── object
 ```
-* Iniciamos `godot -> Nuevo proyecto`.
-* `Examinar` para buscar la carpeta `godot/demo/roguelike` y `Seleccionar carpeta`
-* Poner nombre al proyecto `roguelikeXX` (NOTA: XX es el número asignado a cada alumno).
-* `Crear y editar`
 
 ---
 ## Level 1
@@ -62,10 +66,10 @@ En Godot se utilizan las escenas y los nodos para crear el juego.
 * Los nodos dan funcionalidad o habilidades a las escenas. En principio vamos a usar los nodos que nos proporciona Godot y si nos falta algún nodo más siempre podremos crear los nuestros a medida.
 
 Vamos a crear la primera escena del juego.
-* Usamos el símbolo `+` para añadir nodos a la escena.
-* Elegimos **Node2D** porque es la base para montar juegos 2D. Renombrar el nodo a `level`.
+* Usamos el símbolo `+` para añadir nuevos nodos a la escena.
+* Elegimos **Node2D** porque es la base para empezar un juego 2D. Renombrar el nodo a `level`.
 * Escena guardar como `res::/level/level1.tscn`.
-* Pulsar F5 para ejecutar el juego. Bueno, por ahora sólo tenemos una pantalla en gris oscuro.
+* Pulsar F5 para ejecutar el juego (Bueno, por ahora sólo tenemos una pantalla en gris oscuro).
 
 > NOTA:
 > * F5 => probar el juego desde el principio
@@ -79,9 +83,9 @@ Ahora vamos a crear otra escena, para crear a nuestro personaje principal.
 
 ![](images/player-node-tree.png)
 
-* Empezamos con un nodo raíz de tipo **KinematicBody2D** al que hemos renombrado como `player` (Usamos el símbolo `+` para añadir nodos a la escena).
+* Empezamos con un nodo raíz de tipo **KinematicBody2D** al que hemos renombrado como `player` (Recordar que usamos el símbolo `+` para añadir nodos a la escena).
 
-Hemos elegido este nodo porque nos proporciona el comportamiento de un cuerpo físico, que necesitamos para conseguir colisiones con el resto de cuerpos físicos de la escena. Esto es, las paredes de la mazmorra.
+> Hemos elegido este nodo porque nos proporciona comportamiento de un cuerpo físico. Lo necesitamos para conseguir el efecto de colisiones con el resto de cuerpos físicos de la escena (Como por ejemplo, las paredes de la mazmorra).
 
 * Añadir un nodo hijo de tipo **Sprite** al que renombraremos como `sprite`.
 * Seleccionando el nodo `sprite`, vemos en la ventana inspector las propiedades de este nodo. En la propiedad texture vamos a cargar la imagen `assets/actor/tile_004.png`.
