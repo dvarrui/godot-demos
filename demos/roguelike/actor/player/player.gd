@@ -1,14 +1,13 @@
 extends KinematicBody2D
 
 export var speed = 12000 # Pixels/second
-var origin = Vector2(0,127) # Initial position
+var origin = Vector2(10,10) # Initial position
 var keys = 0
 
 func _ready():
 	origin = position
 
 func _physics_process(delta):
-	z_index = 20
 	update_motion(delta)
 
 func update_motion(delta):

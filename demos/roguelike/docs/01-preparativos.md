@@ -24,20 +24,6 @@ El artista es el encargado de crear los gráficos, sprites, texturas, modelos 3D
 
 En esta serie de tutoriales, sólo nos vamos a centrar en el rol del programador. En la parte artística haremos uso de recursos con licencia libre y el la parte de diseño... bueno ahí vamos a ser poco originales y vamos a imitar otros diseños que ya existen. Porque nos vamos a centrar en el rol del programador.
 
-## Assets
-
-Los assets son los recursos tanto gráficos como de sonido o música que hacen los artistas y que necesitamos para nuestro juego. Existen algunas web donde podemos descargar assets con licencia libre, por ejemplo:
-* [Kenney](https://www.kenney.nl/)
-* [Game-Icons.net](https://game-icons.net/)
-* spriter-resource
-* itch.io
-* vg-resource
-
-
-Nosotros vamos descargar loas assets de la web de Kenney:
-* Crear la carpeta `godot/assets`.
-* Descargar de la web de Kenney, los assets de "miniroguelike" en la carpeta anterior.
-
 ## Organizando las carpetas
 
 * Creamos el siguiente directorio `godot/demo/roguelike`.
@@ -58,8 +44,30 @@ Nosotros vamos descargar loas assets de la web de Kenney:
 └── object
 ```
 
+## Assets
+
+Los assets son los recursos tanto gráficos como de sonido o música que hacen los artistas y que necesitamos para nuestro juego. Existen algunas web donde podemos descargar assets con licencia libre, por ejemplo:
+* [Kenney](https://www.kenney.nl/)
+* [Game-Icons.net](https://game-icons.net/)
+* spriter-resource
+* itch.io
+* vg-resource
+
+En nuestro proyecto vamos usar assets de Kenney:
+* Crear la carpeta `godot/assets`.
+* Descargar de la web de Kenney, los assets de "miniroguelike" en la carpeta anterior.
+
+Ahora tenemos todos los assets que nos hemos descargado en `godot/assets`. Después de revisarlos, vamos a escoger sólo aquellos que nos hacen falta y lo vamos a copiar dentro de nuestro proyecto de Godot, de la siguiente forma:
+
+| Carpeta | Ficheros | Descripción |
+| ------- | -------- | ----------- |
+| demos/roguelike/assets |  Instructions.url, Kenney.url, License.txt y Patreon.url | Respetar la licencia del autor |
+| demos/roguelike/assets/actors | tile 0004, 0014, 0015, 0016, 0017, 0019, 0080 | Personajes (player y enemigos) |
+| demos/roguelike/assets/objects | tile 0034, 0039, y 0057 | Objetos del juego |
+| demos/roguelike/assets/tiles | Desde tile 0000 hasta tile 89 | Tiles para formar el mapa |
+
 ---
-## Level 1
+## Creando la primera escena
 
 En Godot se utilizan las escenas y los nodos para crear el juego.
 * Las escenas las usamos para crear cada elemento del juego de forma independiente. Al final haremos un escena que contenga al resto y ya tenemos el juego. Las escenas serían como clases en programación orientada a objetos.
@@ -88,27 +96,29 @@ Ahora vamos a crear otra escena, para crear a nuestro personaje principal.
 > Hemos elegido este nodo porque nos proporciona comportamiento de un cuerpo físico. Lo necesitamos para conseguir el efecto de colisiones con el resto de cuerpos físicos de la escena (Como por ejemplo, las paredes de la mazmorra).
 
 * Añadir un nodo hijo de tipo **Sprite** al que renombraremos como `sprite`.
-* Seleccionando el nodo `sprite`, vemos en la ventana inspector las propiedades de este nodo. En la propiedad texture vamos a cargar la imagen `assets/actor/tile_004.png`.
+* Seleccionando el nodo `sprite`, vemos en la ventana inspector las propiedades de este nodo. En la propiedad **texture** vamos a cargar la imagen `assets/actor/tile_004.png`.
 
-Añadimos un nodo sprite para incorporar imágenes 2D a nuestra escena.
+> Hemos añadimos un nodo **Sprite** para incorporar imágenes 2D a nuestra escena.
 
 * Añadir otro nodo hijo al nodo raíz, de tipo **CollisionShape2D** y lo renombramos como `shape`.
 * Seleccionando el nodo `shape`, vamos a la ventana inspector y en la propiedad Shape elegir `RectangleShape2D`. Ajustamos el tamaño del rectángulo para ajustarlo lo mejor posible al tamaño y forma de nuestro sprite.
 
 ![](images/player-scene.png)
 
+> RectangleShape2D nos permite definir al área de colisión de nuestro personaje.
+
 * Grabar la escena que acabamos de crear como `actor/player/player.tscn`.
 
 ## Level 1
 
 * Volvemos a la escena `level` que sólo tiene un nodo.
-* Al lado del símbolo "+" tenemos la "cadena" (instanciar objeto). Lo usamos para añadir la escena `player` como un nodo hijo dentro de `level`.
+* Al lado del símbolo "+" tenemos la "cadena" (instanciar objeto). La usaremos para añadir la escena `player` como un nodo hijo dentro de `level`.
 * En la parte superior de Godot elegimos visión "2D". Podemos mover el `player` para moverlo al centro de la ventana o bien usar las propiedades de la ventana inspector y asignar el valor de posición `Node2D/Transform/Position` con x = 100 e y = 74.
 * Seleccionamos el nodo `level`, y en la ventana inspector, buscamos la propiedad `Node2D/Scale`. Ponemos los valores x=4 e y=4. Para hacer un escalado de todos los nodos de la escena. Esto lo hacemos porque tenemos unas imágenes muy pequeñas (8x8) y queremos que se vean un poco más grandes (32x32).
 * **Pulsar F5** y vemos nuestro juego con un personaje que no se mueve.
 
 ![](images/level1-player.png)
 
-En la siguiente parte vamos a darle movimiento al player.
+Vamos continuar para darle movimiento al personaje.
 
 [Siguiente](02-mover.md)
