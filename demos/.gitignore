@@ -1,4 +1,5 @@
 *.d
 *.devel
+command
 platform
 spaceshooter
