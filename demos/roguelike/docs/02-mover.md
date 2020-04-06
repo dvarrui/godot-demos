@@ -6,11 +6,18 @@
 
 Dentro de nuestro proyecto de Godot:
 * Vamos `Proyecto -> Ajustes del proyecto -> Mapa de Entradas`. Aquí vamos a definir las entradas (teclado, joystick, etc) que vamos a usar para interactuar con el juego.
-* Añadimos las siguientes definiciones:
+
+Vamos a añadir las siguientes definiciones:
 
 ![](images/input-map-01.png)
 ![](images/input-map-02.png)
 
+* Escribir el nombre de la acción y añadir.
+* Seleccionamos la acción.
+* Pulsamos "+". Elegir teclado y pulsar la tecla que corresponda.
+* Pulsamos "+". Elegir Joystick y elegir la opción que corresponda.
+
+---
 ## Script
 
 Vamos a crear nuestro primer script para que el personaje responda a las entradas del teclado/joystick.
@@ -45,10 +52,11 @@ func _physics_process(delta):
 	move_and_slide(motion)
 ```
 
-* Con F5 podemos probar el resultado
+* Con F5 podemos probar el resultado. Esto es, ahora se puede mover el personaje por una pantalla gris oscura.
 
-## Vamos a explicar el script
+## Vamos a explicar un poco el script
 
+El profesor debería hacer una explicación en clase ajustándose a los distintos niveles del alumnado. Pero por ahora, tenemos el siguiente resumen:
 * `extends KinematicBody2D`, esta instrucción determina que nuestro `player` va a heredar todas las habilidades de los KinematicBody2D. Con este mecanismo de reutilización de código (herencia) nos ahorraremos escribir mucho código.
 * `var speed`, creamos una variable `speed` que guardará el valor que define la velocidad de movimiento del personaje. Ajustaremos este valor después de hacer algunas pruebas.
 * `func _physics_process(delta):`, es la forma de definir una función con el nombre `_physics_process`. Una función es un bloque de código con un nombre. Esta función en concreto se ejecuta periódicamente para procesar los cambios que van a tener lugar en el juego. Dentro de esta función se comprueba si se ha pulsado alguna de las teclas Up, Down, Left o Right y hace los cambios de posición del personaje.
@@ -57,4 +65,4 @@ func _physics_process(delta):
 * `motion = motion.normalized() * speed * delta`. `motion` es el vector que indica la dirección del movimiento, `speed` es la velocidad y `delta`  es el tiempo. Por la fórmula "espacio = velocidad * tiempo", se calcula cuándo se desplazará el personaje teniendo "velocidad * tiempo" (`speed * delta`).
 * `move_and_slide(motion)`, esta orden intenta aplicar el cambio definido por la variable motion respetando las colisiones que se puedan producir. El personaje sólo se podrá mover en esa dirección, si no tiene otros objetos que colisionen y le impidan hacerlo (Según las leyes de la física del motor).
 
-[Siguiente](03-tilemap.md)
+[Siguiente](03-mapa.md)
