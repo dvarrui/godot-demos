@@ -7,9 +7,14 @@ Enlaces de interés:
 * [Awesome Godot](https://github.com/Calinou/awesome-godot/blob/master/README.md)
 * Video: [Very simple game using Godot Engine](http://youtu.be/svoTd2gDdt4)
 
-Assets:
+## Free Assets
+
 * [Game-Icons.net](https://game-icons.net/)
 * [Godot crt-lottes shader: port of the libretro crt-lottes GLSL shader to Godot shading language.](https://github.com/qarlosh/godot-crt-lottes-shader/blob/master/README.md)
 * [Kenney](https://www.kenney.nl/)
 * spriter-resource
 * [Transitions Between Scenes - Godot Asset by César León](https://in3mo.itch.io/transitions-godot)
+
+## Arte vectorial
+
+* [2d game art guru](https://2dgameartguru.com/)
