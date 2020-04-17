@@ -29,7 +29,7 @@ En esta serie de tutoriales, sólo nos vamos a centrar en el rol del programador
 * Creamos el siguiente directorio `godot/demo/roguelike`.
 * Iniciamos `godot -> Nuevo proyecto`.
 * `Examinar` para buscar la carpeta `godot/demo/roguelike` y `Seleccionar carpeta`
-* Poner nombre al proyecto `roguelikeXX` (NOTA: XX es el número asignado a cada alumno).
+* Poner nombre al proyecto `Roguelike`.
 * `Crear y editar`
 * Usando el propio editor de Godot, vamos a crear la siguiente estructura de directorios para nuestro proyecto:
 ```
@@ -46,16 +46,16 @@ En esta serie de tutoriales, sólo nos vamos a centrar en el rol del programador
 
 ## Assets
 
-Los assets son los recursos tanto gráficos como de sonido o música que hacen los artistas y que necesitamos para nuestro juego. Existen algunas web donde podemos descargar assets con licencia libre, por ejemplo:
+Los assets son los recursos tanto gráficos como de sonido o música, que hacen los artistas, y que necesitaremos en nuestro juego. Existen algunas web donde podemos descargar assets con licencia libre, por ejemplo:
 * [Kenney](https://www.kenney.nl/)
 * [Game-Icons.net](https://game-icons.net/)
 * spriter-resource
 * itch.io
 * vg-resource
 
-En nuestro proyecto vamos usar assets de Kenney:
+En nuestro proyecto vamos usar un conjunto de assets de Kenney:
 * Crear la carpeta `godot/assets`.
-* Descargar de la web de Kenney, los assets de "miniroguelike" en la carpeta anterior.
+* Descargar de la web de Kenney, los assets de **miniroguelike** en la carpeta anterior.
 
 Ahora tenemos todos los assets que nos hemos descargado en `godot/assets`. Después de revisarlos, vamos a escoger sólo aquellos que nos hacen falta y lo vamos a copiar dentro de nuestro proyecto de Godot, de la siguiente forma:
 

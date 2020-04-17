@@ -1,5 +1,5 @@
 
-# Demo: Roguelike
+# Roguelike
 
 Es es un proyecto para aprender a crear juegos 2D con GodotEngine.
 
