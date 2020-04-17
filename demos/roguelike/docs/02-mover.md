@@ -65,4 +65,4 @@ El profesor debería hacer una explicación en clase ajustándose a los distinto
 * `motion = motion.normalized() * speed * delta`. `motion` es el vector que indica la dirección del movimiento, `speed` es la velocidad y `delta`  es el tiempo. Por la fórmula "espacio = velocidad * tiempo", se calcula cuándo se desplazará el personaje teniendo "velocidad * tiempo" (`speed * delta`).
 * `move_and_slide(motion)`, esta orden intenta aplicar el cambio definido por la variable motion respetando las colisiones que se puedan producir. El personaje sólo se podrá mover en esa dirección, si no tiene otros objetos que colisionen y le impidan hacerlo (Según las leyes de la física del motor).
 
-[Siguiente](03-mapa.md)
+[next](03-mapa.md)

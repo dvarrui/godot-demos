@@ -121,4 +121,4 @@ Ahora vamos a crear otra escena, para crear a nuestro personaje principal.
 
 Vamos continuar para darle movimiento al personaje.
 
-[Siguiente](02-mover.md)
+[next](02-mover.md)
