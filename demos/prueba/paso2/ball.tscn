@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/ball.png" type="Texture" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 35.0343
+
+[node name="ball" type="RigidBody2D"]
+gravity_scale = 0.0
+
+[node name="sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_rect = Rect2( 32, 112, 16, 16 )
+
+[node name="shape" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )

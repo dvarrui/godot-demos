@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://paso2/player2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://paso2/wall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://paso2/ball.tscn" type="PackedScene" id=3]
+
+[node name="level2" type="Node2D"]
+
+[node name="walls" type="Node2D" parent="."]
+
+[node name="wall" parent="walls" instance=ExtResource( 2 )]
+position = Vector2( 296.588, 39.4372 )
+
+[node name="wall2" parent="walls" instance=ExtResource( 2 )]
+position = Vector2( 410, 156.364 )
+
+[node name="wall3" parent="walls" instance=ExtResource( 2 )]
+position = Vector2( 410, 224.45 )
+
+[node name="wall4" parent="walls" instance=ExtResource( 2 )]
+position = Vector2( 410, 292.623 )
+
+[node name="balls" type="Node2D" parent="."]
+
+[node name="ball" parent="balls" instance=ExtResource( 3 )]
+position = Vector2( 226.607, 276.994 )
+
+[node name="ball2" parent="balls" instance=ExtResource( 3 )]
+position = Vector2( 187.899, 197.857 )
+
+[node name="ball3" parent="balls" instance=ExtResource( 3 )]
+position = Vector2( 278.466, 211.722 )
+
+[node name="player2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 63.318, 245.284 )

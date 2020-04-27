@@ -1,37 +1,27 @@
 extends KinematicBody2D
 
-export var speed = 12000 # Pixels/second
-var origin = Vector2(10,10) # Initial position
-var keys = 0
+export var speed = 12000
 
 func _ready():
-	origin = position
+	$sprite.animation = "default"
 
 func _physics_process(delta):
-	update_motion(delta)
-
-func update_motion(delta):
 	var motion = Vector2()
 	
 	if Input.is_action_pressed("player_up"):
 		motion += Vector2(0, -1)
+		$sprite.animation = "up"
 	if Input.is_action_pressed("player_down"):
 		motion += Vector2(0, 1)
+		$sprite.animation = "down"
 	if Input.is_action_pressed("player_left"):
 		motion += Vector2(-1, 0)
+		get_node("sprite").animation = "left"
 	if Input.is_action_pressed("player_right"):
 		motion += Vector2(1, 0)
-	if Input.is_action_pressed("goto_next_level"):
-		self.take_key()
-	
+		$sprite.animation = "right"
+	if motion == Vector2(0,0):
+		$sprite.animation = "default"
+
 	motion = motion.normalized() * speed * delta
 	move_and_slide(motion)
-
-func reset():
-	position = origin
-	keys = 0
-	get_parent().reset()
-
-func take_key():
-	keys += 1
-	get_parent().open_doors_with(keys)
