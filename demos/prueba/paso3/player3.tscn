@@ -1,0 +1,59 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://assets/player/idle-down.png" type="Texture" id=1]
+[ext_resource path="res://assets/player/walk-right-02.png" type="Texture" id=2]
+[ext_resource path="res://assets/player/walk-left-03.png" type="Texture" id=3]
+[ext_resource path="res://assets/player/walk-right-01.png" type="Texture" id=4]
+[ext_resource path="res://assets/player/walk-right-03.png" type="Texture" id=5]
+[ext_resource path="res://assets/player/walk-left-02.png" type="Texture" id=6]
+[ext_resource path="res://assets/player/walk-left-01.png" type="Texture" id=7]
+[ext_resource path="res://paso3/player3.gd" type="Script" id=8]
+[ext_resource path="res://assets/player/walk-down-01.png" type="Texture" id=9]
+[ext_resource path="res://assets/player/walk-down-03.png" type="Texture" id=10]
+[ext_resource path="res://assets/player/walk-up-03.png" type="Texture" id=11]
+[ext_resource path="res://assets/player/walk-down-02.png" type="Texture" id=12]
+[ext_resource path="res://assets/player/walk-up-02.png" type="Texture" id=13]
+[ext_resource path="res://assets/player/walk-up-01.png" type="Texture" id=14]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 20.2277
+
+[node name="player3" type="KinematicBody2D"]
+script = ExtResource( 8 )
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 4, 4 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 10.0349 )
+shape = SubResource( 2 )

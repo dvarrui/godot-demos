@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/tileset_1bit.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 7.77862
+
+[node name="tiles3" type="Node2D"]
+
+[node name="tile_01" type="Sprite" parent="."]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 48, 0, 16, 16 )
+
+[node name="body" type="StaticBody2D" parent="tile_01"]
+
+[node name="shape" type="CollisionShape2D" parent="tile_01/body"]
+shape = SubResource( 1 )
+
+[node name="tile_02" type="Sprite" parent="."]
+position = Vector2( 64, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 112, 0, 16, 16 )
+
+[node name="body" type="StaticBody2D" parent="tile_02"]
+
+[node name="shape" type="CollisionShape2D" parent="tile_02/body"]
+shape = SubResource( 2 )
+
+[node name="tile_03" type="Sprite" parent="."]
+position = Vector2( 128, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 96, 0, 16, 16 )

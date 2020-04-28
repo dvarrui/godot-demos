@@ -24,6 +24,7 @@ position = Vector2( 410, 292.623 )
 
 [node name="ball" parent="balls" instance=ExtResource( 3 )]
 position = Vector2( 226.607, 276.994 )
+mass = 0.01
 
 [node name="ball2" parent="balls" instance=ExtResource( 3 )]
 position = Vector2( 187.899, 197.857 )
@@ -32,4 +33,4 @@ position = Vector2( 187.899, 197.857 )
 position = Vector2( 278.466, 211.722 )
 
 [node name="player2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 63.318, 245.284 )
+position = Vector2( 37.4709, 175.905 )
