@@ -13,7 +13,7 @@ func _physics_process(delta):
 	update_motion(delta)
 
 func update_motion(delta):
-	var motion = Vector2()
+	var motion = Vector2.ZERO
 	var dir = Vector2(cos(rotation), sin(rotation))
 
 	if Input.is_action_pressed("player_move"):
@@ -36,7 +36,6 @@ func shot(dir):
 	bullet.position = self.position + dir * 40
 	bullet.direction = dir
 	get_parent().add_child(bullet)
-
 
 func _on_visibility_screen_exited():
 	get_parent().exit_game()
