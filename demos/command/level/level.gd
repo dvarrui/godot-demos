@@ -10,4 +10,8 @@ func _process(delta):
 	$camera.position.y -= speed * delta
 	# Exit game?
 	if Input.is_action_pressed("exit_game"):
-		get_tree().quit()
+		exit_game()
+
+func exit_game():
+	get_tree().quit()
+	

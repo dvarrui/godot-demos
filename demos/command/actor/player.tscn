@@ -20,3 +20,6 @@ shape = SubResource( 1 )
 
 [node name="shoot" type="Node2D" parent="."]
 position = Vector2( 37, 9 )
+
+[node name="visibility" type="VisibilityNotifier2D" parent="."]
+[connection signal="screen_exited" from="visibility" to="." method="_on_visibility_screen_exited"]

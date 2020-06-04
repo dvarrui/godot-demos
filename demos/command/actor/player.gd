@@ -36,3 +36,7 @@ func shot(dir):
 	bullet.position = self.position + dir * 40
 	bullet.direction = dir
 	get_parent().add_child(bullet)
+
+
+func _on_visibility_screen_exited():
+	get_parent().exit_game()
