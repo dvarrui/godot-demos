@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var speed = 150 # Pixels/second
+export var speed = 200 # Pixels/second
 export var rot_speed = 5
 var origin = Vector2(0,127) # Initial position
 var bullet_res = load("res://actor/bullet.tscn") 
@@ -29,7 +29,10 @@ func update_motion(delta):
 	move_and_slide(motion)
 
 	if Input.is_action_just_pressed("player_shoot"):
-		var bullet = bullet_res.instance()
-		get_parent().add_child(bullet)
-		var pos = position + dir * 40
-		bullet.run( pos, dir)
+		shot(dir)
+
+func shot(dir):
+	var bullet = bullet_res.instance()
+	bullet.position = self.position + dir * 40
+	bullet.direction = dir
+	get_parent().add_child(bullet)

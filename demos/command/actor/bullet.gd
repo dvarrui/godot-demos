@@ -1,8 +1,10 @@
-extends RigidBody2D
+extends Area2D
 
 export var speed = 500
+export var direction = Vector2()
 
-func run(pos, dir):
-	self.position = pos
-	self.apply_impulse(Vector2(0,0), dir * speed)
+func _process(delta):
+	position = position + direction * speed * delta
 
+func _on_bullet_body_entered(_body):
+	self.queue_free()
