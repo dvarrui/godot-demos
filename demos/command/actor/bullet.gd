@@ -7,7 +7,7 @@ func _process(delta):
 	position = position + direction * speed * delta
 
 func _on_bullet_body_entered(body):
-	if body.get_parent().name=="enemies":
+	if body.has_method("hurt"):
 		body.hurt()
 	self.queue_free()
 

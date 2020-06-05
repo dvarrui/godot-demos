@@ -26,6 +26,7 @@ func update_motion(delta):
 		rotate(rot_speed * delta)
 	
 	motion = motion.normalized() * speed
+	# warning-ignore:return_value_discarded
 	move_and_slide(motion)
 
 	if Input.is_action_just_pressed("player_shoot"):
@@ -36,6 +37,9 @@ func shot(dir):
 	bullet.position = self.position + dir * 40
 	bullet.direction = dir
 	get_parent().add_child(bullet)
+
+func hurt():
+	queue_free()
 
 func _on_visibility_screen_exited():
 	get_parent().exit_game()
