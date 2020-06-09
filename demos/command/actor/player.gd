@@ -14,12 +14,11 @@ func _physics_process(delta):
 
 func update_motion(delta):
 	var motion = Vector2.ZERO
-	var dir = Vector2(cos(rotation), sin(rotation))
-
+	#var dir = Vector2(cos(rotation), sin(rotation))
 	if Input.is_action_pressed("player_move"):
-		motion = dir
+		motion = self.transform.x
 	if Input.is_action_pressed("player_back"):
-		motion = dir * -1
+		motion = self.transform.x * -1
 	if Input.is_action_pressed("player_turn_left"):
 		rotate(-rot_speed * delta)
 	if Input.is_action_pressed("player_turn_right"):
@@ -30,7 +29,7 @@ func update_motion(delta):
 	move_and_slide(motion)
 
 	if Input.is_action_just_pressed("player_shoot"):
-		shot(dir)
+		shot(self.transform.x)
 
 func shot(dir):
 	var bullet = bullet_res.instance()
