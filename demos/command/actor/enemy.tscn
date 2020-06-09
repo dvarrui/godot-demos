@@ -22,7 +22,7 @@ shape = SubResource( 1 )
 
 [node name="env" type="Area2D" parent="."]
 
-[node name="env_shape" type="CollisionShape2D" parent="env"]
+[node name="shape" type="CollisionShape2D" parent="env"]
 position = Vector2( 175.566, -2.45544 )
 shape = SubResource( 2 )
 [connection signal="body_entered" from="env" to="." method="_on_env_body_entered"]
