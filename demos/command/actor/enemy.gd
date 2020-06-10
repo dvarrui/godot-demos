@@ -40,4 +40,7 @@ func shot(dir):
 	var bullet = bullet_res.instance()
 	bullet.position = self.position + dir * 40
 	bullet.direction = dir
+	# Set enemy bullet layer = enemy layer
+	# To avoid enemies kill other enemies
+	bullet.collision_layer = self.collision_layer 
 	get_parent().add_child(bullet)

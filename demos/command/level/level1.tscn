@@ -27,7 +27,7 @@ tile_data = PoolIntArray( -2621429, 12, 0, -2555890, 12, 0, -2555889, 12, 0, -24
 position = Vector2( 304.752, 225.252 )
 
 [node name="enemy2" parent="enemies" instance=ExtResource( 5 )]
-position = Vector2( 869.207, 169.601 )
+position = Vector2( 840.057, 230.551 )
 rotation = 3.14159
 
 [node name="camera" type="Camera2D" parent="."]
@@ -45,4 +45,4 @@ __meta__ = {
 }
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 539.851, 469.279 )
+position = Vector2( 592.852, 556.73 )
