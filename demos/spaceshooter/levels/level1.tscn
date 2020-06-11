@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/backgrounds/background.png" type="Texture" id=1]
+[ext_resource path="res://assets/png/x-wing64.png" type="Texture" id=6]
+[ext_resource path="res://assets/png/tie-figther64.png" type="Texture" id=7]
+[ext_resource path="res://assets/png/satelite128.png" type="Texture" id=8]
+[ext_resource path="res://assets/png/rock64.png" type="Texture" id=9]
+
+[node name="level1" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( 512, 350 )
+
+[node name="starwars" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="starwars"]
+position = Vector2( 475.483, 503.582 )
+texture = ExtResource( 6 )
+
+[node name="Sprite2" type="Sprite" parent="starwars"]
+position = Vector2( 340.446, 187.813 )
+texture = ExtResource( 7 )
+
+[node name="Sprite3" type="Sprite" parent="starwars"]
+position = Vector2( 632.394, 92.6436 )
+texture = ExtResource( 9 )
+
+[node name="Sprite4" type="Sprite" parent="starwars"]
+position = Vector2( 832.263, 182.135 )
+texture = ExtResource( 8 )
