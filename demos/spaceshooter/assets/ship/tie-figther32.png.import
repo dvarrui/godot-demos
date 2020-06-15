@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/satelite64.png-0d9bddb43f7cc8b663fbf1f679dc7af7.stex"
+path="res://.import/tie-figther32.png-229643792cd7182783ff6004e807e46f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/png/satelite64.png"
-dest_files=[ "res://.import/satelite64.png-0d9bddb43f7cc8b663fbf1f679dc7af7.stex" ]
+source_file="res://assets/ship/tie-figther32.png"
+dest_files=[ "res://.import/tie-figther32.png-229643792cd7182783ff6004e807e46f.stex" ]
 
 [params]
 

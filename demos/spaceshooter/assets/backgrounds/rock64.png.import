@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dark-purple.png-a44411e9691f12dafd4f6173625c138d.stex"
+path="res://.import/rock64.png-047ab711f26cbdaded98625cb4d128be.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/dark-purple.png"
-dest_files=[ "res://.import/dark-purple.png-a44411e9691f12dafd4f6173625c138d.stex" ]
+source_file="res://assets/backgrounds/rock64.png"
+dest_files=[ "res://.import/rock64.png-047ab711f26cbdaded98625cb4d128be.stex" ]
 
 [params]
 

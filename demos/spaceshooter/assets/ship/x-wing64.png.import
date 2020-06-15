@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rock32.png-af75f790486b3a6670b598e996fb6101.stex"
+path="res://.import/x-wing64.png-decb180b2489cd47a3086748fc6c33af.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/png/rock32.png"
-dest_files=[ "res://.import/rock32.png-af75f790486b3a6670b598e996fb6101.stex" ]
+source_file="res://assets/ship/x-wing64.png"
+dest_files=[ "res://.import/x-wing64.png-decb180b2489cd47a3086748fc6c33af.stex" ]
 
 [params]
 

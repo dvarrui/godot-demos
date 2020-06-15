@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/satelite128.png-c8030ae55de424f0ff73d8d3ed1090e1.stex"
+path="res://.import/satelite128.png-791a70ad57c4666f6f4ca7ea36be62d2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/png/satelite128.png"
-dest_files=[ "res://.import/satelite128.png-c8030ae55de424f0ff73d8d3ed1090e1.stex" ]
+source_file="res://assets/ship/satelite128.png"
+dest_files=[ "res://.import/satelite128.png-791a70ad57c4666f6f4ca7ea36be62d2.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/x-wing32.png-e6ccfa498891209d51327b0d36899afb.stex"
+path="res://.import/tie-figther64.png-96ff0b1a8d1458c4a1de2d17d69f0fbe.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/png/x-wing32.png"
-dest_files=[ "res://.import/x-wing32.png-e6ccfa498891209d51327b0d36899afb.stex" ]
+source_file="res://assets/ship/tie-figther64.png"
+dest_files=[ "res://.import/tie-figther64.png-96ff0b1a8d1458c4a1de2d17d69f0fbe.stex" ]
 
 [params]
 

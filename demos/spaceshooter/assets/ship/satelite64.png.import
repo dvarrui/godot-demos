@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/x-wing64.png-40d8fb58fb27691d4210f3a4029a0f6f.stex"
+path="res://.import/satelite64.png-39f1de841fe173bbb0f937c4a82011d5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/png/x-wing64.png"
-dest_files=[ "res://.import/x-wing64.png-40d8fb58fb27691d4210f3a4029a0f6f.stex" ]
+source_file="res://assets/ship/satelite64.png"
+dest_files=[ "res://.import/satelite64.png-39f1de841fe173bbb0f937c4a82011d5.stex" ]
 
 [params]
 
