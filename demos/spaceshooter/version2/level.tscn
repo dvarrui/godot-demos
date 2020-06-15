@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/ship/tie-figther64.png" type="Texture" id=6]
 [ext_resource path="res://assets/backgrounds/rock64.png" type="Texture" id=7]
 
-[node name="level" type="Node2D"]
+[node name="level2" type="Node2D"]
 
 [node name="background" type="Node2D" parent="."]
 
@@ -66,4 +66,4 @@ rotation = 0.0872665
 texture = ExtResource( 6 )
 
 [node name="player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 549.34, 522.068 )
+position = Vector2( 531.808, 451.94 )
