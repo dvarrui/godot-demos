@@ -24,3 +24,9 @@ func shot():
 	var bullet = bullet_res.instance()
 	bullet.position = self.position + Vector2(0, -40)
 	get_parent().add_child(bullet)
+
+func _on_player_area_entered(area):
+	if area.is_in_group("bullet_down"):
+		area.queue_free()
+		queue_free()
+		get_parent().end_game()
