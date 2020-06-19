@@ -1,12 +1,15 @@
 extends Area2D
 
 export var speed = 300
+var bullet_res = null
 
 func _ready():
-	pass # Replace with function body.
+	bullet_res = preload("res://version2/bullet_up.tscn")
 
 func _process(delta):
 	var motion = Vector2.ZERO
+	if Input.is_action_just_pressed("player_shot"):
+		shot()
 	if Input.is_action_pressed("player_left"):
 		motion += Vector2(-1,0)
 	if Input.is_action_pressed("player_right"):
@@ -17,3 +20,7 @@ func _process(delta):
 		motion += Vector2(0,1)
 	position += motion.normalized() * speed * delta
 
+func shot():
+	var bullet = bullet_res.instance()
+	bullet.position = self.position + Vector2(0, -40)
+	get_parent().add_child(bullet)
