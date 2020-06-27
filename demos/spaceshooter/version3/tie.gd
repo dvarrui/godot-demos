@@ -6,7 +6,7 @@ var acc_shot_time = 0
 var bullet_res = null
 
 func _ready():
-	bullet_res = preload("res://version2/bullet_down.tscn")
+	bullet_res = preload("res://version3/bullet_down.tscn")
 
 func _process(delta):
 	acc_shot_time += delta

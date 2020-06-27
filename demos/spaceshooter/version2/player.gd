@@ -2,9 +2,11 @@ extends Area2D
 
 export var speed = 300
 var bullet_res = null
+var explosion_res = null
 
 func _ready():
-	bullet_res = preload("res://version2/bullet_up.tscn")
+	bullet_res = preload("res://version3/bullet_up.tscn")
+	explosion_res = preload("res://version3/explosion.tscn")
 
 func _process(delta):
 	var motion = Vector2.ZERO
@@ -28,5 +30,9 @@ func shot():
 func _on_player_area_entered(area):
 	if area.is_in_group("bullet_down"):
 		area.queue_free()
-		queue_free()
+		var explosion = explosion_res.instance()
+		explosion.position = self.position
+		get_parent().add_child(explosion)
 		get_parent().end_game()
+		queue_free()
+
