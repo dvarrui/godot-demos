@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tie-figther64-normalmap.png-d7461848c8ca674ffa372e5822237791.stex"
+path="res://.import/tie-figther64-normalmap.png-cc4cb6e8cc27f6b564e51817c33e0282.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ship/tie-figther64-normalmap.png"
-dest_files=[ "res://.import/tie-figther64-normalmap.png-d7461848c8ca674ffa372e5822237791.stex" ]
+source_file="res://version4/tie-figther64-normalmap.png"
+dest_files=[ "res://.import/tie-figther64-normalmap.png-cc4cb6e8cc27f6b564e51817c33e0282.stex" ]
 
 [params]
 
