@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://wall/block.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 28, 14 )
+
+[node name="block" type="StaticBody2D" groups=[
+"block",
+]]
+input_pickable = true
+
+[node name="sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( 0, 2 )
+
+[node name="shape" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )

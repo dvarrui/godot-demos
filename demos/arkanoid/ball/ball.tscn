@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ball/ball.png" type="Texture" id=1]
+[ext_resource path="res://ball/ball.gd" type="Script" id=2]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 9.0
+
+[node name="ball" type="RigidBody2D"]
+physics_material_override = SubResource( 1 )
+contacts_reported = 1
+contact_monitor = true
+linear_velocity = Vector2( 50, -200 )
+linear_damp = 0.0
+script = ExtResource( 2 )
+
+[node name="sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( 20, 4 )
+
+[node name="shape" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="visibility" type="VisibilityNotifier2D" parent="."]
+[connection signal="screen_exited" from="visibility" to="." method="_on_visibility_screen_exited"]
