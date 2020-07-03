@@ -2,7 +2,7 @@
 
 [ext_resource path="res://level/level1.gd" type="Script" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://wall/block_red.tscn" type="PackedScene" id=3]
+[ext_resource path="res://wall/block.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ball/ball.tscn" type="PackedScene" id=4]
 [ext_resource path="res://ui/pause.tscn" type="PackedScene" id=5]
 
@@ -89,6 +89,7 @@ position = Vector2( 64, 64 )
 
 [node name="block23" parent="wall" instance=ExtResource( 3 )]
 position = Vector2( 128, 64 )
+type = "green"
 
 [node name="block24" parent="wall" instance=ExtResource( 3 )]
 position = Vector2( 192, 64 )
