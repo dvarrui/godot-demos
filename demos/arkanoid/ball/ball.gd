@@ -10,4 +10,4 @@ func _physics_process(delta):
 			body.queue_free()
 
 func _on_visibility_screen_exited():
-	get_tree().quit()
+	get_tree().change_scene("res://ui/title.tscn")

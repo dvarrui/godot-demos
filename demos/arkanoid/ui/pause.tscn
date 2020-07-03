@@ -7,14 +7,9 @@
 size = 64
 font_data = ExtResource( 2 )
 
-[node name="pause" type="Control"]
+[node name="pause" type="Node2D"]
 pause_mode = 2
-margin_right = 40.0
-margin_bottom = 40.0
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="background" type="ColorRect" parent="."]
 margin_right = 402.0
@@ -27,37 +22,37 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 359.0
-margin_bottom = 550.0
+margin_left = 55.0
+margin_right = 336.0
+margin_bottom = 592.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="title" type="Label" parent="VBoxContainer"]
-margin_top = 238.0
-margin_right = 399.0
-margin_bottom = 303.0
+margin_top = 239.0
+margin_right = 281.0
+margin_bottom = 304.0
 custom_fonts/font = SubResource( 1 )
 text = "Arkanoid"
 align = 1
 autowrap = true
 
 [node name="continue" type="Button" parent="VBoxContainer"]
-margin_top = 307.0
-margin_right = 399.0
-margin_bottom = 327.0
+margin_top = 308.0
+margin_right = 281.0
+margin_bottom = 328.0
 text = "Cotinue"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="menu" type="Button" parent="VBoxContainer"]
-margin_top = 331.0
-margin_right = 399.0
-margin_bottom = 351.0
+margin_top = 332.0
+margin_right = 281.0
+margin_bottom = 352.0
 text = "Menu"
-script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
