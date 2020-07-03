@@ -30,7 +30,7 @@ En este repositorio iré poniendo pequeñas demos jugables, usando el motor Godo
 * [Transitions Between Scenes - Godot Asset by César León](https://in3mo.itch.io/transitions-godot)
 * [GDQuest/godot-visual-effects](https://github.com/GDQuest/godot-visual-effects): Open-source visual effects designed in Godot, from our VFX Secrets course. - GDQuest/godot-visual-effects
 * [Clasic Sonic palette Shader](https://github.com/raphaklaus/sonic-palette-fade/blob/master/README.md)
-
+ 
 ### Arte vectorial
 
 * [Learn 2D gameart using vector tools - 2dgameartguru](https://2dgameartguru.com/)
