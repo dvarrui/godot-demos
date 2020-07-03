@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://ui/main.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[node name="main" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="ColorRect" parent="."]
+margin_right = 402.0
+margin_bottom = 599.0
+color = Color( 0.556863, 0.556863, 0.729412, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 359.0
+margin_bottom = 550.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="VBoxContainer"]
+margin_top = 238.0
+margin_right = 399.0
+margin_bottom = 303.0
+custom_fonts/font = SubResource( 1 )
+text = "Arkanoid"
+align = 1
+autowrap = true
+
+[node name="start" type="Button" parent="VBoxContainer"]
+margin_top = 307.0
+margin_right = 399.0
+margin_bottom = 327.0
+text = "Start game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quit" type="Button" parent="VBoxContainer"]
+margin_top = 331.0
+margin_right = 399.0
+margin_bottom = 351.0
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]

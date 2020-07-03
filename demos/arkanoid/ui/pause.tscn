@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://ui/pause.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 2 )
+
+[node name="pause" type="Control"]
+pause_mode = 2
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="ColorRect" parent="."]
+margin_right = 402.0
+margin_bottom = 599.0
+color = Color( 0, 0, 0, 0.235294 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 359.0
+margin_bottom = 550.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="VBoxContainer"]
+margin_top = 238.0
+margin_right = 399.0
+margin_bottom = 303.0
+custom_fonts/font = SubResource( 1 )
+text = "Arkanoid"
+align = 1
+autowrap = true
+
+[node name="continue" type="Button" parent="VBoxContainer"]
+margin_top = 307.0
+margin_right = 399.0
+margin_bottom = 327.0
+text = "Cotinue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu" type="Button" parent="VBoxContainer"]
+margin_top = 331.0
+margin_right = 399.0
+margin_bottom = 351.0
+text = "Menu"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="VBoxContainer/continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/menu" to="." method="_on_menu_pressed"]
