@@ -1,0 +1,173 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://assets/map1.png" type="Texture" id=1]
+[ext_resource path="res://assets/other/magic_contador.png" type="Texture" id=2]
+[ext_resource path="res://assets/tower/catapult_tower.png" type="Texture" id=3]
+[ext_resource path="res://assets/tower/magic_tower.png" type="Texture" id=4]
+[ext_resource path="res://assets/tower/shoottower_hielo.png" type="Texture" id=5]
+[ext_resource path="res://assets/tower/mine_tower1.png" type="Texture" id=6]
+[ext_resource path="res://assets/tower/shoottower_in_action.png" type="Texture" id=7]
+[ext_resource path="res://assets/tower/muro_tower.png" type="Texture" id=8]
+[ext_resource path="res://assets/other/proyectil.png" type="Texture" id=9]
+[ext_resource path="res://assets/tower/shoottower_hielo_in action.png" type="Texture" id=10]
+[ext_resource path="res://assets/tower/magic_tower_in_action.png" type="Texture" id=11]
+[ext_resource path="res://assets/tower/shoottower_dañado.png" type="Texture" id=12]
+[ext_resource path="res://assets/other/proyectil_hielo.png" type="Texture" id=13]
+[ext_resource path="res://assets/tower/mine_tower2.png" type="Texture" id=14]
+[ext_resource path="res://assets/enemy/enemigo_basic_moving2.png" type="Texture" id=15]
+[ext_resource path="res://assets/tower/pinchos_tower.png" type="Texture" id=16]
+[ext_resource path="res://assets/enemy/enemigo_lubo_run2.png" type="Texture" id=17]
+[ext_resource path="res://assets/enemy/enemigo_cura.png" type="Texture" id=18]
+[ext_resource path="res://assets/tower/pinchos_tower_in_action.png" type="Texture" id=19]
+[ext_resource path="res://assets/enemy/enemigo_soldier_moving_dañado2.png" type="Texture" id=20]
+[ext_resource path="res://assets/enemy/enemigo_basic_iddle3.png" type="Texture" id=21]
+[ext_resource path="res://assets/enemy/enemigo_lubo_run.png" type="Texture" id=22]
+[ext_resource path="res://assets/enemy/enemigo_antorcha_apagada_moving.png" type="Texture" id=23]
+[ext_resource path="res://assets/enemy/enemigo_antorcha_iddle.png" type="Texture" id=24]
+[ext_resource path="res://assets/other/muerte_salpicadura_sangre.png" type="Texture" id=25]
+[ext_resource path="res://assets/enemy/enemigo_escudo_running.png" type="Texture" id=26]
+[ext_resource path="res://assets/enemy/enemigo_soldier_iddle.png" type="Texture" id=27]
+[ext_resource path="res://assets/enemy/enemigo_cubierto_iddle.png" type="Texture" id=28]
+[ext_resource path="res://assets/enemy/enemigo_volador_moving.png" type="Texture" id=29]
+[ext_resource path="res://actor/enemy/enemy_basic.tscn" type="PackedScene" id=30]
+
+[node name="preview" type="Node2D"]
+position = Vector2( 0, 52 )
+scale = Vector2( 2, 2 )
+
+[node name="map1" type="Sprite" parent="."]
+position = Vector2( 273.302, 165.82 )
+texture = ExtResource( 1 )
+
+[node name="enemies" type="Node2D" parent="."]
+position = Vector2( -71.6494, -5.63907 )
+
+[node name="enemy" parent="enemies" instance=ExtResource( 30 )]
+position = Vector2( 489.547, 155.572 )
+
+[node name="towers" type="Node2D" parent="."]
+position = Vector2( 489.547, 155.572 )
+
+[node name="Sprite" type="Sprite" parent="towers"]
+position = Vector2( -296.146, -69.2875 )
+texture = ExtResource( 12 )
+
+[node name="sprite1" type="Sprite" parent="towers"]
+position = Vector2( -326.18, -5.0683 )
+texture = ExtResource( 4 )
+
+[node name="sprite12" type="Sprite" parent="towers"]
+position = Vector2( -326.655, 27.7067 )
+texture = ExtResource( 11 )
+
+[node name="sprite13" type="Sprite" parent="towers"]
+position = Vector2( -316.205, 15.8317 )
+texture = ExtResource( 2 )
+
+[node name="sprite6" type="Sprite" parent="towers"]
+position = Vector2( -326.18, -37.1429 )
+texture = ExtResource( 4 )
+
+[node name="sprite2" type="Sprite" parent="towers"]
+position = Vector2( -296.657, -37.5759 )
+texture = ExtResource( 3 )
+
+[node name="sprite3" type="Sprite" parent="towers"]
+position = Vector2( -169.438, -37.3105 )
+texture = ExtResource( 8 )
+
+[node name="sprite14" type="Sprite" parent="towers"]
+position = Vector2( -168.963, 26.3395 )
+texture = ExtResource( 8 )
+
+[node name="sprite4" type="Sprite" parent="towers"]
+position = Vector2( -295.523, -5.00189 )
+texture = ExtResource( 7 )
+
+[node name="sprite5" type="Sprite" parent="towers"]
+position = Vector2( -216.96, -5.35106 )
+texture = ExtResource( 9 )
+
+[node name="sprite7" type="Sprite" parent="towers"]
+position = Vector2( -198.345, -39.0024 )
+texture = ExtResource( 6 )
+
+[node name="sprite8" type="Sprite" parent="towers"]
+position = Vector2( -296.318, 57.6558 )
+texture = ExtResource( 10 )
+
+[node name="sprite9" type="Sprite" parent="towers"]
+position = Vector2( -296.152, 25.4799 )
+texture = ExtResource( 5 )
+
+[node name="sprite10" type="Sprite" parent="towers"]
+position = Vector2( -262.951, 54.9476 )
+texture = ExtResource( 13 )
+
+[node name="sprite11" type="Sprite" parent="towers"]
+position = Vector2( -128.708, 55.5779 )
+texture = ExtResource( 13 )
+
+[node name="sprite15" type="Sprite" parent="towers"]
+position = Vector2( -263.133, 23.2779 )
+texture = ExtResource( 14 )
+
+[node name="sprite16" type="Sprite" parent="towers"]
+position = Vector2( -135.358, 26.1279 )
+texture = ExtResource( 16 )
+
+[node name="sprite17" type="Sprite" parent="towers"]
+position = Vector2( -104.958, -86.4471 )
+texture = ExtResource( 15 )
+
+[node name="sprite18" type="Sprite" parent="towers"]
+position = Vector2( -104.008, -68.8721 )
+texture = ExtResource( 19 )
+
+[node name="sprite19" type="Sprite" parent="towers"]
+position = Vector2( -106.383, 57.9529 )
+texture = ExtResource( 23 )
+
+[node name="sprite20" type="Sprite" parent="towers"]
+position = Vector2( -72.6578, 26.6029 )
+texture = ExtResource( 24 )
+
+[node name="sprite21" type="Sprite" parent="towers"]
+position = Vector2( -136.783, -5.22212 )
+texture = ExtResource( 26 )
+
+[node name="sprite22" type="Sprite" parent="towers"]
+position = Vector2( -267.883, -69.3471 )
+texture = ExtResource( 17 )
+
+[node name="sprite23" type="Sprite" parent="towers"]
+position = Vector2( -153.883, -85.9721 )
+texture = ExtResource( 21 )
+
+[node name="sprite24" type="Sprite" parent="towers"]
+position = Vector2( -231.783, 42.2779 )
+texture = ExtResource( 29 )
+
+[node name="sprite25" type="Sprite" parent="towers"]
+position = Vector2( -60.3078, -85.0221 )
+texture = ExtResource( 28 )
+
+[node name="sprite26" type="Sprite" parent="towers"]
+position = Vector2( -103.533, -5.22211 )
+texture = ExtResource( 18 )
+
+[node name="sprite27" type="Sprite" parent="towers"]
+position = Vector2( -193.783, -70.2971 )
+texture = ExtResource( 22 )
+
+[node name="sprite28" type="Sprite" parent="towers"]
+position = Vector2( -123.483, -37.0471 )
+texture = ExtResource( 20 )
+
+[node name="sprite29" type="Sprite" parent="towers"]
+position = Vector2( -84.5328, -37.5221 )
+texture = ExtResource( 27 )
+
+[node name="sprite30" type="Sprite" parent="towers"]
+position = Vector2( -197.583, -3.32213 )
+texture = ExtResource( 25 )

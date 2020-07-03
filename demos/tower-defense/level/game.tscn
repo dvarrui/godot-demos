@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/map1.png" type="Texture" id=1]
+[ext_resource path="res://ui/cards.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/ui/progress_bar2.png" type="Texture" id=3]
+[ext_resource path="res://assets/ui/magic_gout.png" type="Texture" id=4]
+[ext_resource path="res://level/game.gd" type="Script" id=5]
+[ext_resource path="res://assets/ui/progress_bar1.png" type="Texture" id=6]
+
+[node name="game" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="background" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+offset = Vector2( 270, 190 )
+
+[node name="cards" parent="." instance=ExtResource( 2 )]
+position = Vector2( 350, 150 )
+
+[node name="board" type="Node2D" parent="."]
+
+[node name="progress_bar" type="Node2D" parent="."]
+position = Vector2( 350, 560 )
+scale = Vector2( 2, 2 )
+
+[node name="bar" type="TextureProgress" parent="progress_bar"]
+margin_left = -32.0
+margin_top = -8.0
+margin_right = 33.0
+margin_bottom = 7.0
+max_value = 5.0
+step = 0.1
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gout" type="Sprite" parent="progress_bar"]
+position = Vector2( 46.4399, -3.76903 )
+texture = ExtResource( 4 )
+
+[node name="value" type="Label" parent="progress_bar"]
+margin_left = 38.0
+margin_top = -7.0
+margin_right = 54.0
+margin_bottom = 8.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
