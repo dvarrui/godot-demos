@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://actor/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://environment/tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://levels/level1.gd" type="Script" id=3]
 
 [node name="level1" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="map" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )

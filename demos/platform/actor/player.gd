@@ -1,39 +1,52 @@
 extends KinematicBody2D
 
-export var speed = 100
-export var default_gravity = 170
-export var jump_speed = -200
-var state = "walking"
-var current_gravity = 0
-var previous_pos = Vector2.ZERO
+var input_direction = 0
+var direction = 0
+
+var speed_x = 0 # Horizontal speed about character
+var speed_y = 0 # Vertical spped about character
+var velocity = Vector2()
+
+const MAX_SPEED = 300
+const ACCELERATION = 1000
+const DECELERATION = 2000
+
+const JUMP_FORCE = 210
+const GRAVITY = 300
 
 func _ready():
-	previous_pos = position
-	current_gravity = default_gravity
+	set_process(true)
+	set_process_input(true)
 
-# warning-ignore:unused_argument
-func _physics_process(delta):
-	if abs(previous_pos.y - position.y) < 0.1:
-		if state=="falling":
-			state = "walking"
-		elif state=="jumping":
-			state="falling"
-			current_gravity = default_gravity
-	var motion = Vector2.ZERO
+func _input(event):
+	if event.is_action_pressed("player_jump"):
+		speed_y = -JUMP_FORCE
+
+func _process(delta):
+	# INPUT
+	if input_direction:
+		direction = input_direction
+	
 	if Input.is_action_pressed("player_left"):
-		motion.x = -speed
-	if Input.is_action_pressed("player_right"):
-		motion.x = speed
-	if Input.is_action_just_pressed("player_jump") and state == "walking":
-		current_gravity = jump_speed
-		state = "jumping"
-		$jump_timer.start()
-	motion.y = current_gravity
-	previous_pos = position
+		input_direction = -1
+	elif Input.is_action_pressed("player_right"):
+		input_direction = 1
+	else:
+		input_direction = 0
+	
+	# MOVEMENT
+	if input_direction == - direction:
+		speed_x /= 3
+	if input_direction:
+		speed_x += ACCELERATION * delta
+	else:
+		speed_x -= DECELERATION * delta
+
+	speed_x = clamp(speed_x, 0, MAX_SPEED)
+	speed_y += GRAVITY * delta
+
+	velocity.x = speed_x * direction
+	velocity.y = speed_y
 # warning-ignore:return_value_discarded
-	move_and_slide(motion)
+	move_and_slide(velocity)
 
-
-func _on_jump_timer_timeout():
-	current_gravity = default_gravity
-	state = "falling"
