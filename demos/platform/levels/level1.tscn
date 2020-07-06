@@ -1,12 +1,16 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://actor/player/player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://levels/platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://actor/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://environment/tileset.tres" type="TileSet" id=2]
 
-[node name="level" type="Node2D"]
+[node name="level1" type="Node2D"]
+
+[node name="map" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+compatibility_mode = true
+format = 1
+tile_data = PoolIntArray( 393219, 0, 0, 393220, 1, 0, 393221, 1, 0, 393222, 1, 0, 393223, 1, 0, 393224, 1, 0, 393225, 1, 0, 393226, 1, 0, 393227, 1, 0, 393228, 2, 0, 393233, 0, 0, 393234, 1, 0, 393235, 1, 0, 393236, 1, 0, 393237, 2, 0, 655369, 0, 0, 655370, 1, 0, 655371, 1, 0, 655372, 1, 0, 655373, 1, 0, 655374, 1, 0, 655375, 1, 0, 655376, 1, 0, 655377, 2, 0, 851984, 0, 0, 851985, 1, 0, 851986, 1, 0, 851987, 1, 0, 851988, 1, 0, 851989, 1, 0, 851990, 1, 0, 851991, 2, 0, 1114122, 0, 0, 1114123, 1, 0, 1114124, 1, 0, 1114125, 1, 0, 1114126, 1, 0, 1114127, 1, 0, 1114128, 1, 0, 1114129, 1, 0, 1114130, 1, 0, 1114131, 1, 0, 1114132, 2, 0 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 515.382, 162.73 )
-
-[node name="platform" parent="." instance=ExtResource( 2 )]
-position = Vector2( 497.495, 385.739 )
+position = Vector2( 123.957, 66.7462 )

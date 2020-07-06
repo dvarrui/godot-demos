@@ -1,6 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets/actor/idle.png" type="Texture" id=1]
+[ext_resource path="res://version1/idle.png" type="Texture" id=1]
+
+
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 16.0
