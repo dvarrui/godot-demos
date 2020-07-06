@@ -17,3 +17,8 @@ region_rect = Rect2( 0, 240, 16, 16 )
 
 [node name="shape" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="jump_timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+[connection signal="timeout" from="jump_timer" to="." method="_on_jump_timer_timeout"]
