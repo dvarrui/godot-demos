@@ -1,13 +1,14 @@
 
 # Godot
 
-En este repositorio iré poniendo pequeñas demos jugables, usando el motor GodotEngine (versión 3.2) y otros recursos libres.
+En este repositorio iré poniendo pequeñas demos jugables, creadas con el motor GodotEngine (versión 3.2) y otros recursos libres.
 
+1. Arkanoid (By Rafanoid)
 1. [Roguelike](docs/roguelike/README.md)
 1. Command (En construccion!)
 1. SpaceShooter (En construcción!)
 1. Platforms (Pendiente)
-1. Tower Defense (Pendiente)
+1. Tower Defense (En contrucción)
 
 ---
 ## Más información

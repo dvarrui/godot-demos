@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://file-editor.gd" type="Script" id=1]
+
+[node name="file-editor" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="v-container" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="h-container" type="HBoxContainer" parent="v-container"]
+margin_right = 500.0
+margin_bottom = 20.0
+
+[node name="load" type="Button" parent="v-container/h-container"]
+margin_right = 69.0
+margin_bottom = 20.0
+text = "Load File"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="save" type="Button" parent="v-container/h-container"]
+margin_left = 73.0
+margin_right = 141.0
+margin_bottom = 20.0
+text = "Save File"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exit" type="Button" parent="v-container/h-container"]
+margin_left = 145.0
+margin_right = 180.0
+margin_bottom = 20.0
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text-editor" type="TextEdit" parent="v-container"]
+margin_top = 24.0
+margin_right = 500.0
+margin_bottom = 500.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="v-container/h-container/exit" to="." method="_on_exit_pressed"]
