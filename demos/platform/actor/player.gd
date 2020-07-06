@@ -7,12 +7,12 @@ var speed_x = 0 # Horizontal speed about character
 var speed_y = 0 # Vertical spped about character
 var velocity = Vector2()
 
-const MAX_SPEED = 300
+const MAX_SPEED = 200
 const ACCELERATION = 1000
 const DECELERATION = 2000
 
 const JUMP_FORCE = 210
-const GRAVITY = 300
+const GRAVITY = 330
 
 func _ready():
 	set_process(true)
@@ -35,14 +35,16 @@ func _process(delta):
 		input_direction = 0
 	
 	# MOVEMENT
-	if input_direction == - direction:
-		speed_x /= 3
-	if input_direction:
-		speed_x += ACCELERATION * delta
+	if is_on_floor():
+		if input_direction == - direction:
+			speed_x /= 3
+		if input_direction:
+			speed_x += ACCELERATION * delta
+		else:
+			speed_x -= DECELERATION * delta
+		speed_x = clamp(speed_x, 0, MAX_SPEED)
 	else:
-		speed_x -= DECELERATION * delta
-
-	speed_x = clamp(speed_x, 0, MAX_SPEED)
+		speed_x = clamp(speed_x, 0, MAX_SPEED/3)
 	speed_y += GRAVITY * delta
 
 	velocity.x = speed_x * direction
