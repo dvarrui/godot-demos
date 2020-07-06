@@ -19,7 +19,7 @@ func _ready():
 	set_process_input(true)
 
 func _input(event):
-	if event.is_action_pressed("player_jump"):
+	if event.is_action_pressed("player_jump") and is_on_floor():
 		speed_y = -JUMP_FORCE
 
 func _process(delta):
@@ -48,5 +48,5 @@ func _process(delta):
 	velocity.x = speed_x * direction
 	velocity.y = speed_y
 # warning-ignore:return_value_discarded
-	move_and_slide(velocity)
+	move_and_slide(velocity, Vector2(0, -1))
 
