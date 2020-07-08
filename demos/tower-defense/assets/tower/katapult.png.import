@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/catapult_tower.png-fd26d04c1dcea2f1bf40433da4862d22.stex"
+path="res://.import/katapult.png-336aaddfd561c7efd1105536b4fbc4ca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tower/catapult_tower.png"
-dest_files=[ "res://.import/catapult_tower.png-fd26d04c1dcea2f1bf40433da4862d22.stex" ]
+source_file="res://assets/tower/katapult.png"
+dest_files=[ "res://.import/katapult.png-336aaddfd561c7efd1105536b4fbc4ca.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

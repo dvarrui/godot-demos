@@ -18,7 +18,7 @@ offset = Vector2( 270, 190 )
 [node name="cards" parent="." instance=ExtResource( 2 )]
 position = Vector2( 350, 150 )
 
-[node name="board" type="Node2D" parent="."]
+[node name="actors" type="Node2D" parent="."]
 
 [node name="progress_bar" type="Node2D" parent="."]
 position = Vector2( 350, 560 )
