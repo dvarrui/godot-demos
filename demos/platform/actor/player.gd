@@ -7,13 +7,13 @@ var speed_x = 0 # Horizontal speed about character
 var speed_y = 0 # Vertical spped about character
 var motion = Vector2()
 
-const MAX_SPEED_X = 200
-const ACCELERATION = 1000
-const DECELERATION = 2000
+const MAX_SPEED_X = 200 # 200
+const ACCELERATION = 600
+const DECELERATION = 1300 # 2000
 
 const MAX_SPEED_Y = 400
-const JUMP_FORCE = 210
-const GRAVITY = 330
+const JUMP_FORCE = 210 # 210
+const GRAVITY = 330 # 330
 
 func _ready():
 	#set_process(true)
@@ -63,4 +63,4 @@ func _physics_process(delta):
 	motion.y = speed_y
 # warning-ignore:return_value_discarded
 	move_and_slide(motion, Vector2(0, -1))
-
+#	move_and_slide_with_snap(motion, Vector2.DOWN, Vector2.UP)
