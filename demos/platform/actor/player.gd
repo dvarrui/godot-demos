@@ -54,7 +54,7 @@ func _physics_process(delta):
 		speed_y = 0
 	else:
 		# Limit max X speed when jumping
-		speed_x = clamp(speed_x, 0, MAX_SPEED_X/3)
+		speed_x = clamp(speed_x, 0, MAX_SPEED_X/3 +15)
 	
 	speed_y += GRAVITY * delta
 	speed_y = clamp(speed_y, -MAX_SPEED_Y, MAX_SPEED_Y)
