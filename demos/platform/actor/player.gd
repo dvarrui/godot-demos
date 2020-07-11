@@ -64,3 +64,6 @@ func _physics_process(delta):
 # warning-ignore:return_value_discarded
 	move_and_slide(motion, Vector2(0, -1))
 #	move_and_slide_with_snap(motion, Vector2.DOWN, Vector2.UP)
+
+func _on_visibility_screen_exited():
+	get_tree().quit()
