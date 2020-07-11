@@ -1,12 +1,13 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://actor/player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://environment/box1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://environment/tileset.tres" type="TileSet" id=3]
+[ext_resource path="res://version2/box1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://version2/tileset.tres" type="TileSet" id=3]
 [ext_resource path="res://levels/level.gd" type="Script" id=4]
-[ext_resource path="res://environment/platform.tscn" type="PackedScene" id=5]
-[ext_resource path="res://environment/box2.tscn" type="PackedScene" id=6]
-[ext_resource path="res://environment/platform_owc.tscn" type="PackedScene" id=7]
+[ext_resource path="res://version2/platform.tscn" type="PackedScene" id=5]
+[ext_resource path="res://version2/box2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://version2/platform_owc.tscn" type="PackedScene" id=7]
+
 
 [node name="test" type="Node2D"]
 script = ExtResource( 4 )
