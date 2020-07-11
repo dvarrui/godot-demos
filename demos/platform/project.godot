@@ -16,8 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Platform"
-run/main_scene="res://levels/test.tscn"
+run/main_scene="res://levels/level1.tscn"
+boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
 config/icon="res://icon.png"
+
+[display]
+
+window/size/resizable=false
 
 [input]
 
