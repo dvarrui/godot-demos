@@ -12,7 +12,7 @@ extents = Vector2( 12, 12 )
 script = ExtResource( 2 )
 
 [node name="sprite" type="Sprite" parent="."]
-position = Vector2( 0, -4 )
+position = Vector2( 0, -2 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 480, 32, 32 )
