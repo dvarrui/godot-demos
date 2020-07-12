@@ -25,6 +25,7 @@ shape = SubResource( 1 )
 [node name="visibility" type="VisibilityNotifier2D" parent="."]
 
 [node name="detect" type="Area2D" parent="."]
+position = Vector2( 0, 2 )
 
 [node name="shape" type="CollisionShape2D" parent="detect"]
 shape = SubResource( 2 )
