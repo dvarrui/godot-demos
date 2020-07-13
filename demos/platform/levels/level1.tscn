@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://actor/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://environment/tileset_bosque2.tres" type="TileSet" id=2]
 [ext_resource path="res://actor/enemy1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://environment/platform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://actor/enemy2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://environment/light.tscn" type="PackedScene" id=6]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -108,3 +109,6 @@ x_max = 90
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 111.323, 472.72 )
+
+[node name="light2d" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1044.48, 33.3354 )
