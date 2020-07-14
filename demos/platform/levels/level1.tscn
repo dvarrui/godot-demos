@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://actor/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://environment/tileset_bosque2.tres" type="TileSet" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://environment/platform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://actor/enemy2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://environment/light.tscn" type="PackedScene" id=6]
+[ext_resource path="res://environment/water.tscn" type="PackedScene" id=7]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -30,16 +31,29 @@ extents = Vector2( 4, 45 )
 [node name="level1" type="Node2D"]
 script = SubResource( 1 )
 
-[node name="background" type="CanvasLayer" parent="."]
+[node name="background2" type="Node2D" parent="."]
+
+[node name="black" type="CanvasLayer" parent="background2"]
 layer = -2
 
-[node name="color" type="ColorRect" parent="background"]
+[node name="color" type="ColorRect" parent="background2/black"]
 margin_right = 1070.0
 margin_bottom = 632.0
 color = Color( 0.00392157, 0.00392157, 0.00392157, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="water" parent="background2" instance=ExtResource( 7 )]
+position = Vector2( 532, 580 )
+z_index = -1
+
+[node name="water2" parent="background2" instance=ExtResource( 7 )]
+position = Vector2( 780, 580 )
+z_index = -1
+
+[node name="light" parent="background2" instance=ExtResource( 6 )]
+position = Vector2( 1039.78, 32.9628 )
 
 [node name="map" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -109,6 +123,3 @@ x_max = 90
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 111.323, 472.72 )
-
-[node name="light2d" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1044.48, 33.3354 )

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://environment/water_shader.shader" type="Shader" id=1]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/mode = 1
+shader_param/level = 5.0
+shader_param/speed = 2.0
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 1 )
+shader_param/mode = 1
+shader_param/level = 5.0
+shader_param/speed = 2.0
+
+[node name="water" type="Node2D"]
+material = SubResource( 1 )
+
+[node name="background" type="ColorRect" parent="."]
+material = SubResource( 2 )
+margin_right = 140.0
+margin_bottom = 42.0
+color = Color( 0.1792, 0.3328, 0.64, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
