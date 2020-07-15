@@ -14,7 +14,7 @@ extents = Vector2( 12, 12 )
 script = ExtResource( 2 )
 
 [node name="sprite" type="Sprite" parent="."]
-modulate = Color( 0.8, 0.8, 1, 1 )
+self_modulate = Color( 1, 0.983333, 0, 1 )
 position = Vector2( 0, -4 )
 texture = ExtResource( 1 )
 region_enabled = true

@@ -13,15 +13,15 @@ region = Rect2( 0, 576, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 576, 32, 32 )
+region = Rect2( 160, 576, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
-region = Rect2( 64, 576, 32, 32 )
+region = Rect2( 32, 576, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
-region = Rect2( 160, 576, 32, 32 )
+region = Rect2( 64, 576, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
@@ -30,14 +30,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 3 ), SubResource( 4 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 5 ) ],
+"frames": [ SubResource( 3 ) ],
 "loop": true,
 "name": "sleep",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -53,10 +53,11 @@ radius = 33.1424
 script = ExtResource( 2 )
 
 [node name="anim" type="AnimatedSprite" parent="."]
+self_modulate = Color( 1, 0.278431, 0.239216, 1 )
 position = Vector2( 0, -5 )
 frames = SubResource( 6 )
 animation = "idle"
-frame = 2
+frame = 1
 playing = true
 
 [node name="shape" type="CollisionShape2D" parent="."]
