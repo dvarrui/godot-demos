@@ -1,7 +1,7 @@
 extends Node2D
 
 var state = "play"
-var max_end_game = 1
+var max_end_game = 2
 var acc_end_game = 0
 
 func _ready():

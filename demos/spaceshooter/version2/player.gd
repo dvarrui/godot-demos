@@ -5,8 +5,8 @@ var bullet_res = null
 var explosion_res = null
 
 func _ready():
-	bullet_res = preload("res://version3/bullet_up.tscn")
-	explosion_res = preload("res://version3/explosion.tscn")
+	bullet_res = preload("res://actor/bullet_up.tscn")
+	explosion_res = preload("res://environment/explosion.tscn")
 
 func _process(delta):
 	var motion = Vector2.ZERO

@@ -4,7 +4,7 @@ export var speed = 300
 var bullet_res = null
 
 func _ready():
-	bullet_res = preload("res://version3/bullet_up.tscn")
+	bullet_res = preload("res://actor/bullet_up.tscn")
 
 func _process(delta):
 	var motion = Vector2.ZERO
