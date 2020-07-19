@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://version3/indiana16.png" type="Texture" id=1]
+[ext_resource path="res://version3/player.tscn" type="PackedScene" id=2]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -123,30 +124,34 @@ animations = [ {
 } ]
 
 [node name="indiana" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 438.75, 52.25 )
+
+[node name="demos" type="Node2D" parent="."]
 scale = Vector2( 4, 4 )
 
-[node name="walk" type="AnimatedSprite" parent="."]
+[node name="walk" type="AnimatedSprite" parent="demos"]
 position = Vector2( 8, 8 )
 frames = SubResource( 9 )
 animation = "walk"
-frame = 4
-playing = true
-
-[node name="hit" type="AnimatedSprite" parent="."]
-position = Vector2( 32, 8 )
-frames = SubResource( 14 )
-animation = "hit"
-frame = 1
-playing = true
-
-[node name="jump" type="AnimatedSprite" parent="."]
-position = Vector2( 56, 8 )
-frames = SubResource( 21 )
-animation = "jump"
 frame = 6
 playing = true
 
-[node name="hit2" type="AnimatedSprite" parent="."]
+[node name="hit" type="AnimatedSprite" parent="demos"]
+position = Vector2( 32, 8 )
+frames = SubResource( 14 )
+animation = "hit"
+playing = true
+
+[node name="jump" type="AnimatedSprite" parent="demos"]
+position = Vector2( 56, 8 )
+frames = SubResource( 21 )
+animation = "jump"
+frame = 2
+playing = true
+
+[node name="hit2" type="AnimatedSprite" parent="demos"]
 position = Vector2( 88, 8 )
 frames = SubResource( 26 )
 frame = 3

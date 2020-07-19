@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/spritesheet2.png" type="Texture" id=1]
+[ext_resource path="res://version3/player.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 12, 12 )
+
+[sub_resource type="CircleShape2D" id=2]
+
+[node name="player" type="KinematicBody2D" groups=[
+"player",
+]]
+script = ExtResource( 2 )
+
+[node name="sprite" type="Sprite" parent="."]
+self_modulate = Color( 1, 0.983333, 0, 1 )
+position = Vector2( 0, -4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 480, 32, 32 )
+
+[node name="shape" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="visibility" type="VisibilityNotifier2D" parent="."]
+
+[node name="detect" type="Area2D" parent="."]
+position = Vector2( 0, 2 )
+
+[node name="shape" type="CollisionShape2D" parent="detect"]
+shape = SubResource( 2 )
+[connection signal="screen_exited" from="visibility" to="." method="_on_visibility_screen_exited"]
+[connection signal="area_entered" from="detect" to="." method="_on_detect_area_entered"]
+[connection signal="area_exited" from="detect" to="." method="_on_detect_area_exited"]
