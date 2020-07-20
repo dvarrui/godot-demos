@@ -5,7 +5,7 @@ var input_direction = Vector2.ZERO # Input XY direction
 var direction = Vector2.ZERO       # Current XY direction
 var speed = Vector2.ZERO # Character speed
 
-const MAX_SPEED = Vector2(200,400) # 200, 400
+const MAX_SPEED = Vector2(150,400) # 200, 400
 const ACCELERATION = 600
 const DECELERATION = 1300 # 2000
 const JUMP_FORCE = 210 # 210
@@ -72,6 +72,21 @@ func _physics_process(delta):
 # warning-ignore:return_value_discarded
 	move_and_slide(motion, Vector2(0, -1))
 #	move_and_slide_with_snap(motion, Vector2.DOWN, Vector2.UP)
+	# ANIM
+	if is_on_floor():
+		if motion.x==0:
+			$anim.play("idle")
+		elif motion.x > 0:
+			$anim.play("walk")
+			$anim.flip_h = false
+		elif motion.x < 0:
+			$anim.play("walk")
+			$anim.flip_h = true
+	else:
+		if motion.y > 1:
+			$anim.play("fall")
+		elif motion.y < -1:
+			$anim.play("jump")
 
 func _on_visibility_screen_exited():
 	get_tree().quit()
