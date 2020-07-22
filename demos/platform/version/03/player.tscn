@@ -1,8 +1,10 @@
 [gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/spritesheet2.png" type="Texture" id=1]
-[ext_resource path="res://version3/player.gd" type="Script" id=2]
-[ext_resource path="res://version3/indiana16.png" type="Texture" id=3]
+[ext_resource path="res://version/03/player.gd" type="Script" id=2]
+[ext_resource path="res://version/03/indiana16.png" type="Texture" id=3]
+
+
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )

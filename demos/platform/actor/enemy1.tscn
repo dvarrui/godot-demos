@@ -57,7 +57,7 @@ self_modulate = Color( 1, 0.278431, 0.239216, 1 )
 position = Vector2( 0, -5 )
 frames = SubResource( 6 )
 animation = "idle"
-frame = 1
+frame = 2
 playing = true
 
 [node name="shape" type="CollisionShape2D" parent="."]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=26 format=2]
 
-[ext_resource path="res://version3/indiana16.png" type="Texture" id=1]
-[ext_resource path="res://version3/player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://version3/tiles16.png" type="Texture" id=3]
-[ext_resource path="res://version3/background16.png" type="Texture" id=4]
+[ext_resource path="res://version/03/indiana16.png" type="Texture" id=1]
+[ext_resource path="res://version/03/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://version/03/tiles16.png" type="Texture" id=3]
+[ext_resource path="res://version/03/background16.png" type="Texture" id=4]
 
 [sub_resource type="TileSet" id=1]
 1/name = ""
@@ -218,6 +218,7 @@ __meta__ = {
 }
 
 [node name="map2" type="TileMap" parent="."]
+visible = false
 tile_set = SubResource( 1 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 32
@@ -242,14 +243,14 @@ scale = Vector2( 3, 3 )
 position = Vector2( 32, 8 )
 frames = SubResource( 9 )
 animation = "hit"
-frame = 1
+frame = 2
 playing = true
 
 [node name="jump" type="AnimatedSprite" parent="demos"]
 position = Vector2( 56, 8 )
 frames = SubResource( 16 )
 animation = "jump"
-frame = 5
+frame = 1
 playing = true
 
 [node name="hit2" type="AnimatedSprite" parent="demos"]

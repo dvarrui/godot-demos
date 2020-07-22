@@ -17,10 +17,13 @@ func _ready():
 	#set_process(true)
 	set_physics_process(true)
 	set_process_input(true)
+	$anim.play("idle")
+	$anim.playing = true
 
 func _input(event):
 	if event.is_action_pressed("player_jump") and is_on_floor():
 		speed.y = -JUMP_FORCE
+
 
 func _physics_process(delta):
 	# INPUT horizontal direction
@@ -71,7 +74,26 @@ func _physics_process(delta):
 	motion.y = speed.y
 # warning-ignore:return_value_discarded
 	move_and_slide(motion, Vector2(0, -1))
-#	move_and_slide_with_snap(motion, Vector2.DOWN, Vector2.UP)
+	update_anim(motion)
+
+func update_anim(motion):
+	# ANIM
+	if on_stairs:
+		$anim.play("stairs")
+	elif is_on_floor():
+		if motion.x==0:
+			$anim.play("idle")
+		elif motion.x > 0:
+			$anim.play("walk")
+			$anim.flip_h = false
+		elif motion.x < 0:
+			$anim.play("walk")
+			$anim.flip_h = true
+	else:
+		if motion.y > 1:
+			$anim.play("fall")
+		elif motion.y < -1:
+			$anim.play("jump")
 
 func _on_visibility_screen_exited():
 	get_tree().quit()

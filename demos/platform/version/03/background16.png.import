@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/indiana16.png-3e513d84cc11e2f961e008039b86bb73.stex"
+path="res://.import/background16.png-c4341cd786d16cba19553344bc4df768.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://version3/indiana16.png"
-dest_files=[ "res://.import/indiana16.png-3e513d84cc11e2f961e008039b86bb73.stex" ]
+source_file="res://version/03/background16.png"
+dest_files=[ "res://.import/background16.png-c4341cd786d16cba19553344bc4df768.stex" ]
 
 [params]
 
