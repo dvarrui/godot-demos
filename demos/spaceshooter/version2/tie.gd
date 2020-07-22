@@ -27,18 +27,14 @@ func update_movement(delta):
 		rotate(delta * 0.5)
 	if dir < 0 and rotation > -0.3:
 		rotate(delta * -0.5)
-	#if dir < 1 and rotation > -10:
-	#	rotate(rotation - 3 * delta)
-	print(rotation)
-	pass
 
 func _on_tie_area_entered(area):
 	if area.is_in_group("bullet_up"):
 		area.queue_free()
-		var explosion = explosion_res.instance()
-		explosion.position = self.position
-		get_parent().add_child(explosion)
-		queue_free()
+		explode()
+	if area.is_in_group("player"):
+		area.explode()
+		self.explode()
 
 func prob_shot(delta):
 	acc_shot_time += delta
@@ -52,3 +48,9 @@ func shot():
 	bullet.position = self.position + Vector2(0, +40)
 	get_parent().add_child(bullet)
 
+func explode():
+	var explosion = explosion_res.instance()
+	explosion.position = self.position
+	get_parent().add_child(explosion)
+	queue_free()
+	

@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/ship/tie-figther64.png" type="Texture" id=1]
+[ext_resource path="res://assets/ship/tie-figther48.png" type="Texture" id=1]
 [ext_resource path="res://version2/tie.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 22 )
+extents = Vector2( 24, 22 )
 
 [node name="tie" type="Area2D"]
 script = ExtResource( 2 )

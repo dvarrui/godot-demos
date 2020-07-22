@@ -12,13 +12,13 @@ func _process(delta):
 	var motion = Vector2.ZERO
 	if Input.is_action_just_pressed("player_shot"):
 		shot()
-	if Input.is_action_pressed("player_left"):
+	if Input.is_action_pressed("player_left") and position.x > 25:
 		motion += Vector2(-1,0)
-	if Input.is_action_pressed("player_right"):
+	if Input.is_action_pressed("player_right") and position.x < 998:
 		motion += Vector2(1,0)
-	if Input.is_action_pressed("player_up"):
+	if Input.is_action_pressed("player_up") and position.y > 25:
 		motion += Vector2(0,-1)
-	if Input.is_action_pressed("player_down"):
+	if Input.is_action_pressed("player_down") and position.y < 574:
 		motion += Vector2(0,1)
 	position += motion.normalized() * speed * delta
 
@@ -30,9 +30,11 @@ func shot():
 func _on_player_area_entered(area):
 	if area.is_in_group("bullet_down"):
 		area.queue_free()
-		var explosion = explosion_res.instance()
-		explosion.position = self.position
-		get_parent().add_child(explosion)
-		get_parent().end_game()
-		queue_free()
+		explode()
 
+func explode():
+	var explosion = explosion_res.instance()
+	explosion.position = self.position
+	get_parent().add_child(explosion)
+	get_parent().end_game()
+	queue_free()
