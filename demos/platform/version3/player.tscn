@@ -4,78 +4,77 @@
 [ext_resource path="res://version3/player.gd" type="Script" id=2]
 [ext_resource path="res://version3/indiana16.png" type="Texture" id=3]
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 32, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 3 )
-region = Rect2( 16, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 3 )
-region = Rect2( 32, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 3 )
-region = Rect2( 48, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 3 )
-region = Rect2( 64, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 3 )
-region = Rect2( 80, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 3 )
-region = Rect2( 96, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=28]
-atlas = ExtResource( 3 )
-region = Rect2( 112, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=32]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 3 )
 region = Rect2( 32, 32, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=33]
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 3 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 3 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 3 )
+region = Rect2( 112, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 3 )
 region = Rect2( 64, 32, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=11]
+[sub_resource type="SpriteFrames" id=12]
 animations = [ {
-"frames": [ SubResource( 29 ) ],
+"frames": [ SubResource( 1 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
-"loop": true,
-"name": "walk",
-"speed": 7.0
-}, {
-"frames": [ SubResource( 32 ) ],
+"frames": [ SubResource( 2 ) ],
 "loop": true,
 "name": "jump",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 33 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "walk",
+"speed": 7.0
+}, {
+"frames": [ SubResource( 11 ) ],
 "loop": true,
 "name": "fall",
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=20]
-radius = 14.0
-height = 38.0
+[sub_resource type="CapsuleShape2D" id=13]
+height = 46.0
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=14]
 
 [node name="player" type="KinematicBody2D" groups=[
 "player",
@@ -84,8 +83,8 @@ script = ExtResource( 2 )
 
 [node name="anim" type="AnimatedSprite" parent="."]
 scale = Vector2( 4, 4 )
-frames = SubResource( 11 )
-animation = "fall"
+frames = SubResource( 12 )
+animation = "idle"
 playing = true
 
 [node name="sprite" type="Sprite" parent="."]
@@ -97,7 +96,7 @@ region_enabled = true
 region_rect = Rect2( 0, 480, 32, 32 )
 
 [node name="shape" type="CollisionShape2D" parent="."]
-shape = SubResource( 20 )
+shape = SubResource( 13 )
 
 [node name="visibility" type="VisibilityNotifier2D" parent="."]
 
@@ -106,7 +105,7 @@ position = Vector2( 0, 2 )
 
 [node name="shape" type="CollisionShape2D" parent="detect"]
 visible = false
-shape = SubResource( 2 )
+shape = SubResource( 14 )
 [connection signal="screen_exited" from="visibility" to="." method="_on_visibility_screen_exited"]
 [connection signal="area_entered" from="detect" to="." method="_on_detect_area_entered"]
 [connection signal="area_exited" from="detect" to="." method="_on_detect_area_exited"]
