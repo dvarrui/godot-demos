@@ -30,8 +30,11 @@ func shot():
 func _on_player_area_entered(area):
 	if area.is_in_group("bullet_down"):
 		area.queue_free()
-		explode()
+		hit()
 
+func hit():
+	explode()
+	
 func explode():
 	var explosion = explosion_res.instance()
 	explosion.position = self.position

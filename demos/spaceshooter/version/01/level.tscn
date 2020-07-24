@@ -1,12 +1,14 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://version2/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://version/02/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/backgrounds/asteroids-belt.png" type="Texture" id=2]
 [ext_resource path="res://assets/backgrounds/background.png" type="Texture" id=3]
 [ext_resource path="res://assets/ship/satelite128.png" type="Texture" id=4]
 [ext_resource path="res://assets/backgrounds/rock32.png" type="Texture" id=5]
 [ext_resource path="res://assets/backgrounds/rock64.png" type="Texture" id=6]
 [ext_resource path="res://assets/ship/tie-figther64.png" type="Texture" id=7]
+
+
 
 [node name="level2" type="Node2D"]
 

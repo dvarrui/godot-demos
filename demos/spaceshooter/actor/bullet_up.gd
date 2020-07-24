@@ -11,3 +11,5 @@ func _process(delta):
 func _on_visibility_screen_exited():
 	queue_free()
 	
+func hit():
+	queue_free()

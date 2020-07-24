@@ -21,12 +21,16 @@ func update_movement(delta):
 	position.x += speed * dir * delta
 	if position.x > max_x and dir > 0:
 		dir = -1
+		position.y += Global.camera_speed * delta
 	if position.x < min_x and dir < 0:
 		dir = 1
+		position.y += Global.camera_speed * delta
 	if dir > 0 and rotation < 0.3:
 		rotate(delta * 0.5)
+		position.y += Global.camera_speed * delta
 	if dir < 0 and rotation > -0.3:
 		rotate(delta * -0.5)
+		position.y += Global.camera_speed * delta
 
 func _on_tie_area_entered(area):
 	if area.is_in_group("bullet_up"):

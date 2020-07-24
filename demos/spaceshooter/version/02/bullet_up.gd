@@ -1,6 +1,6 @@
 extends Area2D
 
-export var speed = +300
+export var speed = -500
 
 func _ready():
 	pass # Replace with function body.
@@ -10,3 +10,4 @@ func _process(delta):
 
 func _on_visibility_screen_exited():
 	queue_free()
+

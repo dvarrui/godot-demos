@@ -3,12 +3,14 @@
 [ext_resource path="res://assets/backgrounds/asteroids-belt.png" type="Texture" id=1]
 [ext_resource path="res://assets/backgrounds/background.png" type="Texture" id=2]
 [ext_resource path="res://assets/ship/satelite128.png" type="Texture" id=3]
-[ext_resource path="res://version2/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://version/02/player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/backgrounds/rock32.png" type="Texture" id=5]
 [ext_resource path="res://assets/backgrounds/rock64.png" type="Texture" id=7]
-[ext_resource path="res://version2/tie.tscn" type="PackedScene" id=8]
+[ext_resource path="res://version/02/tie.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/Starjedi.ttf" type="DynamicFontData" id=10]
-[ext_resource path="res://version2/level.gd" type="Script" id=11]
+[ext_resource path="res://version/02/level.gd" type="Script" id=11]
+
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 32

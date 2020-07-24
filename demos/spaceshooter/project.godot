@@ -19,6 +19,10 @@ config/name="Spaceshooter"
 run/main_scene="res://level/level.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://global.gd"
+
 [display]
 
 window/size/resizable=false

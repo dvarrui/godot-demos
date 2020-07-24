@@ -4,8 +4,8 @@
 [ext_resource path="res://assets/backgrounds/background.png" type="Texture" id=2]
 [ext_resource path="res://assets/backgrounds/asteroids-belt.png" type="Texture" id=3]
 [ext_resource path="res://assets/ship/satelite96.png" type="Texture" id=4]
-[ext_resource path="res://assets/backgrounds/rock32.png" type="Texture" id=5]
-[ext_resource path="res://assets/backgrounds/rock64.png" type="Texture" id=6]
+[ext_resource path="res://environment/rock32.tscn" type="PackedScene" id=5]
+[ext_resource path="res://environment/rock64.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/Starjedi.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://level/level.gd" type="Script" id=8]
 [ext_resource path="res://actor/tie.tscn" type="PackedScene" id=9]
@@ -14,7 +14,7 @@
 size = 32
 font_data = ExtResource( 7 )
 
-[node name="level3" type="Node2D"]
+[node name="level1" type="Node2D"]
 script = ExtResource( 8 )
 
 [node name="background" type="Node2D" parent="."]
@@ -38,20 +38,16 @@ rotation = -1.5708
 texture = ExtResource( 3 )
 flip_h = true
 
-[node name="asteroids" type="Node2D" parent="."]
+[node name="obstacles" type="Node2D" parent="."]
 
-[node name="asteroid" type="Sprite" parent="asteroids"]
-position = Vector2( 940.18, 254.329 )
-texture = ExtResource( 6 )
+[node name="rock32" parent="obstacles" instance=ExtResource( 5 )]
+position = Vector2( 925.259, 117.725 )
 
-[node name="asteroid2" type="Sprite" parent="asteroids"]
-position = Vector2( 863.814, 161.282 )
-rotation = -0.849276
-texture = ExtResource( 6 )
+[node name="rock64" parent="obstacles" instance=ExtResource( 6 )]
+position = Vector2( 937.986, 230.405 )
 
-[node name="rock" type="Sprite" parent="asteroids"]
-position = Vector2( 935.704, 121.434 )
-texture = ExtResource( 5 )
+[node name="rock65" parent="obstacles" instance=ExtResource( 6 )]
+position = Vector2( 877.396, 163.134 )
 
 [node name="enemies" type="Node2D" parent="."]
 
