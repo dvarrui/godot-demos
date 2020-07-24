@@ -1,0 +1,3 @@
+#Fichero de entrada
+rock32
+rock64
