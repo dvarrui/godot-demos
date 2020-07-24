@@ -1,10 +1,11 @@
 extends Node2D
 
 var state = "play"
+var data = null
 
 func _ready():
-	print_debug(Global.load_filename("level1.txt"))
-	pass
+	data = Global.load_filename("level1.txt")
+	$timers/build.start(1)
 
 func _process(_delta):
 	if Input.is_action_pressed("exit_game"):
@@ -13,7 +14,11 @@ func _process(_delta):
 func end_game():
 	state = "endgame"
 	$game_over.visible = true
-	$timer.start(3)
+	$timers/endgame.start(3)
 
-func _on_timer_timeout():
+func _on_endgame_timeout():
 	get_tree().quit()
+
+func _on_build_timeout():
+	print("build...")
+	$timers/build.start(1)
