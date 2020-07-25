@@ -40,6 +40,7 @@ func hit():
 func explode():
 	var explosion = explosion_res.instance()
 	explosion.position = self.position
-	get_parent().add_child(explosion)
-	get_parent().end_game()
+	var level = get_tree().root.get_node("level")
+	level.add_child(explosion)
+	level.finish_game()
 	queue_free()

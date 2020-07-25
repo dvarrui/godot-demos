@@ -8,8 +8,6 @@
 [ext_resource path="res://assets/backgrounds/rock64.png" type="Texture" id=6]
 [ext_resource path="res://assets/ship/tie-figther64.png" type="Texture" id=7]
 
-
-
 [node name="level2" type="Node2D"]
 
 [node name="background" type="Node2D" parent="."]

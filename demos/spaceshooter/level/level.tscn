@@ -14,7 +14,7 @@
 size = 32
 font_data = ExtResource( 7 )
 
-[node name="level1" type="Node2D"]
+[node name="level" type="Node2D"]
 script = ExtResource( 8 )
 
 [node name="timers" type="Node2D" parent="."]
