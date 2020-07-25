@@ -22,7 +22,13 @@ func _on_endgame_timeout():
 
 func _on_build_timeout():
 	if data_index < data.size():
-		print("[INFO] building " + str(data_index) + "...")
-		print("       " + data[data_index])
+		var items = data[data_index].split(":")
+		if items[0].substr(0,1) == "#":
+			print("   " + items[0])
+		elif items[0] == "rock32":
+			print("=> rock32")
+		else:
+			print("=> building " + str(data_index) + "...")
+			print("   " + data[data_index])
 		data_index += 1
 		$timers/build.start(1)
