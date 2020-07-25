@@ -1,9 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/ship/x-wing48.png" type="Texture" id=1]
-[ext_resource path="res://version/02/player.gd" type="Script" id=2]
-
-
+[ext_resource path="res://actor/player.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 8.0

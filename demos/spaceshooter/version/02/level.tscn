@@ -10,8 +10,6 @@
 [ext_resource path="res://assets/Starjedi.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://version/02/level.gd" type="Script" id=11]
 
-
-
 [sub_resource type="DynamicFont" id=1]
 size = 32
 font_data = ExtResource( 10 )
