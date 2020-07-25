@@ -22,13 +22,14 @@ func _on_endgame_timeout():
 
 func _on_build_timeout():
 	if data_index < data.size():
-		var items = data[data_index].split(":")
-		if items[0].substr(0,1) == "#":
-			print("   " + items[0])
+		var items = data[data_index]
+		if items[0] == "#":
+			print("   [BUILD] " + items[1])
 		elif items[0] == "rock32":
-			print("=> rock32")
+			print("=> rock32 with " + items[1])
+			var node = Global.build_node_with(items)
+			get_node("obstacles").add_child(node)
 		else:
-			print("=> building " + str(data_index) + "...")
-			print("   " + data[data_index])
+			print("=> "+items[0] + " with "+ items[1])
 		data_index += 1
 		$timers/build.start(1)
