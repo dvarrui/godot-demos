@@ -17,10 +17,9 @@ func update_movement(delta):
 
 func _on_satelite_area_entered(area):
 	if area.is_in_group("bullet_up"):
-		area.queue_free()
-		#explode()
+		area.hit()
 	if area.is_in_group("player"):
-		area.explode()
+		area.hit()
 		self.explode()
 
 func explode():
