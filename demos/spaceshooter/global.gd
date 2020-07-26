@@ -22,7 +22,12 @@ func load_filename(filename):
 	file.close()
 	return content
 
-func build_node_with(items):
-	var node = resources[items[0]].instance()
-	node.position.x = 300
+func build_node_with(type, config):
+	var node = resources[type].instance()
+	var params = {}
+	for i in config.split(","):
+		var j = i.split("=")
+		params[j[0]]=j[1]
+	if params["x"]:
+		node.position.x = int(params["x"])
 	return node
