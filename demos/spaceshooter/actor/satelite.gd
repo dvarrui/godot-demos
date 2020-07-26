@@ -32,7 +32,7 @@ func explode():
 
 func hit():
 	$sprite.self_modulate = Color(0.5, 0.5, 0.5, 1)
-	$timer.start(0.1)
+	$timer.start(0.15)
 
 func _on_timer_timeout():
 	$sprite.self_modulate = Color(1, 1, 1, 1)
