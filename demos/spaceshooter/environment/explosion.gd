@@ -1,5 +1,6 @@
 extends Node2D
 
+# Player explosion (Big effect)
 func _ready():
 	var items = [ $fire, $fire/pieces, $fire/smoke, $fire/smoke2 ]
 	for item in items:

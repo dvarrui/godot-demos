@@ -1,5 +1,6 @@
 extends Node2D
 
+# Bullet explosion (Little effect)
 func _ready():
 	$particles.one_shot = true
 	$particles.emitting = true

@@ -1,7 +1,7 @@
 extends Area2D
 
-export var speed_y = 60
-var speed = Vector2.ZERO
+export var speed_y = 20
+export var life = 3
 var bullet_res = null
 var explosion_res = null
 
@@ -14,7 +14,7 @@ func _process(delta):
 	update_movement(delta)
 
 func update_movement(delta):
-	position.y += (speed.y + Global.camera_speed) * delta
+	position.y += (speed_y + Global.camera_speed) * delta
 
 func _on_satelite_area_entered(area):
 	if area.is_in_group("bullet_up"):
@@ -24,16 +24,26 @@ func _on_satelite_area_entered(area):
 		area.hit()
 		self.explode()
 
+func hit():
+	life -= 1
+	if life > 0:
+		$sprite.self_modulate = Color(0.5, 0.5, 0.5, 1)
+		$timer.start(0.15)
+		shot()
+	else:
+		explode()
+
+func _on_timer_timeout():
+	$sprite.self_modulate = Color(1, 1, 1, 1)
+	$timer.stop()
+
+func shot():
+	var bullet = bullet_res.instance()
+	bullet.position = self.position + Vector2(0, +40)
+	get_parent().add_child(bullet)
+
 func explode():
 	var explosion = explosion_res.instance()
 	explosion.position = self.position
 	get_parent().add_child(explosion)
 	queue_free()
-
-func hit():
-	$sprite.self_modulate = Color(0.5, 0.5, 0.5, 1)
-	$timer.start(0.15)
-
-func _on_timer_timeout():
-	$sprite.self_modulate = Color(1, 1, 1, 1)
-	$timer.stop()
