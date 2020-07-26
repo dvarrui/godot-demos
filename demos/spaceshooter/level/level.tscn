@@ -3,7 +3,7 @@
 [ext_resource path="res://actor/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/backgrounds/background.png" type="Texture" id=2]
 [ext_resource path="res://assets/backgrounds/asteroids-belt.png" type="Texture" id=3]
-[ext_resource path="res://assets/ship/satelite96.png" type="Texture" id=4]
+[ext_resource path="res://actor/satelite.tscn" type="PackedScene" id=4]
 [ext_resource path="res://environment/rock32.tscn" type="PackedScene" id=5]
 [ext_resource path="res://environment/rock64.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/Starjedi.ttf" type="DynamicFontData" id=7]
@@ -58,10 +58,6 @@ position = Vector2( 877.396, 163.134 )
 
 [node name="enemies" type="Node2D" parent="."]
 
-[node name="satelite" type="Sprite" parent="enemies"]
-position = Vector2( 693.954, 139.279 )
-texture = ExtResource( 4 )
-
 [node name="tie2" parent="enemies" instance=ExtResource( 9 )]
 position = Vector2( 220.032, 215.249 )
 
@@ -70,6 +66,9 @@ position = Vector2( 286.998, 107.624 )
 
 [node name="tie3" parent="enemies" instance=ExtResource( 9 )]
 position = Vector2( 172.199, 86.0995 )
+
+[node name="satelite" parent="enemies" instance=ExtResource( 4 )]
+position = Vector2( 780.183, 91.3967 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 492.906, 479.656 )
