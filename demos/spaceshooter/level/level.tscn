@@ -33,6 +33,7 @@ texture = ExtResource( 2 )
 offset = Vector2( 505, 380 )
 
 [node name="belt" type="Sprite" parent="background"]
+visible = false
 self_modulate = Color( 0.376471, 0.0745098, 0.0745098, 1 )
 position = Vector2( 889.731, 241.35 )
 rotation = -1.5708
@@ -40,6 +41,7 @@ texture = ExtResource( 3 )
 flip_h = true
 
 [node name="belt2" type="Sprite" parent="background"]
+visible = false
 self_modulate = Color( 0.988235, 0.968627, 0.968627, 1 )
 position = Vector2( 953.297, 567.386 )
 rotation = -1.5708
