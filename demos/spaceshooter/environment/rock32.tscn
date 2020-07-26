@@ -12,6 +12,20 @@ script = ExtResource( 2 )
 [node name="sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 
+[node name="sprite2" type="Sprite" parent="sprite"]
+modulate = Color( 0.196078, 0.196078, 0.196078, 1 )
+position = Vector2( -1.90735e-06, -39.5147 )
+scale = Vector2( 0.9, 0.9 )
+z_index = -1
+texture = ExtResource( 1 )
+
+[node name="sprite3" type="Sprite" parent="sprite"]
+modulate = Color( 0.196078, 0.196078, 0.196078, 1 )
+position = Vector2( -1.41422, -72.0417 )
+scale = Vector2( 0.7, 0.7 )
+z_index = -1
+texture = ExtResource( 1 )
+
 [node name="shape" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
