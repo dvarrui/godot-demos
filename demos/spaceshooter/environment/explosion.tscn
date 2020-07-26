@@ -159,3 +159,6 @@ lifetime = 0.8
 speed_scale = 2.0
 explosiveness = 0.8
 process_material = SubResource( 21 )
+
+[node name="timer" type="Timer" parent="."]
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

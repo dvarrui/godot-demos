@@ -32,5 +32,6 @@ func _on_build_timeout():
 		else:
 			print("=> Unknown "+items[0])
 		data_index += 1
+		print(Global.build_timeout)
 		$timers/build.start(Global.build_timeout)
 

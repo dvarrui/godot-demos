@@ -22,4 +22,7 @@ shape = SubResource( 1 )
 position = Vector2( 0, 16 )
 rotation = 1.5708
 shape = SubResource( 2 )
+
+[node name="timer" type="Timer" parent="."]
 [connection signal="area_entered" from="." to="." method="_on_satelite_area_entered"]
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

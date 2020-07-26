@@ -37,3 +37,6 @@ amount = 16
 lifetime = 0.5
 explosiveness = 0.8
 process_material = SubResource( 5 )
+
+[node name="timer" type="Timer" parent="."]
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
