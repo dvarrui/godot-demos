@@ -2,6 +2,7 @@ extends Node
 
 var camera_speed = 20
 var resources = {}
+var build_timeout = 1
 
 func _ready():
 	resources["rock32"] = preload("res://environment/rock32.tscn")
@@ -30,4 +31,6 @@ func build_node_with(type, config):
 		params[j[0]]=j[1]
 	if params["x"]:
 		node.position.x = int(params["x"])
+	if params["next"]:
+		build_timeout = float(params["next"]) / camera_speed
 	return node

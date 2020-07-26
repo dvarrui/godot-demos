@@ -1,3 +1,6 @@
 #Fichero de entrada
-rock32:x=300
-rock64:x=350
+rock64:x=400,next=64
+rock32:x=300,next=64
+rock64:x=350,next=1
+rock32:x=50,next=0
+rock32:x=100,next=0
