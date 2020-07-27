@@ -1,7 +1,7 @@
 extends Area2D
 
-export var speed_y = 20
-export var life = 3
+export var speed_y = 10
+export var life = 4
 var bullet_res = null
 var explosion_res = null
 

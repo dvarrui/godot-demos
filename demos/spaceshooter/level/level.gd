@@ -25,12 +25,10 @@ func _on_build_timeout():
 		var items = data[data_index]
 		if items[0] == "#":
 			print("   [BUILD] " + items[1])
-		elif items[0] in ["rock32", "rock64"]:
-			print("=> rock32 with " + items[1])
+		else:
+			print("=> " + items[0] + " with " + items[1])
 			var node = Global.build_node_with(items[0], items[1])
 			get_node("obstacles").add_child(node)
-		else:
-			print("=> Unknown "+items[0])
 		data_index += 1
 		print(Global.build_timeout)
 		$timers/build.start(Global.build_timeout)
