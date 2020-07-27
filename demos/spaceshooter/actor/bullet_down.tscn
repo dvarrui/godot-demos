@@ -3,10 +3,8 @@
 [ext_resource path="res://assets/ship/bullet2.png" type="Texture" id=1]
 [ext_resource path="res://version/02/bullet_down.gd" type="Script" id=2]
 
-
-
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4, 16 )
+extents = Vector2( 2, 8 )
 
 [node name="bullet_down" type="Area2D" groups=[
 "bullet_down",

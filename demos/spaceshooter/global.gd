@@ -5,8 +5,8 @@ var resources = {}
 var build_timeout = 1
 
 func _ready():
-	resources["rock32"] = preload("res://environment/rock32.tscn")
-	resources["rock64"] = preload("res://environment/rock64.tscn")
+	resources["rock32"] = preload("res://world/rock32.tscn")
+	resources["rock64"] = preload("res://world/rock64.tscn")
 	resources["satelite"] = preload("res://actor/satelite.tscn")
 
 func load_filename(filename):

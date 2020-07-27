@@ -29,6 +29,5 @@ func _on_build_timeout():
 			var node = Global.build_node_with(items[0], items[1])
 			get_node("world").add_child(node)
 		data_index += 1
-		print(Global.build_timeout)
 		$timers/build.start(Global.build_timeout)
 

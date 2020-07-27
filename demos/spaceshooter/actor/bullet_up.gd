@@ -4,7 +4,7 @@ export var speed = -500
 var explosion_res = null
 
 func _ready():
-	explosion_res = preload("res://environment/explosion2.tscn")
+	explosion_res = preload("res://world/explosion2.tscn")
 
 func _process(delta):
 	position.y += delta * speed

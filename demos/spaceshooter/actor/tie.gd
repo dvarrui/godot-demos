@@ -14,7 +14,7 @@ var explosion_res = null
 func _ready():
 	speed = Vector2(speed_x, speed_y)
 	bullet_res = preload("res://actor/bullet_down.tscn")
-	explosion_res = preload("res://environment/explosion.tscn")
+	explosion_res = preload("res://world/explosion.tscn")
 
 func _process(delta):
 	prob_shot(delta)
