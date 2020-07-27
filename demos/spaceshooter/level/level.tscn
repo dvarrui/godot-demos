@@ -28,7 +28,7 @@ position = Vector2( 6.04907, 0 )
 texture = ExtResource( 2 )
 offset = Vector2( 505, 380 )
 
-[node name="obstacles" type="Node2D" parent="."]
+[node name="world" type="Node2D" parent="."]
 
 [node name="enemies" type="Node2D" parent="."]
 

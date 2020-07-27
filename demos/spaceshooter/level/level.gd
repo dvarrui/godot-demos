@@ -24,11 +24,10 @@ func _on_build_timeout():
 	if data_index < data.size():
 		var items = data[data_index]
 		if items[0] == "#":
-			print("   [BUILD] " + items[1])
-		else:
-			print("=> " + items[0] + " with " + items[1])
+			print("[BUILD] " + items[1])
+		elif items[0]!="":
 			var node = Global.build_node_with(items[0], items[1])
-			get_node("obstacles").add_child(node)
+			get_node("world").add_child(node)
 		data_index += 1
 		print(Global.build_timeout)
 		$timers/build.start(Global.build_timeout)
