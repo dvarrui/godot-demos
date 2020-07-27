@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://actor/enemy/satelite.gd" type="Script" id=1]
 [ext_resource path="res://assets/ship/satelite96.png" type="Texture" id=2]
+[ext_resource path="res://world/effect/flash.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 height = 80.0
@@ -15,6 +16,8 @@ script = ExtResource( 1 )
 [node name="sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
+[node name="flash" parent="sprite" instance=ExtResource( 3 )]
+
 [node name="shape" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
@@ -25,9 +28,6 @@ shape = SubResource( 2 )
 
 [node name="timer" type="Node2D" parent="."]
 
-[node name="flash" type="Timer" parent="timer"]
-
 [node name="can_shot" type="Timer" parent="timer"]
 [connection signal="area_entered" from="." to="." method="_on_satelite_area_entered"]
-[connection signal="timeout" from="timer/flash" to="." method="_on_flash_timeout"]
 [connection signal="timeout" from="timer/can_shot" to="." method="_on_can_shot_timeout"]

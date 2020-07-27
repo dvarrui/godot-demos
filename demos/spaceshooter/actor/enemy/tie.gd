@@ -4,6 +4,7 @@ export var speed_x = 60
 export var speed_y = 60
 export var max_x = 700
 export var min_x = 64
+export var life = 2
 var speed = Vector2.ZERO
 var dir = 1
 var max_shot_time = rand_range(1,6)
@@ -14,7 +15,7 @@ var explosion_res = null
 func _ready():
 	speed = Vector2(speed_x, speed_y)
 	bullet_res = preload("res://actor/bullet_down.tscn")
-	explosion_res = preload("res://world/explosion.tscn")
+	explosion_res = preload("res://world/effect/explosion.tscn")
 
 func _process(delta):
 	prob_shot(delta)
@@ -34,10 +35,10 @@ func update_movement(delta):
 
 func _on_tie_area_entered(area):
 	if area.is_in_group("bullet_up"):
-		area.queue_free()
-		explode()
+		area.hit()
+		hit()
 	if area.is_in_group("player"):
-		area.explode()
+		area.hit()
 		self.explode()
 
 func prob_shot(delta):
@@ -53,9 +54,15 @@ func shot():
 	bullet.set_direction("down")
 	get_parent().add_child(bullet)
 
+func hit():
+	life -= 1
+	if life > 0:
+		$sprite/flash.activate()
+	else:
+		explode()
+
 func explode():
 	var explosion = explosion_res.instance()
 	explosion.position = self.position
 	get_parent().add_child(explosion)
 	queue_free()
-	

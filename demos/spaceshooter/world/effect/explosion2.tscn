@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://world/explosion2.gd" type="Script" id=1]
+[ext_resource path="res://world/effect/explosion2.gd" type="Script" id=1]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0.0228571, 0.988571 )

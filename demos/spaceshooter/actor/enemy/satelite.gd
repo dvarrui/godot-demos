@@ -11,8 +11,7 @@ var can_shot = true
 
 func _ready():
 	bullet_res = preload("res://actor/bullet_down.tscn")
-	explosion_res = preload("res://world/explosion.tscn")
-	$timer/flash.stop()
+	explosion_res = preload("res://world/effect/explosion.tscn")
 	player = get_tree().root.get_node("level/player")
 
 func _process(delta):
@@ -39,15 +38,10 @@ func _on_satelite_area_entered(area):
 func hit():
 	life -= 1
 	if life > 0:
-		$sprite.self_modulate = Color(0.5, 0.5, 0.5, 1)
-		$timer/flash.start(0.15)
+		$sprite/flash.activate() 
 		shot("down")
 	else:
 		explode()
-
-func _on_flash_timeout():
-	$sprite.self_modulate = Color(1, 1, 1, 1)
-	$timer/flash.stop()
 
 func shot(direction):
 	if not can_shot:
