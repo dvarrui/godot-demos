@@ -1,17 +1,29 @@
 #Fichero de entrada
+tie:x=100,y=-64,speed_x=0,speed_y=100,dir=0,next=0.1
+tie:x=180,speed_x=0,speed_y=100,dir=0,next=0.1
+tie:x=260,y=-64,speed_x=0,speed_y=100,dir=0,next=0.1
 rock64:x=800,next=64
 rock64:x=870,next=64
 rock32:x=820,next=64
+tie:x=300,y=-64,speed_x=0,speed_y=100,dir=0,next=0.1
+tie:x=380,speed_x=0,speed_y=100,dir=0,next=0.1
+tie:x=460,y=-64,speed_x=0,speed_y=100,dir=0,next=0.1
 satelite:x=700,speed_y=5,next=64
 satelite:x=80,speed_y=5,next=64
 rock64:x=400,next=64
 rock32:x=300,next=64
 rock64:x=350,next=1
+tie:x=800,y=-64,speed_x=0,speed_y=100,dir=0,next=0.1
+tie:x=880,speed_x=0,speed_y=100,dir=0,next=0.1
+tie:x=860,y=-64,speed_x=0,speed_y=100,dir=0,next=0.1
 rock32:x=100,next=70
 rock64:x=75,next=70
 rock32:x=150,next=20
 satelite:x=870,speed_y=5,next=64
 #Muro de rocas con abertura a la izquierda
+tie:x=500,next=0
+tie:x=450,y=-50,next=0
+tie:x=400,y=-100,next=0
 rock32:x=800,next=20
 rock64:x=950,next=30
 rock32:x=875,next=20

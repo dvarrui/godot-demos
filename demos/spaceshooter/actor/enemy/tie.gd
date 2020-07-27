@@ -5,15 +5,13 @@ export var speed_y = 60
 export var max_x = 700
 export var min_x = 64
 export var life = 2
-var speed = Vector2.ZERO
-var dir = 1
+export var dir = 1
 var max_shot_time = rand_range(1,6)
 var acc_shot_time = 0
 var bullet_res = null
 var explosion_res = null
 
 func _ready():
-	speed = Vector2(speed_x, speed_y)
 	bullet_res = preload("res://actor/bullet_down.tscn")
 	explosion_res = preload("res://world/effect/explosion.tscn")
 
@@ -22,8 +20,8 @@ func _process(delta):
 	update_movement(delta)
 
 func update_movement(delta):
-	position.x += speed.x * dir * delta
-	position.y += (speed.y + Global.camera_speed) * delta
+	position.x += speed_x * dir * delta
+	position.y += (speed_y + Global.camera_speed) * delta
 	if position.x > max_x and dir > 0:
 		dir = -1
 	if position.x < min_x and dir < 0:

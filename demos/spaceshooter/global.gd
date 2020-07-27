@@ -8,6 +8,7 @@ func _ready():
 	resources["rock32"] = preload("res://world/rock32.tscn")
 	resources["rock64"] = preload("res://world/rock64.tscn")
 	resources["satelite"] = preload("res://actor/enemy/satelite.tscn")
+	resources["tie"] = preload("res://actor/enemy/tie.tscn")
 
 func load_filename(filename):
 	var file = File.new()
@@ -34,8 +35,12 @@ func build_node_with(type, config):
 		node.position.x = int(params["x"])
 	if params.has("y"):
 		node.position.y = int(params["y"])
+	if params.has("speed_x"):
+		node.speed_x = int(params["speed_x"])
 	if params.has("speed_y"):
 		node.speed_y = int(params["speed_y"])
+	if params.has("dir"):
+		node.dir = int(params["dir"])
 	if params.has("next"):
 		build_timeout = float(params["next"]) / camera_speed
 	return node
