@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/asteroids-belt.png-42c34ad86387e6c7cafe0198e3c0a0b0.stex"
+path="res://.import/asteroids-belt.png-e2998860f85acbe6b996fad54ce3d658.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/asteroids-belt.png"
-dest_files=[ "res://.import/asteroids-belt.png-42c34ad86387e6c7cafe0198e3c0a0b0.stex" ]
+source_file="res://version/02/asteroids-belt.png"
+dest_files=[ "res://.import/asteroids-belt.png-e2998860f85acbe6b996fad54ce3d658.stex" ]
 
 [params]
 
