@@ -32,5 +32,8 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="visibility" type="VisibilityNotifier2D" parent="."]
+
+[node name="timer" type="Timer" parent="."]
 [connection signal="area_entered" from="." to="." method="_on_rock32_area_entered"]
 [connection signal="screen_exited" from="visibility" to="." method="_on_visibility_screen_exited"]
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

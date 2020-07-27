@@ -23,4 +23,7 @@ func _on_rock32_area_entered(area):
 		area.hit()
 
 func _on_visibility_screen_exited():
+	$timer.start(2.0)
+
+func _on_timer_timeout():
 	queue_free()

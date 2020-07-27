@@ -1,8 +1,22 @@
 #Fichero de entrada
+rock64:x=800,next=64
+rock64:x=870,next=64
+rock32:x=820,next=64
+satelite:x=700,speed_y=5,next=64
 satelite:x=80,speed_y=5,next=64
 rock64:x=400,next=64
 rock32:x=300,next=64
 rock64:x=350,next=1
-rock32:x=50,next=0
-rock32:x=100,next=0
+rock32:x=100,next=70
+rock64:x=75,next=70
+rock32:x=150,next=20
 satelite:x=700,speed_y=5,next=64
+rock32:x=800,next=20
+rock64:x=950,next=30
+rock32:x=875,next=20
+rock64:x=750,next=20
+rock32:x=600,next=10
+rock32:x=680,next=20
+rock64:x=850,next=20
+rock64:x=500,next=20
+rock64:x=580,next=20
