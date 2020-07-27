@@ -3,6 +3,7 @@ extends Area2D
 export var speed_y = 10
 export var life = 4
 export var can_shot_timeout = 0.75
+export var distance_y = 100
 var bullet_res = null
 var explosion_res = null
 var player = null
@@ -18,7 +19,7 @@ func _process(delta):
 	update_movement(delta)
 	if player==null:
 		return
-	if abs(position.y-player.position.y) < 50:
+	if abs(position.y-player.position.y) < distance_y:
 		if position.x < player.position.x:
 			shot("right")
 		else:
@@ -56,13 +57,9 @@ func shot(direction):
 		can_shot = false
 		$timer/can_shot.start(can_shot_timeout)
 		bullet.position = self.position + Vector2(0, 0)
-		bullet.speed_y = Global.camera_speed
-		bullet.speed_x = -300
-		if direction == "right":
-			bullet.speed_x = 300
-		bullet.rotate(1.57)
 	else:
 		bullet.position = self.position + Vector2(0, +40)
+	bullet.set_direction(direction)
 	get_parent().add_child(bullet)
 
 func _on_can_shot_timeout():

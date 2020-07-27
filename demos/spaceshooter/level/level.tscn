@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/backgrounds/background.png" type="Texture" id=2]
 [ext_resource path="res://assets/Starjedi.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://level/level.gd" type="Script" id=8]
-[ext_resource path="res://actor/tie.tscn" type="PackedScene" id=9]
+[ext_resource path="res://actor/enemy/tie.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32

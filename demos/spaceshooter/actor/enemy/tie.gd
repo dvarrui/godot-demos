@@ -50,6 +50,7 @@ func prob_shot(delta):
 func shot():
 	var bullet = bullet_res.instance()
 	bullet.position = self.position + Vector2(0, +40)
+	bullet.set_direction("down")
 	get_parent().add_child(bullet)
 
 func explode():
