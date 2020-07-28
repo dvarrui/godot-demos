@@ -1,10 +1,12 @@
 extends Node
 
 var resources = {}
+var objects = { ".":"none" }
 var data = null
 var index = -1
 var offset_y = 0
 var offset_y_step = 50
+var offset_x_step = 50
 
 func _ready():
 	resources["rock32"] = preload("res://world/rock32.tscn")
@@ -19,13 +21,10 @@ func build_file_into_level(filename,level):
 			print("[INFO] "+ line[1])
 		elif line[0]=="def":
 			define_object_with(line[1],line[2],line[3])
-		elif line[0]=="map":
-			print("[INFO] map => "+ line[1])
-			offset_y -= offset_y_step
 		elif line[0]=="new":
-			print("[INFO] new => "+ line[1])
-			var node = create_new_object_with(line[1], line[2])
-			level.get_node("world").add_child(node)
+			create_new_object(line[1], line[2], level)
+		elif line[0]=="map":
+			create_map_line(line[1], level)
 
 func load_filename(filename):
 	print("[INFO] Loading "+filename)
@@ -43,16 +42,20 @@ func load_filename(filename):
 	index = data.size()
 
 func define_object_with(symbol, type, config):
-	print("[INFO] def("+symbol+") => "+type+" with "+config)
+	print("[INFO] def => <"+symbol+"> is a "+type+" with "+config)
+	var obj = { "type":type, "config":config}
+	objects[symbol]= obj
 
-func create_new_object_with(type, config):
+func create_new_object(type, config, level):
+	print("[INFO] new => "+type+" with "+config)
 	var node = resources[type].instance()
 	node.position.y = offset_y
 
 	var params = {}
 	for i in config.split(","):
 		var j = i.split("=")
-		params[j[0]]=j[1]
+		if j[0].length() > 0:
+			params[j[0]]=j[1]
 	if params.has("x"):
 		node.position.x = int(params["x"])
 	if params.has("speed_x"):
@@ -61,4 +64,20 @@ func create_new_object_with(type, config):
 		node.speed_y = int(params["speed_y"])
 	if params.has("dir"):
 		node.dir = int(params["dir"])
-	return node
+	level.get_node("world").add_child(node)
+
+func create_map_line(line,level):
+	print("[INFO] map => "+ line)
+	offset_y -= offset_y_step
+	var offset_x = 0
+	var i = 0
+	while(i<line.length()):
+		var k = line.substr(i,1)
+		offset_x += offset_x_step
+		if k != "." and objects.has(k):
+			var type = objects[k]["type"]
+			var config = objects[k]["config"]+",x="+str(offset_x)
+			print(type, config)
+			create_new_object(type, config,level)
+		i += 1
+

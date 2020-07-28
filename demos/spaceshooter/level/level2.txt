@@ -2,11 +2,11 @@ new:rock32:x=400
 new:rock32:x=300
 new:tie:x=200
 new:tie:x=100
-map:
+map:.t.t.t..............
 map:...............R..r.
 map:..............r..R..
 map:..................r.
 def:r:rock32:
 def:R:rock64:
-def:T:tie:speed_x=0,speed_y=100
+def:t:tie:speed_x=0,speed_y=100
 info:Mapa con el formato versión 2
