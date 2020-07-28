@@ -13,12 +13,10 @@ font_data = ExtResource( 7 )
 [node name="level" type="Node2D"]
 script = ExtResource( 8 )
 
-[node name="timers" type="Node2D" parent="."]
+[node name="timer" type="Node2D" parent="."]
 
-[node name="endgame" type="Timer" parent="timers"]
+[node name="endgame" type="Timer" parent="timer"]
 wait_time = 2.0
-
-[node name="build" type="Timer" parent="timers"]
 
 [node name="background" type="Node2D" parent="."]
 z_index = -2
@@ -55,5 +53,4 @@ text = "Game 0ver!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="timeout" from="timers/endgame" to="." method="_on_endgame_timeout"]
-[connection signal="timeout" from="timers/build" to="." method="_on_build_timeout"]
+[connection signal="timeout" from="timer/endgame" to="." method="_on_endgame_timeout"]

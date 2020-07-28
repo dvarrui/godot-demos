@@ -16,6 +16,10 @@ func _ready():
 	explosion_res = preload("res://world/effect/explosion.tscn")
 
 func _process(delta):
+	# Wait until enter on screen
+	if position.y < 0:
+		position.y += Global.camera_speed * delta
+		return
 	prob_shot(delta)
 	update_movement(delta)
 
@@ -63,4 +67,7 @@ func explode():
 	var explosion = explosion_res.instance()
 	explosion.position = self.position
 	get_parent().add_child(explosion)
+	queue_free()
+
+func _on_visibility_screen_exited():
 	queue_free()
