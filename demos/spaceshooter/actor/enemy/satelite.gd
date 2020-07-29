@@ -15,6 +15,9 @@ func _ready():
 	player = get_tree().root.get_node("level/player")
 
 func _process(delta):
+	if position.y < 0:
+		position.y += Global.camera_speed * delta
+		return 
 	update_movement(delta)
 	if player==null:
 		return
@@ -63,4 +66,7 @@ func explode():
 	var explosion = explosion_res.instance()
 	explosion.position = self.position
 	get_parent().add_child(explosion)
+	queue_free()
+
+func _on_visibility_screen_exited():
 	queue_free()
