@@ -1,51 +1,62 @@
 
 # Godot
 
-Este repositorio contiene pequeñas demos jugables, creadas con el motor GodotEngine (versión 3.2) y recursos de uso libre.
+Este repositorio contiene pequeñas demos jugables diseñadas con la intención de ser fáciles de aprender y enseñar. Los proyectos has sido creadas con el motor **Godot Engine** (versión 3.2), y usando otros recursos libres.
 
 1. [Arkanoid](#arkanoid)
 1. [Command](demos/command) (En construccion!)
 1. [Platform](#platform)
-1. [Tower Defense](demos/tower-defense): Estado EN CONSTRUCCION.
-1. [Roguelike](demos/roguelike): Estado TERMINADO.
-    * Ir a [explicación](docs/roguelike/README.md) para ver un pequeño resumen.
+1. [Roguelike](#roguelike)
 1. [SpaceShooter](#spaceshooter)
+1. [Tower Defense](demos/tower-defense) (En construcción!)
 
 ## [Arkanoid](demos/arkanoid)
 
-* Inspirado en los ejemplos y vídeos de Rafanoid.
+![](docs/images/arkanoid.png)
+
+* demos/arkanoid: Inspirado en los ejemplos y vídeos de Rafanoid.
 * Se usa el motor de física en el movimiento de la pelota, aprovechando que todos los elementos del juego son cuerpos físicos: RigidBody2D(pelota), StaticBody2D(los muros), KinematicBody2D(player).
 * Hay una ventana de menú inicial, y una ventana de pausa creadas con los elementos de GUI(Container, Label y Button).
 * Futuro: añadir efecto de Particle2D a la pelota, aumentar el número de niveles, diseñar varios muros con diferentes comportamientos (Por ejemplo diferente resistencia).
 
-![](docs/images/arkanoid.png)
-
 ## [Platform](demos/platform)
+
+![](docs/images/platform.png)
 
 * demos/platform: Juego de plataformas con gráficos de 16x16 y 1bit color, descargados de la página web de Kenney.
 * El player es un KinematicBody2D con colisiones con el entorno. Las plataformas móviles también son KinematicBody2D.
 * Los enemigos son Area2D.
 * Para diseñar el mundo se ha usado TileMap y TileSet para crear un conjunto de celdas (tiles).
+* Los actores están animados usando AnimatedSprite.
 * Futuro: De momento sólo tenemos un nivel, pero la idea es crear más pantallas formando un mapa más complejo.
-
-![](docs/images/platform.png)
+Se pueden coger unos objetos brillantes, pero por ahora no sirven para nada.
 
 ## [Roguelike](demos/roguelike)
 
-* demos/roguelike: Un juego 2D de vista top-down, donde el player debe coger todas las llaves que abren la puerta para escapar del laberinto mientras esquivamos a los enemigos.
-* Se usa el motor de física para controlar la colisiones. El player es un KinematicBody2D y el laberinto.
-* Ir a [explicación](docs/roguelike/README.md) para ver un pequeño resumen.
-
 ![](docs/images/roguelike.png)
+
+* demos/roguelike: Un juego 2D de vista top-down, donde el player debe coger todas las llaves que abren la puerta para escapar del laberinto mientras esquivamos a los enemigos. Esta demo jugable puede ser adecuada para empezar a aprender.
+* Para diseñar el mundo se ha usado TileMap y TileSet para crear un conjunto de celdas (tiles).
+* Se usa el motor de física para controlar la colisiones. El player es un KinematicBody2D y los muros del laberinto StaticBody2D.
+* Los enemigos son Area2D para poder detectar las colisiones. Además cada enemigo tiene un comportamiento diferente que se puede configurar.
+* Ir a [explicación](docs/roguelike/README.md) para ver un pequeño resumen.
+* Futuro: Crear ventanas de inicio y pausa.
 
 ## [SpaceShooter](demos/spaceshooter)
 
-* demos/spaceshooter: Shooter de scroll vertical. Los assets son imágenes de 16x16, hechas con Gimp y luego escaladas a 48x48 para resaltar el efecto de pixelado.
+![](docs/images/spaceshooter.png)
+
+* demos/spaceshooter: Shooter de scroll vertical. Los assets son imágenes de 16x16, hechas con Gimp y luego escaladas a 48x48 para resaltar el efecto de pixelado. Los assets no son muy elaborados. Son de creación propia, usando Gimp para el pixel art.
 * Todos los objetos del juego son del tipo Area2D. Actualmente están definidos los siguientes elementos: Rocas (pequeñas y grandes), Satélites, Tie-figther y el X-Wing(Player).
 * Efectos: tenemos efectos de explosiones creados con Particle2D, además se usa Timer y SelfModulate para el efecto flash cuando se recibe un impacto no letal.
 * Hay dos ficheros Singleton: Global y Loader. Global para las variables globales del juego. Loader para contener las funciones de construcción del nivel. El diseño del nivel se hace en un fichero de texto (level/level2.txt) que Loader lee y construye.
 
-![](docs/images/spaceshooter.png)
+## [Tower Defense](demos/tower-defense)
+
+![](docs/images/tower-defense.png)
+* demos/tower-defense: EN CONSTRUCCION. Los assets son de Aarón VJ, creados con Gimp.
+* De momento sólo permite escoger entre 2 tipos de cartas, y colocar las piezas en la primera columna del tablero.
+* Futuro: En construcción!
 
 # Enlaces de interés
 
