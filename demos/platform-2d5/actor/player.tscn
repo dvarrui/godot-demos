@@ -1,12 +1,23 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/platform-2d5x48.png" type="Texture" id=1]
+[ext_resource path="res://assets/colored_tilemap_packed.png" type="Texture" id=1]
 [ext_resource path="res://actor/player.gd" type="Script" id=2]
+[ext_resource path="res://actor/move.gd" type="Script" id=4]
+[ext_resource path="res://actor/die.gd" type="Script" id=5]
 
 [node name="player" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="sprite" type="Sprite" parent="."]
+position = Vector2( 0, -24 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 144, 48, 48, 48 )
+region_rect = Rect2( 528, 0, 48, 48 )
+
+[node name="states" type="Node" parent="."]
+
+[node name="move" type="Node" parent="states"]
+script = ExtResource( 4 )
+
+[node name="die" type="Node" parent="states"]
+script = ExtResource( 5 )
