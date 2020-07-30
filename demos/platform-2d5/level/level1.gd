@@ -7,4 +7,4 @@ func _process(delta):
 	var x = $player.position.x 
 	var y = $player.position.y
 	$info/position.text = "("+str(int(x))+","+str(int(y))+")"
-	$info/tile.text = str($map.get_cell(x/48,y/48))
+	$info/tile.text = str($map_height.get_cell(x/48,y/48))

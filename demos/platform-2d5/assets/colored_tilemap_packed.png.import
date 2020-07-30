@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/platform-2d5x48.png-61be1c95e94ef834860920233cf95df9.stex"
+path="res://.import/colored_tilemap_packed.png-3032b70715e3ada60f3b7186c2a5e767.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/platform-2d5x48.png"
-dest_files=[ "res://.import/platform-2d5x48.png-61be1c95e94ef834860920233cf95df9.stex" ]
+source_file="res://assets/colored_tilemap_packed.png"
+dest_files=[ "res://.import/colored_tilemap_packed.png-3032b70715e3ada60f3b7186c2a5e767.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="platform-2d5"
+config/name="Platform 2d5"
 run/main_scene="res://level/level1.tscn"
 config/icon="res://icon.png"
 
