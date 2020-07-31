@@ -1,7 +1,7 @@
 extends Node2D
 class_name StateMachine
 
-export var speed_walk = 200
+export var speed_walk = 100
 export var speed_fall = 400
 var map_height = null
 
@@ -16,7 +16,7 @@ func _ready():
 	_enter_state()
 
 func get_cell_coord():
-	return Vector2(position.x/48, position.y/48)
+	return Vector2(int(position.x/48), int(position.y/48))
 
 func get_cell_id(pos):
 	return map_height.get_cell(pos.x, pos.y)
