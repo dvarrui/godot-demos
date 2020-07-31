@@ -60,7 +60,7 @@ func _update_north_limit():
 func _update_south_limit():
 	var p1 = fsm.get_cell_coord()
 	var p2 = fsm.get_cell_coord() + Vector2(0, 1)
-	limit["s"] = 47 - (int(fsm.position.y+10) % 48)
+	limit["s"] = 47 - (int(fsm.position.y) % 48)
 	if fsm.get_cell_id(p1) == fsm.get_cell_id(p2):
 		limit["s"] += 48
 

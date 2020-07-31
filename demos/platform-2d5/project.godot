@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "StateMachine",
 "language": "GDScript",
-"path": "res://actor/player.gd"
+"path": "res://actor/version1/player.gd"
 } ]
 _global_script_class_icons={
 "StateMachine": ""

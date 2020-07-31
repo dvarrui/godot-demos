@@ -1,7 +1,7 @@
 extends Node2D
 class_name StateMachine
 
-export var speed_walk = 100
+export var speed_walk = 200
 export var speed_fall = 400
 var map_height = null
 
@@ -45,9 +45,9 @@ func _process(delta):
 	if state.has_method("process"):
 		state.process(delta)
 
-func _physics_process(delta):
-	if state.has_method("physics_process"):
-		state.physics_process(delta)
+#func _physics_process(delta):
+#	if state.has_method("physics_process"):
+#		state.physics_process(delta)
 
 func _input(event):
 	if state.has_method("input"):
@@ -57,9 +57,9 @@ func _unhandled_input(event):
 	if state.has_method("unhandled_input"):
 		state.unhandled_input(event)
 
-func _unhandled_key_input(event):
-	if state.has_method("unhandled_key_input"):
-		state.unhandled_key_input(event)
+#func _unhandled_key_input(event):
+#	if state.has_method("unhandled_key_input"):
+#		state.unhandled_key_input(event)
 
 func _notification(what):
 	if state && state.has_method("notification"):
