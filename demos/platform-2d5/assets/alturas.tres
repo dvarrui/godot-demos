@@ -1,6 +1,12 @@
-[gd_resource type="TileSet" load_steps=2 format=2]
+[gd_resource type="TileSet" load_steps=4 format=2]
 
 [ext_resource path="res://assets/platform-2d5x48.png" type="Texture" id=1]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 48, 48, 0, 48, 0, 0, 48, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 48, 48, 0, 48, 0, 0, 48, 0 )
 
 [resource]
 0/name = ""
@@ -27,9 +33,16 @@
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 1 )
 1/shape_one_way = false
-1/shape_one_way_margin = 0.0
-1/shapes = [  ]
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 1/z_index = 0
 2/name = ""
 2/texture = ExtResource( 1 )
@@ -41,9 +54,16 @@
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 2 )
 2/shape_one_way = false
-2/shape_one_way_margin = 0.0
-2/shapes = [  ]
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 2/z_index = 0
 3/name = ""
 3/texture = ExtResource( 1 )

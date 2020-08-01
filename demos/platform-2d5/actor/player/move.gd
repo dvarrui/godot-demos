@@ -22,8 +22,8 @@ func update(delta):
 	if Input.is_action_pressed("player_right"):
 		dir += Vector2(1,0)
 	
-	motion = dir.normalized() * host.speed_walk * delta
-	host.translate(motion)
+	motion = dir.normalized() * host.speed_walk
+	host.move_and_slide(motion)
 	return null
 
 #func physics_process(delta):

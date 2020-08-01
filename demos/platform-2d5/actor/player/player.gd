@@ -1,4 +1,4 @@
-extends Node2D
+extends KinematicBody2D
 
 export var speed_walk = 200
 export var speed_fall = 400
@@ -39,16 +39,16 @@ func _enter_state():
 
 # Route Game Loop function calls to
 # current state handler method if it exists
-func _process(delta):
+#func _process(delta):
+#	if state.has_method("process"):
+#		state.process(delta)
+
+func _physics_process(delta):
 	var new_state = null
 	if state.has_method("update"):
 		new_state = state.update(delta)
 	if new_state:
 		change_to(new_state)
-
-#func _physics_process(delta):
-#	if state.has_method("physics_process"):
-#		state.physics_process(delta)
 
 func _input(event):
 	if state.has_method("input"):

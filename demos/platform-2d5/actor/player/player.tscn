@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://actor/player/move.gd" type="Script" id=1]
 [ext_resource path="res://actor/player/die.gd" type="Script" id=2]
 [ext_resource path="res://actor/player/player.gd" type="Script" id=3]
 [ext_resource path="res://assets/colored_tilemap_packed.png" type="Texture" id=4]
 
-[node name="player" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 13.0
+height = 10.0
+
+[node name="player" type="KinematicBody2D"]
 script = ExtResource( 3 )
 
 [node name="sprite" type="Sprite" parent="."]
@@ -13,6 +17,10 @@ position = Vector2( 0, -24 )
 texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 528, 0, 48, 48 )
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -16 )
+shape = SubResource( 1 )
 
 [node name="states" type="Node" parent="."]
 
