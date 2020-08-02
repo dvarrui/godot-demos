@@ -3,14 +3,15 @@ extends KinematicBody2D
 export var speed_walk = 200
 export var speed_fall = 400
 var map_height = null
+var height = 1
 
 const DEBUG = true
 var state = ""
 var history = []
 
 func _ready():
+	set_height(1)
 	# Set the initial state to the first child node
-	map_height = get_parent().get_node("map_height")
 	state = get_node("states/move")
 	_enter_state()
 
@@ -19,6 +20,19 @@ func get_cell_coord():
 
 func get_cell_id(pos):
 	return map_height.get_cell(pos.x, pos.y)
+
+func set_height(value):
+	height = value
+	map_height = get_parent().get_node("heights/h" + str(height))
+	if height == 1:
+		collision_layer  = 1
+		collision_mask = 1
+	elif height == 2:
+		collision_layer  = 2
+		collision_mask = 2
+	if height == 3:
+		collision_layer  = 4
+		collision_mask = 4
 
 # Finity State Machine 
 func change_to(new_state):
