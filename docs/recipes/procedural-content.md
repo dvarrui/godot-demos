@@ -8,7 +8,10 @@
 # BSP para la generación básica de mazmorras
 
 > Enlaces de interés:
-> * [EN - Basic BSP Dungeon generation - RogueBasin](http://roguebasin.roguelikedevelopment.org/index.php?title=Basic_BSP_Dungeon_generation)
+> * EN - [Basic BSP Dungeon generation - RogueBasin](http://roguebasin.roguelikedevelopment.org/index.php?title=Basic_BSP_Dungeon_generation)
+> * Vídeo EN - [Binary Trees by Richard Fleming Jr ](https://www.youtube.com/watch?v=S5y3ES4Rvkk)
+
+_Este tutorial es una traducción a español del artículo original que aparece en enlaces de interés_
 
 Vamos a ver cómo usar un árbol BSP para generar un mapa de mazmorras básico.
 
@@ -38,3 +41,40 @@ Seguiremos repitiendo el proceso hasta que la sub-mazmorra más pequeña tiene a
 Veamos un ejemplo después de aplicar 4 iteraciones de división:
 
 ![](image/dungeon_bsp3.png)
+
+Los valores de la posición de división dan distintos resultados:
+* Sub-mazmorras homogéneas si el valor está entre 0.45 y 0.55.
+* Sub-mazmorras heterogéneas si el valor está entre 0.1 y 0.9.
+
+También se puede decidir usar recursión profunda, sólo en algunas partes de las mazmorras de modo que se consigan habitaciones más pequeñas en esas partes concretas.
+
+## 2. Construyendo las mazmorras
+
+Ahora vamos a crear habitaciones con tamaño aleatorio en cada hoja del árbol. Por supuesto, que cada habitación debe estar contenida dentro de su correspondiente sub-mazmorra. Gracias al árbol BSP, evitaremos que dos habitaciones se solapen.
+
+Veamos un ejemplo de las habitaciones (rectágulos de color negro), dentro de cada hoja del árbol BSO (rectángulos de color gris).
+
+![](image/dungeon_bsp4.png)
+
+## 3. Construir los pasillos
+
+Para construir los pasillos, recorreremos todas las hojas del árbol, conectando cada hoja con su hermana. Si dos habitaciones tienen paredes cara a cara, podremos crear un pasillo recto. En caso contrario tenemos que usar un pasillo en forma de Z.
+
+Veamos ejemplo conectando sub-mazmorras del nivel 4.
+
+![](image/dungeon_bsp5.png)
+
+Ahora que hemos hecho los pasillos en el nivel 4 del árbol, subimos un nivel en el árbol y repetimos el proceso para las regiones del padre. Ahora podemos conectar dos sub-regiones con un enlace entre:
+* dos habitaciones
+* un pasillo y una habitación
+* o entre dos pasillos.
+
+Veamos un ejemplo donde se conectan las sub-mazmorras del nivel 3.
+
+![](image/dungeon_bsp6.png)
+
+Repetimos el proceso hasta que terminemos conectando las primeras sub-mazmorras A y B.
+
+![](image/dungeon_bsp7.png)
+
+Si permitimos que algunas habitaciones ocupen la hoja completa, se consiguen mazmorras menos aburridas.
