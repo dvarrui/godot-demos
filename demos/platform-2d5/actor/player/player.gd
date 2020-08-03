@@ -6,7 +6,7 @@ var map_height = null
 var height = 1
 
 const DEBUG = true
-var state = ""
+var state = null
 var history = []
 
 func _ready():
@@ -36,9 +36,8 @@ func set_height(value):
 
 # Finity State Machine 
 func change_to(new_state):
-	print("[INFO] "+ new_state)
-	history.append(state.name)
-	state = get_parent().get_node("states/"+new_state)
+	history.append(state.name) 
+	state = get_node("states/"+new_state)
 	_enter_state()
 
 func back():
@@ -62,8 +61,6 @@ func _physics_process(delta):
 	var new_state = null
 	if state.has_method("update"):
 		new_state = state.update(delta)
-	if new_state:
-		change_to(new_state)
 
 func _input(event):
 	if state.has_method("input"):
