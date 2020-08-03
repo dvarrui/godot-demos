@@ -5,7 +5,6 @@
 
 > Traducción al español del artículo "Generate Random Cave Levels Using Cellular Automata"(https://gamedevelopment.tutsplus.com/tutorials/generate-random-cave-levels-using-cellular-automata--gamedev-9664).
 
-
 # 1. Introducción
 
 Añadir algo de generación en tu juego es una buena forma de darle un valor añadido. A los jugadores les encanta porque obtienen contenidos nuevos, impredecibles y excitantes cada vez que juegan. En este tutorial vamos a ver cómo generar niveles aleatorios.
@@ -15,7 +14,6 @@ En este tutorial vamos a construir un generador de cuevas. Veamos un ejemplo:
 ![](image/caves_ac1.png)
 
 Este generador nos devolverá una matriz bidimensional, donde cada posición indicará si hay un bloque o está vacío. De modo que podemos usar este generador para todo tipo de juegos: mazmorras, niveles para juegos de estrategia, tilemaps para juegos de plataformas, incluso como arena para shooter multijugador. Intercambiando las bloques y los espacios libres tenemos también un generador de islas.
-
 
 # 2. El juego de la vida
 
@@ -60,7 +58,33 @@ Para cada celda aplicaremos las siguientes reglas:
 
 Estas reglas son más sencillas que las del juego de la vida.
 
+## 3.3 Afinando el proceso
 
-# 4. Afinando el proceso
+La función anterior aplica nuestras reglas del autómata celular sobre la rejilla una sola vez. Si aplicamos estas reglas más veces (**numberOfSteps**) podremos ver que el mapa puede seguir evolucionando hasta que llega a un estado estable, donde ya no hay más cambios.
 
-La función anterior aplicar nuestras reglas del autómata celular sobre la rejilla. Lo siguiente será ver que pasa si aplicamos estas reglas más de una vez (**numberOfSteps**).
+he only really new bit of code is a for loop that runs our simulation method a set number of times. Again, pop it in a variable so we can change it, because we're going to start playing with these values now!
+
+Resumiendo, las variables que nos permiten parametrizar nuestro mapa son:
+
+* **chanceToStartAlive**, establece cuánto de denso se creará nuestra rejilla inicial con células vivas.
+* **deathLimit** es el número de vecinos, por debajo del cual la célula muere.
+* **birthNumber** es el número de vecinos que causa el nacimiento de una nueva célula.
+* **numberOfSteps**, es el número de veces que se aplican las reglas de transformación a la rejilla.
+
+# 4. Extras
+
+## 4.1 Relleno por inundación
+
+El relleno por inundación es un método simple para encontrar los espacios dentro de la matriz que están conectados con un punto concreto.
+
+Algunas veces el mapa tendrá será una gran cueva, pero en otras ocasiones tendremos varias cuevas más pequeñas separadas entre sí.
+Pero también se podemos usar este método para averiguar cómo es de grande la cueva.
+
+> Enlace de interés:
+> * [Flood fill](https://en.wikipedia.org/wiki/Flood_fill)
+
+## 4.2 Colocar el tesoro
+
+Colocar el tesoro en una buena zona puede ser complejo. Nosotros como podemos calcular cuantos vecinos (paredes) tiene cada celda podemos usar esa información para buscar un sitio adecuado.
+
+Si una celda de la rejilla está rodeada por muchas paredes puede ser el final de un pasillo o un hueco escondido en las paredes de la caverna. Éste puede ser un buen sitio para esconder el tesoro aunque no es perfecto. Algunas veces el tesoro podría estar inaccesible en huecos de las cuevas y otras el lugar será demasiado obvio.
