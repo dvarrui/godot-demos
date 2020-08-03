@@ -6,7 +6,7 @@
 > Traducción al español del artículo "Generate Random Cave Levels Using Cellular Automata"(https://gamedevelopment.tutsplus.com/tutorials/generate-random-cave-levels-using-cellular-automata--gamedev-9664).
 
 
-# 1. Bienvenido a las cuevas
+# 1. Introducción
 
 Añadir algo de generación en tu juego es una buena forma de darle un valor añadido. A los jugadores les encanta porque obtienen contenidos nuevos, impredecibles y excitantes cada vez que juegan. En este tutorial vamos a ver cómo generar niveles aleatorios.
 
@@ -34,6 +34,33 @@ Ahora si iniciamos la rejilla con valores aleatorios, obtendremos diferentes evo
 
 # 3. Implementar un autómata celular
 
-Vamos a representar nuestra rejilla de células por un Array de dos dimensiones, que contendrá valores Booleanos (true o false).
+## 3.1 Crear la rejilla
 
-We're going to start out by randomly setting each cell to either dead or alive. Each cell will have the same random chance of being made alive, and you should make sure that this chance value is set in a variable somewhere, because we'll definitely want to tweak it later and having it somewhere easy to access will help us with that. I'll use 45% to start off with.
+Vamos a representar nuestra rejilla de células por un Array de dos dimensiones (**cellmap**), que contendrá valores Booleanos (true o false). Inicializaremos esta matriz con valores aleatorios en cada una de sus celdas.
+
+Definiremos una variable **chanceToStartAlive**, que determinará la probabilidad de que una celda contenga una célula viva. Para nuestro ejemplo comenzaremos con un valor de 45%. Veamos ejemplo:
+
+![](image/gdt-sim0.png)
+
+## 3.2 Aplicar reglas de cambio
+
+En "The Game Of Life", cada vez que la simulación avanzaba un paso, en cada celda se comprueban las reglas de vida, para ver si hay que cambiar el estado vivo o muerto. Usaremos esas mismas ideas para construir nuestras cuevas, y escribiremos una función (**doSimulationStep**) que itere sobre cada celda de la rejilla y aplique unas reglas básicas para decidir si vive o muere.
+
+Esta función **doSimulationStep**:
+
+* Crea una nueva rejilla con los cambios de estado. Recordemos que a la hora de calcular el valor futuro de cada celda, hay consultar el valor actual de sus 8 vecinos.
+
+![](image/gdt_1.png)
+
+* Contamos el número de vecinos para cada celda (**countAliveNeighbours**). Cuando estemos calculando en una celda de los límites de la rejilla (bordes del mapa), habrán algunos valores de vecinos que no tengamos. En estos casos asumimos un valor por defecto: vecino vivo o espacio vacío.
+
+Para cada celda aplicaremos las siguientes reglas:
+* Muertes: Si en la celda hay una célula viva y el número de vecinos es menor a **deathLimit**, entonces la célula muere.
+* Nacimientos: Si en la celda no hay célula, y el número de vecinos es mayor que **birthLimit**, entonces se crea una célula nueva en esa posición.
+
+Estas reglas son más sencillas que las del juego de la vida.
+
+
+# 4. Afinando el proceso
+
+La función anterior aplicar nuestras reglas del autómata celular sobre la rejilla. Lo siguiente será ver que pasa si aplicamos estas reglas más de una vez (**numberOfSteps**).
