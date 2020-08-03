@@ -36,13 +36,14 @@ func set_height(value):
 
 # Finity State Machine 
 func change_to(new_state):
+	print("[INFO] "+ new_state)
 	history.append(state.name)
-	state = get_node("states/"+new_state)
+	state = get_parent().get_node("states/"+new_state)
 	_enter_state()
 
 func back():
 	if history.size() > 0:
-		state = get_node(history.pop_back())
+		state = get_parent().get_node(history.pop_back())
 		_enter_state()
 
 func _enter_state():

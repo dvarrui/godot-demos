@@ -30,7 +30,9 @@ func update(delta):
 	host.move_and_slide(motion)
 	post["tile"] = host.get_cell_id(host.get_cell_coord())
 	post["coord"] = host.get_cell_coord()
-		
+	
+	if post["tile"] == 0:
+		exit("die")
 	if prev["tile"] == 1 and post["tile"] == 3:
 		# Up stairs
 		host.set_height(host.height + 1)
@@ -42,7 +44,7 @@ func update(delta):
 		host.set_height(host.height - 1)
 		#if host.get_cell_id(host.get_cell_coord()) == 2:
 		#	host.move_and_slide(Vector2(0,48))
-	elif post["tile"]== -1 and prev["coord"].y < post["coord"].y:
+	elif prev["tile"] == 1 and post["tile"]== -1 and prev["coord"].y < post["coord"].y:
 		print("[INFO] Caer por el muro...")
 		print("prev=>"+str(prev))
 		print("post=>"+str(post))

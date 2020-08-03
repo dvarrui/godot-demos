@@ -1,9 +1,6 @@
 extends Node2D
 
 func _ready():
-	print(str($heights/h1.collision_layer))
-	print(str($heights/h2.collision_layer))
-	print(str($heights/h3.collision_layer))
 	pass
 
 func _process(delta):
