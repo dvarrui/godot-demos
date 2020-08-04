@@ -1,5 +1,5 @@
 
-[<< back](README.md)
+[<< back](../README.md)
 
 # BSP para la generación básica de mazmorras
 

@@ -5,10 +5,11 @@
 
 Enlaces de interés:
 
-* [Tutoriales](enlaces/tutorials.md)
+* [Tutoriales](enlaces/tutorials.md).
 * [Arte](enlaces/art.md): Free Assets, Arte vectorial y Pixel art.
-* [Miscelanea](enlaces/misc.md): Shaders y cursos de Godot
+* [Miscelanea](enlaces/misc.md): Shaders y cursos de Godot.
 
-Artículos:
+Artículos traducidos al español:
 
-* [Procedural Content Generator](pcg/README.md)
+1. [Generar cuevas usando autómatas celulares](pcg/automata-celular.md)
+1. [BSP para la generación básica de mazmorras](pcg/dungeon-bsp.md)
