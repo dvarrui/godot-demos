@@ -5,9 +5,9 @@
 
 Enlaces de interés:
 
-* [Tutoriales](docs/tutorials.md)
-* [Arte](docs/art.md): Free Assets, Arte vectorial y Pixel art.
-* [Miscelanea](docs/misc.md): Shaders y cursos de Godot
+* [Tutoriales](enlaces/tutorials.md)
+* [Arte](enlaces/art.md): Free Assets, Arte vectorial y Pixel art.
+* [Miscelanea](enlaces/misc.md): Shaders y cursos de Godot
 
 Artículos:
 
