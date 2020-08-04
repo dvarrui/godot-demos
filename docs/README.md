@@ -1,7 +1,7 @@
 
 [<< back](../README.md)
 
-# Más documentación
+# Información sobre videojuegos y Godot
 
 Enlaces de interés:
 
