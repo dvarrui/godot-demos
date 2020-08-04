@@ -58,8 +58,6 @@ Se pueden coger unos objetos brillantes, pero por ahora no sirven para nada.
 * De momento sólo permite escoger entre 2 tipos de cartas, y colocar las piezas en la primera columna del tablero.
 * Futuro: En construcción!
 
-# Enlaces de interés
+# Más documentos
 
-* [Tutoriales](docs/tutorials.md)
-* [Arte](docs/art.md): Free Assets, Arte vectorial y Pixel art.
-* [Miscelanea](docs/misc.md): Shaders y cursos de Godot
+[Enlaces de interés, consejos y artículos relacionados.](docs/README.md)

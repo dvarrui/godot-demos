@@ -1,5 +1,5 @@
 
-[<< back](procedural-content-md)
+[<< back](README.md)
 
 # Generación de cuevas usando autómatas celulares
 
