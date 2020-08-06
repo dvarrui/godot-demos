@@ -1,5 +1,6 @@
 extends Node
 
+# states/move 
 var host = null
 var prev = {}
 var post = {}
@@ -42,12 +43,9 @@ func update(delta):
 	elif prev["tile"] == 1 and post["tile"] == -1 and post["coord"].y == prev["coord"].y:
 		# Down stairs
 		host.set_height(host.height - 1)
-		#if host.get_cell_id(host.get_cell_coord()) == 2:
-		#	host.move_and_slide(Vector2(0,48))
+		#exit("fall")
 	elif prev["tile"] == 1 and post["tile"]== -1 and prev["coord"].y < post["coord"].y:
-		print("[INFO] Caer por el muro...")
-		print("prev=>"+str(prev))
-		print("post=>"+str(post))
+		exit("fall")
 		
 	return null
 
