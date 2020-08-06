@@ -38,11 +38,9 @@ Donde `player` (KinematicBody2D) será el nodo raíz que actuará como el contro
 
 Tanto el nodo `player` como `states/*`, tendrán asociado un fichero con código GDScript.
 
-
-## Controlador de la máquina de estados
+## Implementación del Controlador
 
 El script `player.gd` tendrá el código necesario para controlar la máquina de estados: funciones para cambiar el estado, responder a los eventos, y volver al estado anterior.
-
 
 ```
 extends KinematicBody2D
@@ -137,3 +135,11 @@ func exit(next_state):
 func update(delta):
   pass
 ```
+
+El código anterior se puede copiar y personalizar para cada nuevo estado.
+
+## Máquinas de estados concurrentes
+
+En tus juegos, necesitar saber que el estado de otra Máquina de Estados Finitos(FSM) es donde el conexto es importante para la toma de decisiones.
+
+Para esto, puedes tener una variable global (singleton) de tipo diccionario con, referencias a las distintas FSM y al estado actual de cada una.
