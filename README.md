@@ -58,6 +58,6 @@ Se pueden coger unos objetos brillantes, pero por ahora no sirven para nada.
 * De momento sólo permite escoger entre 2 tipos de cartas, y colocar las piezas en la primera columna del tablero.
 * Futuro: En construcción!
 
-# Más documentos
+# Información sobre videojuegos y Godot
 
 [Enlaces de interés, consejos y artículos relacionados.](docs/README.md)
