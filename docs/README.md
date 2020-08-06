@@ -13,3 +13,4 @@ Artículos traducidos al español:
 
 1. [Generar cuevas usando autómatas celulares](pcg/automata-celular.md)
 1. [BSP para la generación básica de mazmorras](pcg/dungeon-bsp.md)
+1. [Máquina de estados](state-machine/README.md)
