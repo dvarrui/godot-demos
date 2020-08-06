@@ -1,6 +1,6 @@
 extends Node
 
-# states/move 
+# Node: states/move 
 var host = null
 var prev = {}
 var post = {}
@@ -42,12 +42,16 @@ func update(delta):
 		host.set_height(host.height - 1)
 	elif prev["tile"] == 1 and post["tile"] == -1 and post["coord"].y == prev["coord"].y:
 		# Down stairs
-		host.set_height(host.height - 1)
-		#exit("fall")
+		#host.set_height(host.height - 1)
+		if prev["coord"].x < post["coord"].x: 
+			host.position.x += 10
+		else:
+			host.position.x -= 10
+		exit("fall")
 	elif prev["tile"] == 1 and post["tile"]== -1 and prev["coord"].y < post["coord"].y:
 		exit("fall")
-		
-	return null
+	elif prev["tile"] == 1 and post["tile"]== -1 and prev["coord"].y > post["coord"].y:
+		exit("die")
 
 #func physics_process(delta):
 #	return delta

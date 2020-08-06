@@ -5,7 +5,7 @@ export var speed_fall = 400
 var map_height = null
 var height = 1
 
-const DEBUG = true
+const DEBUG = false
 var state = null
 var history = []
 
