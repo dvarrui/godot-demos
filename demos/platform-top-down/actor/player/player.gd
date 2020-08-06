@@ -62,18 +62,18 @@ func _physics_process(delta):
 	if state.has_method("update"):
 		new_state = state.update(delta)
 
-func _input(event):
-	if state.has_method("input"):
-		state.input(event)
+#func _input(event):
+#	if state.has_method("input"):
+#		state.input(event)
 
-func _unhandled_input(event):
-	if state.has_method("unhandled_input"):
-		state.unhandled_input(event)
+#func _unhandled_input(event):
+#	if state.has_method("unhandled_input"):
+#		state.unhandled_input(event)
 
 #func _unhandled_key_input(event):
 #	if state.has_method("unhandled_key_input"):
 #		state.unhandled_key_input(event)
 
-func _notification(what):
-	if state && state.has_method("notification"):
-		state.notification(what)
+#func _notification(what):
+#	if state && state.has_method("notification"):
+#		state.notification(what)

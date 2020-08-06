@@ -56,11 +56,11 @@ func update(delta):
 #func physics_process(delta):
 #	return delta
 
-func input(event):
-	return event
+#func input(event):
+#	return event
 
-func unhandled_input(event):
-	return event
+#func unhandled_input(event):
+#	return event
 
 #func unhandled_key_input(event):
 #	return event

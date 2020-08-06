@@ -84,21 +84,21 @@ func _physics_process(delta):
 	if state.has_method("update"):
 		new_state = state.update(delta)
 
-func _input(event):
-	if state.has_method("input"):
-		state.input(event)
+#func _input(event):
+#	if state.has_method("input"):
+#		state.input(event)
 
-func _unhandled_input(event):
-	if state.has_method("unhandled_input"):
-		state.unhandled_input(event)
+#func _unhandled_input(event):
+#	if state.has_method("unhandled_input"):
+#		state.unhandled_input(event)
 
 #func _unhandled_key_input(event):
 #	if state.has_method("unhandled_key_input"):
 #		state.unhandled_key_input(event)
 
-func _notification(what):
-	if state && state.has_method("notification"):
-		state.notification(what)
+#func _notification(what):
+#	if state && state.has_method("notification"):
+#		state.notification(what)
 
 ```
 
@@ -110,6 +110,30 @@ func _notification(what):
 * La funcion `_enter_state` ejecuta el proceso de entrar en el estado (`enter`).
 * La función `back` cambia al estado anterior del historial.
 
-Cuando el juego está en ejecución hay varios métodos que se invocan en el controlador pero su implementación estará en los nodos estado (`_process`, `_physics_process`, `_input`, `_unhandled_input`, `_unhandled_key_input` y `_notification`). Para estos métodos debemos llamar al método adecuado en cada momento. En nuestro ejemplo podemos ver que cuando se invoca la llamada a la función `_physics_process(delta)` del controlador, se ejecuta el código del nodo estado `state.update(delta)`.
+Cuando el juego está en ejecución hay métodos que se invocan en el controlador pero su implementación estará en los nodos estado (Por ejemplo `_process`, `_physics_process`, etc). En nuestro ejemplo podemos ver que cuando se invoca la llamada a la función `_physics_process(delta)` del controlador, se ejecuta el código del nodo estado `state.update(delta)`.
 
-Cuando se invocan las llamadas `_input(event)` y `_notification(what)` del controlador, se ejecutan las funciones `state.input(event)` y `state.notificaction(what)` del estado actual. De esta forma el estado actual puede responder a los eventos que se producen.
+## Implementación de los Estados
+
+Cada estado está representado por un nodo (`states/*`) y cada uno tiene asociado un script GDScript que almacenará el código que implementa la lógica asociada a dicho estado.
+
+* La función `enter` ejecuta la inicialización para ese estado.
+* La función `exit` llamará el mátodo `change_to(next_state)` del controlador.
+* Lo que un estado hace cuando es el estdo actual dependerá de su lógica interna (`update(delta)`).
+
+Veamos una plantilla de ejemplo:
+
+```
+extends Node
+
+var host = null
+
+func enter(_host):
+	host = _host
+
+func exit(next_state):
+	host.change_to(next_state)
+
+# Optional handler functions for game loop events
+func update(delta):
+  pass
+```
