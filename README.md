@@ -6,6 +6,7 @@ Este repositorio contiene pequeñas demos jugables diseñadas con la intención 
 1. [Arkanoid](#arkanoid)
 1. [Command](demos/command) (En construccion!)
 1. [Platform](#platform)
+1. [Platform-Top-Down](#platform-top-down)
 1. [Roguelike](#roguelike)
 1. [SpaceShooter](#spaceshooter)
 1. [Tower Defense](demos/tower-defense) (En construcción!)
@@ -30,6 +31,19 @@ Este repositorio contiene pequeñas demos jugables diseñadas con la intención 
 * Los actores están animados usando AnimatedSprite.
 * Futuro: De momento sólo tenemos un nivel, pero la idea es crear más pantallas formando un mapa más complejo.
 Se pueden coger unos objetos brillantes, pero por ahora no sirven para nada.
+
+## [Platform (Top-Down)](demos/platform-top-down)
+
+![](docs/images/platform-top-down.png)
+
+* demos/platform-top-down: Es una demo que implementa la forma de juego plataformas pero con una vista top-down.
+* Esto es, hay distintas alturas en el mapa del juego. Para subir se usan las escaleras o el salto. Para bajar se usan las escaleras, el salto o dejarse caer por el borde de un nivel.
+* El player es un KinematicBody2D que inicialmente está en la capa 1 (altura 1). A medida que se sube se modifica el valor de la capa.
+* Se usan las teclas WASD para el desplazamiento.
+* Tenemos un TileMap(`map`) sin colisiones para hacer visible el mapa del juego.
+* Para representar cada altura del mapa se usan los nodos dentro del `heights`. Donde `h1` representa el mapa de colisiones de la altura 1, `h2` el mapa de colisiones de la altura 2, etc.
+* La lógica de funcionamiento del `player` se ha creado usando máquinas de estados. Donde tenemos los siguientes estados: `state/move`, `states/die` y `states/fall`.
+* Futuro: implementar la función de salto en el estado `states/jump`.
 
 ## [Roguelike](demos/roguelike)
 
