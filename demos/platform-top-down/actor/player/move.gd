@@ -52,18 +52,3 @@ func update(delta):
 		exit("fall")
 	elif prev["tile"] == 1 and post["tile"]== -1 and prev["coord"].y > post["coord"].y:
 		exit("die")
-
-#func physics_process(delta):
-#	return delta
-
-#func input(event):
-#	return event
-
-#func unhandled_input(event):
-#	return event
-
-#func unhandled_key_input(event):
-#	return event
-
-#func notification(what, flag = false):
-#	return [what, flag]

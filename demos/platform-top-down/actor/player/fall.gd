@@ -25,18 +25,3 @@ func update(delta):
 		# Down stairs
 		host.set_height(host.height - 1)
 		exit("move")
-
-#func physics_process(delta):
-#	return delta
-
-func input(event):
-	return event
-
-func unhandled_input(event):
-	return event
-
-#func unhandled_key_input(event):
-#	return event
-
-#func notification(what, flag = false):
-#	return [what, flag]
