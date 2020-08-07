@@ -1,10 +1,31 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://actor/player/move.gd" type="Script" id=1]
 [ext_resource path="res://actor/player/die.gd" type="Script" id=2]
 [ext_resource path="res://actor/player/player.gd" type="Script" id=3]
 [ext_resource path="res://assets/colored_tilemap_packed.png" type="Texture" id=4]
 [ext_resource path="res://actor/player/fall.gd" type="Script" id=5]
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 4 )
+region = Rect2( 576, 0, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 4 )
+region = Rect2( 528, 0, 48, 48 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 2 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 13.0
@@ -13,11 +34,10 @@ height = 10.0
 [node name="player" type="KinematicBody2D"]
 script = ExtResource( 3 )
 
-[node name="sprite" type="Sprite" parent="."]
+[node name="anim" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -24 )
-texture = ExtResource( 4 )
-region_enabled = true
-region_rect = Rect2( 528, 0, 48, 48 )
+frames = SubResource( 4 )
+animation = "walk"
 
 [node name="shape" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -16 )

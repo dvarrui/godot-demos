@@ -7,6 +7,7 @@ var post = {}
 
 func enter(_host):
 	host = _host
+	host.get_node("anim").play("walk")
 
 func exit(next_state):
 	host.change_to(next_state)
@@ -51,4 +52,5 @@ func update(delta):
 	elif prev["tile"] == 1 and post["tile"]== -1 and prev["coord"].y < post["coord"].y:
 		exit("fall")
 	elif prev["tile"] == 1 and post["tile"]== -1 and prev["coord"].y > post["coord"].y:
-		exit("die")
+		# Down stairs
+		host.set_height(host.height - 1)

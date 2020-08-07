@@ -7,6 +7,7 @@ var post = {}
 
 func enter(_host):
 	host = _host
+	host.get_node("anim").play("fall")
 	prev["pos"] = host.position
 	prev["coord"] = host.get_cell_coord()
 	prev["tile"] = host.get_cell_id(prev["coord"])
