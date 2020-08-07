@@ -23,7 +23,7 @@ animations = [ {
 }, {
 "frames": [ SubResource( 3 ) ],
 "loop": true,
-"name": "walk",
+"name": "move",
 "speed": 5.0
 } ]
 
@@ -37,7 +37,7 @@ script = ExtResource( 3 )
 [node name="anim" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -24 )
 frames = SubResource( 4 )
-animation = "walk"
+animation = "move"
 
 [node name="shape" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -16 )

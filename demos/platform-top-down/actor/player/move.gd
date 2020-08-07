@@ -7,7 +7,7 @@ var post = {}
 
 func enter(_host):
 	host = _host
-	host.get_node("anim").play("walk")
+	host.get_node("anim").play("move")
 
 func exit(next_state):
 	host.change_to(next_state)
