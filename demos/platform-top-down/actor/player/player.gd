@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
+# Node: player
 export var speed_walk = 200
-export var speed_fall = 400
 var map_height = null
 var height = 1
 

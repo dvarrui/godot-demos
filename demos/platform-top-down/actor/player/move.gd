@@ -25,13 +25,15 @@ func update(delta):
 		dir += Vector2(-1,0)
 	if Input.is_action_pressed("player_right"):
 		dir += Vector2(1,0)
+	if Input.is_action_pressed("player_jump"):
+		exit("jump")
 	
 	motion = dir.normalized() * host.speed_walk
-	prev["tile"] = host.get_cell_id(host.get_cell_coord())
 	prev["coord"] = host.get_cell_coord()
+	prev["tile"] = host.get_cell_id(prev["coord"])
 	host.move_and_slide(motion)
-	post["tile"] = host.get_cell_id(host.get_cell_coord())
 	post["coord"] = host.get_cell_coord()
+	post["tile"] = host.get_cell_id(post["coord"])
 	
 	if post["tile"] == 0:
 		exit("die")
