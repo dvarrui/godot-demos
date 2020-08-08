@@ -456,6 +456,13 @@ collision_mask = 0
 format = 1
 tile_data = PoolIntArray( 65551, 1, 0, 65552, 1, 0, 65553, 1, 0, 65554, 1, 0, 131087, 1, 0, 131088, 1, 0, 131089, 1, 0, 131090, 1, 0 )
 
+[node name="h4" type="TileMap" parent="heights"]
+tile_set = SubResource( 2 )
+cell_size = Vector2( 48, 48 )
+collision_layer = 4
+collision_mask = 0
+format = 1
+
 [node name="map" type="TileMap" parent="."]
 tile_set = SubResource( 3 )
 cell_size = Vector2( 48, 48 )
