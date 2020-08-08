@@ -4,6 +4,7 @@ extends Node
 var host = null
 var prev = {}
 var post = {}
+var dir = Vector2.ZERO
 
 func enter(_host):
 	host = _host
@@ -16,7 +17,7 @@ func exit(next_state):
 func update(delta):
 	var motion = Vector2.ZERO
 	# Add handler code here
-	var dir = Vector2.ZERO
+	dir = Vector2.ZERO
 	if Input.is_action_pressed("player_up"):
 		dir += Vector2(0,-1)
 	if Input.is_action_pressed("player_down"):

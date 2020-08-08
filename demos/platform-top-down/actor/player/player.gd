@@ -36,7 +36,7 @@ func set_height(value):
 
 # Finity State Machine 
 func change_to(new_state):
-	history.append(state.name) 
+	history.append(state.name)
 	state = get_node("states/"+new_state)
 	_enter_state()
 
@@ -48,6 +48,8 @@ func back():
 func _enter_state():
 	if DEBUG:
 		print("Entering state: ", state.name)
+	if state.name == "jump":
+		state.dir = get_node("states/move").dir
 	# Give the new state a reference to this state machine script
 	state.enter(self)
 

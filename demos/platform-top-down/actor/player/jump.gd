@@ -7,6 +7,8 @@ var post = {}
 var GRAVITY = 450
 var SPEED = Vector2(200,300)
 var motion = Vector2.ZERO
+var dir = Vector2.ZERO 
+var going = "up"
 
 func enter(_host):
 	host = _host
@@ -23,9 +25,25 @@ func exit(next_state):
 # Optional handler functions for game loop events
 func update(delta):
 	host.move_and_slide(motion)
+	motion.x = SPEED.x/2.5 * dir.x
 	motion.y += GRAVITY * delta
+
+	post["pos"] = host.position
+	post["coord"] = host.get_cell_coord()
+	post["tile"] = host.get_cell_id(post["coord"])
 	
-	if host.position.y > prev["pos"].y:
-		host.position.y = prev["pos"].y
-		host.set_height(host.height - 1)
-		exit("move")
+	if abs(motion.y) < 2 and going == "up":
+		going = "down"
+	elif going == "down":
+		if dir.x == 0 and host.position.y > prev["pos"].y -48 * 2:
+			var tile =  host.get_cell_id(host.get_cell_coord())
+			if tile in [1, 3, 4]:
+				exit("move")
+		if dir.x == 1 and host.position.y > prev["pos"].y -48 * 2:
+			var tile =  host.get_cell_id(host.get_cell_coord())
+			if tile in [1, 3, 4]:
+				exit("move")
+		if host.position.y > prev["pos"].y:
+			host.position.y = prev["pos"].y
+			host.set_height(host.height - 1)
+			exit("move")
