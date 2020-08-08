@@ -14,7 +14,13 @@ func exit(next_state):
 	host.change_to(next_state)
 
 # Optional handler functions for game loop events
+# warning-ignore:unused_argument
 func update(delta):
+	prev["coord"] = host.get_cell_coord()
+	prev["tile"] = host.get_cell_id(prev["coord"])
+	if prev["tile"] == -1:
+		exit("fall") 
+
 	var motion = Vector2.ZERO
 	# Add handler code here
 	dir = Vector2.ZERO
