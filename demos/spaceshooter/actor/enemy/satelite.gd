@@ -41,7 +41,6 @@ func _on_satelite_area_entered(area):
 func hit():
 	life -= 1
 	if life > 0:
-		#$sprite/flash.activate() 
 		$sprite/white_flash.activate() 
 		shot("down")
 	else:

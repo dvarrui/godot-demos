@@ -1,5 +1,7 @@
 extends Node
 
+const DEBUG = false
+
 var resources = {}
 var objects = { ".":"none" }
 var data = null
@@ -27,7 +29,8 @@ func build_file_into_level(filename,level):
 			create_map_line(line[1], level)
 
 func load_filename(filename):
-	print("[INFO] Loading "+filename)
+	if DEBUG:
+		print("[INFO] Loading "+filename)
 	var file = File.new()
 	var content = []
 	file.open("res://level/" + filename, File.READ)
@@ -42,12 +45,14 @@ func load_filename(filename):
 	index = data.size()
 
 func define_object_with(symbol, type, config):
-	print("[INFO] def => <"+symbol+"> is a "+type+" with "+config)
+	if DEBUG:
+		print("[INFO] def => <"+symbol+"> is a "+type+" with "+config)
 	var obj = { "type":type, "config":config}
 	objects[symbol]= obj
 
 func create_new_object(type, config, level):
-	print("[INFO] new => "+type+" with "+config)
+	if DEBUG:
+		print("[INFO] new => "+type+" with "+config)
 	var node = resources[type].instance()
 	node.position.y = offset_y
 
@@ -67,7 +72,8 @@ func create_new_object(type, config, level):
 	level.get_node("world").add_child(node)
 
 func create_map_line(line,level):
-	print("[INFO] map => "+ line)
+	if DEBUG:
+		print("[INFO] map => "+ line)
 	offset_y -= offset_y_step
 	var offset_x = 0
 	var i = 0

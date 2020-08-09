@@ -59,7 +59,7 @@ func shot():
 func hit():
 	life -= 1
 	if life > 0:
-		$sprite/flash.activate()
+		$sprite/white_flash.activate()
 	else:
 		explode()
 
