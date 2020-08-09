@@ -25,21 +25,21 @@ Character (Node2D)
 
 * Ir al nodo raíz es del tipo Node2D y vemos que tiene la propiedad `CanvasItem -> Material -> Material` con el valor `Empty`. Añadimos material de tipo `ShaderMaterial`.
 * Ir al nodo tipo Sprite `Torso`. Modificar el valor de la propiedad `CanvasItem -> Material -> Use Parent Material` a `On`.
-* Editar `Shader Material -> Shader` y creamos un shader nuevo. Lo editamos y se nos abre una ventana para escribir el código del shader.
+* Editar `Shader Material -> Shader` y creamos un shader nuevo. Lo editamos escribimos el siguiente código shader.
 
 ```
 shader_type canvas_item;
 
-uniform vec4 flash_color : hint_color = vec4(1.0)
+uniform vec4 flash_color : hint_color = vec4(1.0);
 uniform float flash_modifier : hint_range(0.0, 1.0) = 0.0;
 
 void fragment() {
   vec4 color = texture(TEXTURE, UV);
-  color.rgb = mix(color.rgb, flah_clor.rgb, flahs_modifier);
+  color.rgb = mix(color.rgb, flash_color.rgb, flash_modifier);
   COLOR = color;
 }
 ```
 * Modificar el valor de `Shader Material -> Resource -> Resource -> Local to Scene` a `On`.
-* Editamos `ShaderMaterial` en el inspector y vemos las siguientes propiedades:
-    * `Shader Param -> Flash Color` = color blanco.
-    * `Shader Param -> Flash Mo..` = 1. Cambiando este valor la imagen toma el color anterior en mayor o menor medida.    
+* Para probar lo que hemos creado, vamos a `ShaderMaterial` y en el inspector modificamos el valor de las siguientes propiedades para ver los efectos que producen:
+    * `Shader Param -> Flash Color` => color blanco.
+    * `Shader Param -> Flash Modifier` => 1. Cambiando este valor podemos hacer que la imagen tome el color de flash en mayor o menor medida.    
