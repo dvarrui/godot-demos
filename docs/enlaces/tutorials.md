@@ -6,7 +6,6 @@
 * [Kids can code - Godot Recipes](http://kidscancode.org/godot_recipes/)
 * [Awesome Godot](https://github.com/Calinou/awesome-godot/blob/master/README.md)
 * Video: [Very simple game using Godot Engine](http://youtu.be/svoTd2gDdt4)
-* [Procedural levels](https://twitter.com/NathanGDQuest/status/1249757240774492160?s=09)
 * [Godot Signals and How to Use Them - GoTut: Game and Other Tutorials](https://www.gotut.net/godot-signals/)
 * [Game Clone Challenges](https://github.com/rby90/game-clone-challenges): A progressive list of game clones for the practicing programmer.
 * [Transiciones con Nodo Tween Godot - Avance 3 del Curso completo](https://youtu.be/dbw8pEnJChQ)
