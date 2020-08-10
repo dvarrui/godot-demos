@@ -37,17 +37,18 @@ Se pueden coger unos objetos brillantes, pero por ahora no sirven para nada.
 ![](docs/images/platform-top-down.png)
 
 * demos/platform-top-down: Es una demo que implementa la forma de juego plataformas pero con una vista top-down. Esto es, hay distintas alturas en el mapa del juego. Para subir se usan las escaleras o el salto. Para bajar se usan las escaleras, el salto o dejarse caer por el borde de un nivel.
+* Para mover el Player se usan las teclas WASD y J para saltar.
 * El player es un KinematicBody2D que inicialmente está en la capa 1 (altura 1). A medida que se sube se modifica el valor de la capa. Se usan las teclas WASD para mover el personaje.
 * Tenemos un TileMap(`map`) sin colisiones para hacer visible el mapa del juego.
 * Para representar cada altura del mapa, se usan varios nodos TileMap dentro de `heights`. Donde `h1` representa el mapa de colisiones de la altura 1, `h2` el mapa de colisiones de la altura 2, etc.
-* La lógica de funcionamiento del `player` se ha creado usando máquinas de estados. Donde tenemos los siguientes estados: `state/move`, `states/die` y `states/fall`.
-* Futuro: implementar la función de salto en el estado `states/jump`.
+* La lógica de funcionamiento del `player` se ha creado usando máquinas de estados. Donde tenemos los siguientes estados: `state/move`, `states/die`, `states/fall` y `states/jump`.
 
 ## [Roguelike](demos/roguelike)
 
 ![](docs/images/roguelike.png)
 
 * demos/roguelike: Un juego 2D de vista top-down, donde el player debe coger todas las llaves que abren la puerta para escapar del laberinto mientras esquivamos a los enemigos. Esta demo jugable puede ser adecuada para empezar a aprender.
+* Para mover el Player se usan las teclas WASD.
 * Para diseñar el mundo se ha usado TileMap y TileSet para crear un conjunto de celdas (tiles).
 * Se usa el motor de física para controlar la colisiones. El player es un KinematicBody2D y los muros del laberinto StaticBody2D.
 * Los enemigos son Area2D para poder detectar las colisiones. Además cada enemigo tiene un comportamiento diferente que se puede configurar.
