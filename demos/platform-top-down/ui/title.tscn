@@ -1,0 +1,24 @@
+[gd_scene format=2]
+
+[node name="title" type="Node2D"]
+
+[node name="background" type="ColorRect" parent="."]
+margin_right = 1025.0
+margin_bottom = 598.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="margin" type="MarginContainer" parent="."]
+margin_left = 220.486
+margin_top = 129.243
+margin_right = 856.486
+margin_bottom = 470.243
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vbox" type="VBoxContainer" parent="margin"]
+margin_right = 636.0
+margin_bottom = 341.0
