@@ -21,19 +21,90 @@ card_name = "katapult"
 
 [node name="cell1x2" parent="cells" instance=ExtResource( 4 )]
 position = Vector2( -34, 134 )
-id = "cell1x2"
 
 [node name="cell1x3" parent="cells" instance=ExtResource( 4 )]
 position = Vector2( -34, 198 )
-id = "cell1x3"
 
 [node name="cell1x4" parent="cells" instance=ExtResource( 4 )]
 position = Vector2( -34, 262 )
-id = "cell1x4"
 
 [node name="cell1x5" parent="cells" instance=ExtResource( 4 )]
 position = Vector2( -34, 325 )
-id = "cell1x5"
+
+[node name="cell2x1" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 31, 70 )
+
+[node name="cell2x2" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 31, 134 )
+
+[node name="cell2x3" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 31, 198 )
+
+[node name="cell2x4" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 31, 262 )
+
+[node name="cell2x5" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 31, 325 )
+
+[node name="cell3x1" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 95, 70 )
+
+[node name="cell3x2" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 95, 134 )
+
+[node name="cell3x3" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 95, 198 )
+
+[node name="cell3x4" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 95, 262 )
+
+[node name="cell3x5" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 95, 325 )
+
+[node name="cell4x1" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 158, 70 )
+
+[node name="cell4x2" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 158, 134 )
+
+[node name="cell4x3" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 158, 198 )
+
+[node name="cell4x4" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 158, 262 )
+
+[node name="cell4x5" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 158, 325 )
+
+[node name="cell5x1" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 222, 70 )
+
+[node name="cell5x2" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 222, 134 )
+
+[node name="cell5x3" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 222, 198 )
+
+[node name="cell5x4" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 222, 262 )
+
+[node name="cell5x5" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 222, 325 )
+
+[node name="cell6x1" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 286, 70 )
+
+[node name="cell6x2" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 286, 134 )
+
+[node name="cell6x3" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 286, 198 )
+
+[node name="cell6x4" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 286, 262 )
+
+[node name="cell6x5" parent="cells" instance=ExtResource( 4 )]
+position = Vector2( 286, 325 )
 
 [node name="label" type="Label" parent="."]
 visible = false

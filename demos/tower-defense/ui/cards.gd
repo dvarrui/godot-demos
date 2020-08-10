@@ -8,7 +8,14 @@ var data = {
 
 func _ready():
 	$cells.visible = false 
-	pass
+	var cols = [-34, 31, 95, 158, 222, 286]
+	var rows = [70, 134, 198, 262, 325 ]
+	
+	for x in range(0, cols.size()):
+		for y in range(0, rows.size()):
+			var name = str(x) + "x" + str(y)
+			print(name)
+			pass
 	
 func refresh_gout_counter(value):
 	for c in $list.get_children():
