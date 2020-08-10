@@ -10,6 +10,7 @@
 * [GDQuest/godot-visual-effects](https://github.com/GDQuest/godot-visual-effects): Open-source visual effects designed in Godot, from our VFX Secrets course. - GDQuest/godot-visual-effects
 * [Clasic Sonic palette Shader](https://github.com/raphaklaus/sonic-palette-fade/blob/master/README.md)
 * Libro sobre AI en videojuegos: http://gameaibook.org/
+* Fuentes libres https://www.dafont.com/es
 
 # Arte vectorial
 
