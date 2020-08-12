@@ -30,11 +30,11 @@ __meta__ = {
 [node name="title" type="Label" parent="panel"]
 margin_left = 16.0
 margin_top = 16.0
-margin_right = 237.0
+margin_right = 186.0
 margin_bottom = 49.0
 size_flags_horizontal = 2
 size_flags_vertical = 0
-text = "Multiplayer Demo"
+text = "Multiplayer (2 players)"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false

@@ -5,11 +5,14 @@ Este repositorio contiene pequeñas demos jugables diseñadas con la intención 
 
 1. [Arkanoid](#arkanoid)
 1. [Command](demos/command) (En construccion!)
+1. [Multiplayer 2](#multiplayer-2)
 1. [Platform](#platform)
 1. [Platform-Top-Down](#platform-top-down)
 1. [Roguelike](#roguelike)
 1. [SpaceShooter](#spaceshooter)
 1. [Tower Defense](demos/tower-defense) (En construcción!)
+
+* Más información: [Enlaces de interés, consejos y artículos relacionados.](docs/README.md)
 
 ## [Arkanoid](demos/arkanoid)
 
@@ -19,6 +22,13 @@ Este repositorio contiene pequeñas demos jugables diseñadas con la intención 
 * Se usa el motor de física en el movimiento de la pelota, aprovechando que todos los elementos del juego son cuerpos físicos: RigidBody2D(pelota), StaticBody2D(los muros), KinematicBody2D(player).
 * Hay una ventana de menú inicial, y una ventana de pausa creadas con los elementos de GUI(Container, Label y Button).
 * Futuro: añadir efecto de Particle2D a la pelota, aumentar el número de niveles, diseñar varios muros con diferentes comportamientos (Por ejemplo diferente resistencia).
+
+## [Multiplayer 2](demos/multiplayer-2)
+
+![](docs/images/multiplayer-2.png)
+
+* demos/multiplayer-2: Es una versión simplificada de la [demo Pong en red](https://github.com/godotengine/godot-demo-projects/tree/master/networking/multiplayer_pong). A partir de este juego se ha simplificado al máximo para dejar una estructura mínima que simplemente refleje la conexión entre dos programas (servidor y cliente) y cómo se sincronizan los cambios entre ellos.
+* Para poder verlo en acción en necesario ejecutar el mismo programa 2 veces. En máquinas diferentes conectadas en red o en la misma máquina.
 
 ## [Platform](demos/platform)
 
@@ -70,7 +80,3 @@ Se pueden coger unos objetos brillantes, pero por ahora no sirven para nada.
 * demos/tower-defense: EN CONSTRUCCION. Los assets son de Aarón VJ, creados con Gimp.
 * De momento sólo permite escoger entre 2 tipos de cartas, y colocar las piezas en la primera columna del tablero.
 * Futuro: En construcción!
-
-# Información sobre videojuegos y Godot
-
-[Enlaces de interés, consejos y artículos relacionados.](docs/README.md)
