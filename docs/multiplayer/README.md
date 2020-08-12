@@ -1,14 +1,14 @@
 
-# Multiplayer game
+# Multiplayer - 2 jugadores
 
 > Enlaces de interés:
 > * [Pong multijugador](
 https://github.com/godotengine/godot-demo-projects/tree/master/networking/multiplayer_pong/)
 > * [Godot dedicated server tutorial](https://mrminimal.gitlab.io/2018/07/26/godot-dedicated-server-tutorial.html)
 
-Vamos a ver un ejemplo sencillo para crear una estructura de juego en red para dos 2 jugadores simultáneos, usando las utilidades de red que proporciona el propio Godot Engine a través de a clase NetworkedMultiplayerENet ([Ver código](../../demos/multiplayer)).
+Vamos a ver un ejemplo sencillo para crear una estructura de juego en red para dos 2 jugadores simultáneos, usando las utilidades de red que proporciona el propio Godot Engine a través de la clase NetworkedMultiplayerENet que proporciona un API de red de alto nivel ([Ver código del ejemplo](../../demos/multiplayer)).
 
-El ejemplo lo estructuramos en las siguientes partes:
+El código de nuestro ejemplo lo estructuramos en las siguientes partes:
 1. Escena [lobby](#lobby)
 2. Escena [level1](#level1)
 3. Escena [player](#player)
@@ -133,3 +133,16 @@ puppet func set_pos_and_motion(p_pos, p_motion):
 * La función `_process()` se ejecuta en MV1 y MV2, pero como MV1 es el master de player1, player1 sólo responde a las órdenes del teclado realizadas en la MV1. Lo mismo con player2. El master de player2 es la MV2, por lo que sólo responderá a las entradas de teclado producidas en la MV2.
 * Cuando player2 tiene un cambio de `motion` en MV2, invoca la función `rpc_unreliable("set_pos_and_motion", position, motion)` para enviar estos datos al servidor MV1. Cuando el sevidor MV1 recibe la llamada, invoca el método `set_pos_and_motion` para informar en el servidor del cambio que se ha producido.
 * Recordar que el juego se está ejecutando en MV1 y MV2. Hay copia de los nodos level1, player1 y player2 en MV1 y MV2. El cliente controla player2 y hace sus cambios en local pero debe informar al servidor para que actualice su copia.
+
+## Resumen
+
+* Cuando se establece la conexión de red entre el servidor (MV1) y el cliente (MV2), ambos ejecutan el mismo juego con la misma estructura de nodos (lobby, level1, player1 y player2).
+* Algunos de estos nodos serán controlados por el servidor (level1, player1) y otros por el cliente (player2). Esto se consigue definiendo el "master" de cada nodo con su ID correspondiente.
+* Para probar nuestro juego en red, lo ejecutaremos en dos máquinas diferentes.
+
+|        | MV1      | MV2     |
+| ------ | -------- | ------- |
+| Modo   | Servidor | Cliente |
+| ID     | 1        | 2       |
+| Nodos  | lobby, level1, player1, player2 | lobby, level1, player1, player2 |
+| Master | level1, player1 | player2 |
