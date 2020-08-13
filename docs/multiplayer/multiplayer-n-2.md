@@ -10,19 +10,30 @@ Vamos a diseñar una ventana principal ("main_menu") sencilla para poder elegir 
 
 ## 2.1 Eventos de red
 
-Veamos algunos eventos que genera el sistema de red de Godot:
+El sistema de red genera algunos eventos que debemos escuchar para actuar en consecuencia.
+
+Eventos que genera el sistema de red de Godot:
 * **connected_to_server()**: Se emite cuando un cliente se une al servidor.
 * **connection_failed()**: Cuando falla el intento de un ciente de unirse a un servidor
 * **network_peer_connected(id)**: Se envía a todos los conectados al servidor cuando se une un nuevo cliente. ID es el identificador del nuevo cliente.
 * **network_peer_disconnected(id)**: Cuando el cliente ID se desconecta del servidor, se envía esta señal a todo el mundo.
 * **server_disconnected()**: Evento recibio por un cliente cuando se desconecta del servidor.
 
-Para estar atentos a estos eventos de red y responder en consecuencia debemos hacer dos cosas:
-
-* (a) crear unas funciones con el código de respuesta.
+> El fichero singleton "network.gd" lo usaremos para almacenar todas las funciones que tengan que ver con el manejo de la red.
 
 ```
 # File: network.gd
+
+# Conectar las señales (eventos) a funciones.
+
+func _ready():
+	get_tree().connect("network_peer_connected", self, "_on_player_connected")
+	get_tree().connect("network_peer_disconnected", self, "_on_player_disconnected")
+	get_tree().connect("connected_to_server", self, "_on_connected_to_server")
+	get_tree().connect("connection_failed", self, "_on_connection_failed")
+	get_tree().connect("server_disconnected", self, "_on_disconnected_from_server")
+
+# Crear funciones con el código de respuesta a los eventos.
 
 # Everyone gets notified whenever a new client joins the server
 func _on_player_connected(id):
@@ -45,25 +56,12 @@ func _on_disconnected_from_server():
 	pass
 ```
 
-* , y (b) conectar las señales (eventos) a dichas funciones.
-
-```
-# File: network.gd
-
-func _ready():
-	get_tree().connect("network_peer_connected", self, "_on_player_connected")
-	get_tree().connect("network_peer_disconnected", self, "_on_player_disconnected")
-	get_tree().connect("connected_to_server", self, "_on_connected_to_server")
-	get_tree().connect("connection_failed", self, "_on_connection_failed")
-	get_tree().connect("server_disconnected", self, "_on_disconnected_from_server")
-```
-
 ## 2.2 Crear el servidor
 
 Vamos a crear el código necesario en "network.gd" para crear el servidor de red.
 
 ```
-#File: network.gd
+# File: network.gd
 
 var server_info = {
 	name = "Server",      # Holds the name of the server
@@ -88,7 +86,7 @@ func create_server():
 	emit_signal("server_created")
 ```
 
-La función anterior se invocará desde el "main_menu", cuando se pulse el botón "btCreate".
+La función anterior se invocará desde el "main_menu". Cuando se pulse el botón de crear servidor, se emitirá la señal "server_created", y cuando se reciba se cargará la escena principal del juego ("game_world.tscn").
 
 ```
 # File: main_menu.gd
@@ -110,11 +108,9 @@ func _on_btCreate_pressed():
 	network.create_server()
 ```
 
-Cuando se pulse el botón de crear servidor, si se ha creado correctamente se emite la señal "server_created" que cuando se recibe hará que se cargué la escena principal del juego "game_world.tscn".
-
 ## 2.3 Unirse a un servidor
 
-Creamos el código de red necesario para unir un cliente a un servidor:
+Vamos a añadir código en "network.gd" para unir un cliente a un servidor:
 
 ```
 # File: network.gd
@@ -143,9 +139,7 @@ func _on_connection_failed():
 	get_tree().set_network_peer(null)
 ```
 
-Ahora modificamos "main_menu" para poder invocar la función anterior desde el "btnJoin".
-
-We now can join a server, we just need to call this function from the main menu! Ok, we also need to listen to the signals telling about success or failure. So, let’s first connect them. For the success we will reuse the `_on_ready_to_play()` function, although it would be a good idea to separate that into a different function if there is any need to perform different tasks based on wether we are creating or joining a server. As for the failure we will create a new function shortly. The connections:
+Ahora hay que modificar "main_menu" para invocar la función anterior desde el "btnJoin".
 
 ```
 # File: main_menu.gd
@@ -169,8 +163,6 @@ func _on_btJoin_pressed():
 Para poder comprobar lo que tenemos:
 * Exportar el proyecto y crear un ejecutable.
 * Ejecutar el proyecto desde el editor, para usarlo como servidor.
-* Ejecutar el proyecto desde el ejecutable para usarlo como cliente.
-
-En la siguiente sección añadiremos objetos a nuestro "game world" y los sincronizaremos entre todas las máquinas.
+* Ejecutar la aplicación desde el ejecutable para usarlo como cliente.
 
 [next >>](multiplayer-n-3.md)

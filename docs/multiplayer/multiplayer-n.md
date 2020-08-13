@@ -13,20 +13,14 @@ _Traducción al español del artículo "Kehom's Forge - Multiplayer Game Setup i
 
 ## Introducción
 
-En este tutorial vamos a ver los pasos necesarios para configurar un juego multiusuario en Godot para un número N de jugadores.
+Vamos a ver los pasos para configurar un juego en red con Godot para un número N de jugadores.
 
-En la mayoría de tutoriales se trabaja con un "lobby" para establecer las conexiones entre los participantes. Esto es, en el "lobby" nos quedaríamos todos esperando hasta completar el número de jugadores conectados antes de empezar a jugar. Pero en este tutorial, no vamos a tener un "lobby". Una vez se establece la conexión, inmediatamente entramos a jugar sin esperar por el resto de participantes.
+Muchos proyectos usan una escena "lobby", donde nos quedamos esperando hasta se hayan establecido las conexiones entre todos los participantes. En esta guía no vamos a tener un "lobby". Una vez que se establece la conexión, entramos a jugar inmediatamente sin esperar por el resto de participantes. Esto nos permite tener una cantidad variable de participantes.
 
-Cuando se inicia el "juego" empezamos con un menú principal donde podemos elegir:
-* Crear un servidor o unirnos como cliente a un servidor existente.
-* Personalizar nuestro color.
+El juego se inicia con un menú principal donde podemos:
+* Personalizar nuestro nombre y color.
+* Crear un servidor de red o unirnos como cliente a un servidor existente.
 
-Cuando creamos el servidor, podemos establecer:
-* La cantidad máxima de jugadores que se podrán conectar.
-* El número del puerto de conexión.
-
-Una vez creado el servidor, pasamos a la escena del juego y a mostrar el jugador.
-Más adelante, completaremos con "bots" hasta llegar al número máximo de jugadores.
 
 En resumen, este tutorial abarcará lo siguiente:
 * Inicialización de red.
@@ -34,10 +28,10 @@ En resumen, este tutorial abarcará lo siguiente:
 * Lógica para rellenar el juego con bots.
 
 Estructura del tutorial:
-1. Sistema de red de lto nivel de Godot: Breve repaso de las características del sistema de red que proporciona Godot. Configuraremos la base de nuestro proyecto.
-2. Menú principal: Trabajaremos con el menú principal y usaremos el código base de red para crear el servidor o unirnos a uno.
-3. Sincronización: Crearemos un sistema de gestión de jugadores sencilla que nos permita mostrar los jugadores conectados. Luego colocaremos cada jugador en el mundo del juego y los sincronizaremos entre ellos.
-4. Bots: Añadiremos una inteligencia artificial rudimentaria para los "bots" que se usarán para completar el número máximo de jugadores. Todo además sincronizado entre los jugadores conectados.
+1. **Sistema de red de alto nivel de Godot**: Breve repaso de las características del sistema de red que proporciona Godot.
+2. **Menú principal**: En el menú principal se establece la conexión de red con el servidor o se crea el servidor si somos el primer jugador.
+3. **Sincronización**: Crearemos las escenas "game_world" y "player" para tener un mundo de juego y jugadores. Lo más importante es ver cómo se sincronizan estas escenas entre todas las máquinas.
+4. **Bots**: Si no tenemos suficientes jugadores dentro del juego, completaremos añadiendo "bots" con una inteligencia muy básica. Además estos "bots" deben estar sincronizados entre todas las máquinas.
 
 > Se puede [descargar el código del proyecto](https://github.com/Kehom/gdMultiplayerTutorial)
 
@@ -46,7 +40,7 @@ Estructura del tutorial:
 > Enlace de interés:
 * [Godot’s networking documentation](https://docs.godotengine.org/en/3.1/tutorials/networking/index.html)
 
-El sistema de red de alto nivel de Godot recae en la clase "NetworkedMultiplayerENet". La usaremos para crear el servidor y los clientes. Cuando la conexión está establecida podemos invocar la ejecución de funciones en las máquinas remotas usando llamadas RPC (Remote Procedura Call). Además, para que una función pueda ser invocada de forma remota debe estar definida con la palabra clave "remote".
+El sistema de red de alto nivel de Godot se lleva a cabo en la clase **NetworkedMultiplayerENet**. Nos permitirá crear el servidor de red y las conexiones de los clientes. Si definimos una función con la palabra clave "remote", podremos invocar su ejecución en las máquinas remotas usando llamadas RPC (Remote Procedure Call).
 
 ```
 remote func function_name(arguments):
@@ -54,7 +48,7 @@ remote func function_name(arguments):
 ```
 
 Tenemos las siguientes métodos para invocar una función remota:
-* **rpc()**: Llama a una función remota de todos los equipos remotos y también en el equipo local. Pero nunca llama a una función del servidor.
+* **rpc()**: Llama a una función remota de todos las máquinas y también en el equipo local. Pero nunca llama a una función del servidor.
 * **rpc_id()**: Llama a una función remota de una determinada máquina (ID). Debemos tener cuidado para no usarla con nuestro ID local.
 * **rpc_unreliable()**: Funciona de forma similar a "rpc()"", pero usando un protocolo de red (UDP) no confiable pero mucho más rápido.
 * **rpc_unreliable_id()**: Funciona de forma similar a "rpc_id()", pero usando un protocolo de red no confiable pero mucho más rápido.
@@ -65,7 +59,7 @@ Si declaramos las variables de la siguiente forma:
 slave var variable_name
 ```
 
-También podemos mantener sincronizados su valores entre las diferentes máquinas usando las siguientes funciones:
+Podemos mantener sincronizados su valores entre las diferentes máquinas usando las siguientes funciones:
 
 * **rset()**: Cambia el valor de la variable en todas las máquinas remotas y localmente.
 * **rset_id()**: Es similar a "rset()" pero sólo se ejecuta en la máquina especificada (ID).
@@ -76,8 +70,8 @@ También podemos mantener sincronizados su valores entre las diferentes máquina
 ## 1.1 Configuración del proyecto
 
 * Creamos un proyecto nuevo de Godot.
-* Nuestra primera escena se llamará "main_menu". Tendrá un nodo raíz de tipo "CanvasLayer" y la grabamos como "main_menu.tscn" y la configuramos para que sea nuestra escena inicial del proyecto.
-* Ahora creamos una escena llamada "game world". Tendrá un nodo raíz de tipo "Node2D" y la grabamos como game_world.tscn".
+* Nuestra primera escena se llamará "main_menu". Tendrá un nodo raíz de tipo "CanvasLayer" y la grabamos como "main_menu.tscn". La configuramos para que sea nuestra escena inicial del proyecto.
+* Ahora creamos una escena llamada "game world". Tendrá un nodo raíz de tipo "Node2D" y la grabamos como "game_world.tscn".
 * Usaremos singletons para guardar el código de red y el estado del juego. Crearemos los ficheros "gamestate.gd" y "network.gd" heredando de Node:
 
 ```
