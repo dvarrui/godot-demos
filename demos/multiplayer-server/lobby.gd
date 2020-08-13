@@ -18,7 +18,7 @@ func _client_connected(id):
 
 	var new_client = load("res://remote_client.tscn").instance()
 	new_client.set_name(str(id))     # spawn players with their respective names
-	get_tree().get_root().add_child(new_client)
+	add_child(new_client)
 
 func _client_disconnected(id):
 	get_node(id).free()
