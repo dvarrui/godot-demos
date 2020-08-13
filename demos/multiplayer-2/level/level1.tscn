@@ -21,7 +21,9 @@ __meta__ = {
 }
 
 [node name="player1" parent="." instance=ExtResource( 1 )]
+modulate = Color( 0.415686, 0.898039, 0.4, 1 )
 position = Vector2( 106, 135 )
 
 [node name="player2" parent="." instance=ExtResource( 1 )]
+modulate = Color( 0.94902, 0.643137, 0.117647, 1 )
 position = Vector2( 325, 135 )

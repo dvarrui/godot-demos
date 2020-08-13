@@ -3,7 +3,7 @@ extends Control
 const DEFAULT_PORT = 8910 # An arbitrary number.
 
 onready var address = $panel/address
-onready var host_button = $panel/host_button
+onready var server_button = $panel/server_button
 onready var join_button = $panel/join_button
 onready var status_ok = $panel/status_ok
 onready var status_fail = $panel/status_fail
@@ -16,6 +16,10 @@ func _ready():
 	get_tree().connect("connection_failed", self, "_connected_fail")
 	get_tree().connect("server_disconnected", self, "_server_disconnected")
 
+func _process(delta):
+	if Input.is_action_just_pressed("game_exit"):
+		get_tree().quit()
+
 #### Network callbacks from SceneTree ####
 
 # Callback from SceneTree.
@@ -23,8 +27,7 @@ func _player_connected(_id):
 	# Someone connected, start the game!
 	var level = load("res://level/level1.tscn").instance()
 	# Connect deferred so we can safely erase it from the callback.
-#	level.connect("game_finished", self, "_end_game", [], CONNECT_DEFERRED)
-	level.connect("game_finished", self, "_end_game")
+	level.connect("game_finished", self, "_end_game", [], CONNECT_DEFERRED)
 	get_tree().get_root().add_child(level)
 	hide()
 
@@ -42,7 +45,7 @@ func _connected_ok():
 func _connected_fail():
 	_set_status("Couldn't connect", false)
 	get_tree().set_network_peer(null) # Remove peer.	
-	host_button.set_disabled(false)
+	server_button.set_disabled(false)
 	join_button.set_disabled(false)
 
 func _server_disconnected():
@@ -57,7 +60,7 @@ func _end_game(with_error = ""):
 		show()
 	
 	get_tree().set_network_peer(null) # Remove peer.
-	host_button.set_disabled(false)
+	server_button.set_disabled(false)
 	join_button.set_disabled(false)
 	_set_status(with_error, false)
 
@@ -71,7 +74,7 @@ func _set_status(text, isok):
 		status_ok.set_text("")
 		status_fail.set_text(text)
 
-func _on_host_button_pressed():
+func _on_server_button_pressed():
 	var host = NetworkedMultiplayerENet.new()
 	host.set_compression_mode(NetworkedMultiplayerENet.COMPRESS_RANGE_CODER)
 	var err = host.create_server(DEFAULT_PORT, 1) # Maximum of 1 peer, since it's a 2-player game.
@@ -81,7 +84,7 @@ func _on_host_button_pressed():
 		return
 	
 	get_tree().set_network_peer(host)
-	host_button.set_disabled(true)
+	server_button.set_disabled(true)
 	join_button.set_disabled(true)
 	_set_status("Waiting for player...", true)
 

@@ -1,6 +1,6 @@
 extends Node2D
 
-signal game_finished()
+signal game_finished
 
 onready var player1 = $player1
 onready var player2 = $player2
@@ -17,5 +17,5 @@ func _ready():
 		player2.set_network_master(get_tree().get_network_unique_id())
 
 func _process(delta):
-	if Input.is_action_pressed("game_exit"):
-		emit_signal("game_finish")
+	if Input.is_action_just_pressed("game_menu"):
+		emit_signal("game_finished")
