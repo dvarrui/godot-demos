@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://client.tscn" type="PackedScene" id=2]
+
+[node name="lobby" type="Node2D"]
+
+[node name="client" parent="." instance=ExtResource( 2 )]

@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Multiplayer (server)"
+config/name="Multiplayer (client)"
 run/main_scene="res://lobby.tscn"
 config/icon="res://icon.png"
 
