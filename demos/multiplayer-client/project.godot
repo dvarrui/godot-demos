@@ -19,6 +19,10 @@ config/name="Multiplayer (client)"
 run/main_scene="res://lobby.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=600
+
 [input]
 
 player_letf={

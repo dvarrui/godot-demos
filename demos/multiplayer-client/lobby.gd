@@ -17,7 +17,6 @@ func _ready():
 	get_tree().connect("server_disconnected", self, "_on_disconnected_from_server")
 	id = get_tree().get_network_unique_id()
 	client.init(id)
-	print("[CLIENT] path="+ get_path() + " (id=" + str(id) + ")" )
 
 func _on_connected_to_server():
 	print("[CLIENT] Connected to server")
@@ -32,7 +31,13 @@ func _on_disconnected_from_server():
 func _process(delta):
 	if Input.is_action_pressed("game_quit"):
 		get_tree().quit()
-		print("[CLIENT] Quit!")
+		print("[CLIENT] Quit! (" + str(id)+ ")")
 		
-remote func spawn_remote_client(id, pos):
-	pass
+remote func spawn_rep_client(id, pos):
+	var rep_client = load("res://actor/rep_client.tscn").instance()
+	rep_client.init(id, pos)
+	add_child(rep_client)
+
+remote func despawn_rep_client(id):
+	print("[CLIENT] Despawn id="+str(id))
+	get_node(str(id)).queue_free()

@@ -16,9 +16,13 @@ func _ready():
 func _client_connected(id):
 	print('[SERVER] Client connected (id=' + str(id) + ')')
 
-	var new_client = load("res://actor/remote_client.tscn").instance()
-	new_client.init(str(id))     # spawn players with their respective names
-	add_child(new_client)
+	var rep_client = load("res://actor/rep_client.tscn").instance()
+	rep_client.init(id)     # spawn players with their respective names
+	
+	for i in self.get_children():
+		rpc_id(int(i.name), "spawn_rep_client", id, Vector2.ZERO)
+		rpc_id(id, "spawn_rep_client", int(i.name), i.position)
+	add_child(rep_client)
 
 func _client_disconnected(id):
 	print("[SERVER] Client disconnected (id=" + str(id) + ")")
