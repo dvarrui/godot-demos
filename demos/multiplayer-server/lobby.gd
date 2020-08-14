@@ -11,14 +11,15 @@ func _ready():
 	id = get_tree().get_network_unique_id()
 	get_tree().connect("network_peer_connected",    self, "_client_connected"   )
 	get_tree().connect("network_peer_disconnected", self, "_client_disconnected")
-	print("[SERVER] Server (id="+ str(id) +") running " + get_path())
+	print("[SERVER] path=" + get_path() + "(id=" + str(id) + ")")
 	
 func _client_connected(id):
-	print('[SERVER] Client ' + str(id) + ' connected to Server')
+	print('[SERVER] Client connected (id=' + str(id) + ')')
 
-	var new_client = load("res://remote_client.tscn").instance()
-	new_client.set_name(str(id))     # spawn players with their respective names
+	var new_client = load("res://actor/remote_client.tscn").instance()
+	new_client.init(str(id))     # spawn players with their respective names
 	add_child(new_client)
 
 func _client_disconnected(id):
-	get_node(id).free()
+	print("[SERVER] Client disconnected (id=" + str(id) + ")")
+	get_node(str(id)).free()
