@@ -8,7 +8,7 @@ func init(p_id):
 	name = str(id)
 	$sprite/label.text = str(id)
 
-func _ready():
+func show_info():
 	print("[CLIENT] path="+get_path()+" id="+str(id))
 	
 func _process(delta):

@@ -20,6 +20,7 @@ func _ready():
 
 func _on_connected_to_server():
 	print("[CLIENT] Connected to server")
+	client.show_info()
 
 func _on_connection_failed():
 	print("[CLIENT] Connection failed")
@@ -30,6 +31,7 @@ func _on_disconnected_from_server():
 	
 func _process(delta):
 	if Input.is_action_pressed("game_quit"):
+		rpc("despawn_rep_client", id)
 		get_tree().quit()
 		print("[CLIENT] Quit! (" + str(id)+ ")")
 		
