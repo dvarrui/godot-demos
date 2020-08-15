@@ -1,7 +1,7 @@
 
 # Godot
 
-Este repositorio contiene pequeñas demos jugables diseñadas con la intención de ser fáciles de aprender y enseñar. Los proyectos has sido creadas con el motor **Godot Engine** (versión 3.2), y usando otros recursos libres.
+Este repositorio contiene pequeñas demos jugables diseñadas con la intención de ser fáciles de aprender y enseñar. Los proyectos has sido creadas con el motor **Godot Engine** (versión 3.2.2), y usando otros recursos libres.
 
 1. [Arkanoid](#arkanoid)
 1. [Command](demos/command) (En construccion!)
@@ -29,6 +29,15 @@ Este repositorio contiene pequeñas demos jugables diseñadas con la intención 
 
 * demos/multiplayer-2: Es una versión simplificada de la [demo Pong en red](https://github.com/godotengine/godot-demo-projects/tree/master/networking/multiplayer_pong). A partir de este juego se ha simplificado al máximo para dejar una estructura mínima que simplemente refleje la conexión entre dos programas (servidor y cliente) y cómo se sincronizan los cambios entre ellos.
 * Para poder verlo en acción en necesario ejecutar el mismo programa 2 veces. En máquinas diferentes conectadas en red o en la misma máquina.
+* El mismo programa se ejecuta dos veces (en dos máquinas diferentes o en la misma). Un ejecutable asume el rol de servidor (player1) y el otro el del cliente (player2). Tanto el código del servidor como el del cliente están ambos integrados en el mismo proyecto.
+
+## Multiplayer (server-client)
+
+* Este es un ejemplo muy simplificado de un programa que permite la conexión de un número variable de jugadores.
+* El ejemplo está compuesto por dos proyectos separados: programa del servidor y
+    * demos/multiplayer-server: programa que ejecuta el servidor. Por defecto el servidor trabaja en el puerto 5000. Puede ser necesario abrir el cortafuegos.
+    * demos/multiplayer-client: programa que ejecuta cada uno de los clientes.
+* El proyecto está basado en las ideas de [Godot dedicated server tutorial](https://mrminimal.gitlab.io/2018/07/26/godot-dedicated-server-tutorial.html)
 
 ## [Platform](demos/platform)
 
