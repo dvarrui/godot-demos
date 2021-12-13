@@ -14,4 +14,4 @@ position = Vector2( 370.695, -138.966 )
 position = Vector2( 711.451, 78.9221 )
 
 [node name="Position2D3" type="Position2D" parent="enemy"]
-position = Vector2( 105.654, 228.38 )
+position = Vector2( 65.1997, 219.39 )
