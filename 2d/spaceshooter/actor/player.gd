@@ -43,4 +43,6 @@ func explode():
 	var level = get_tree().root.get_node("level")
 	level.add_child(explosion)
 	level.finish_game()
-	queue_free()
+	self.hide()
+	self.position=Vector2(-100,-100)
+	#queue_free()

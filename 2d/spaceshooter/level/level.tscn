@@ -44,5 +44,6 @@ text = "Space SHOOTER"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="timeout" from="timer/endgame" to="." method="_on_endgame_timeout"]
 [connection signal="timeout" from="timer/startgame" to="." method="_on_startgame_timeout"]

@@ -11,9 +11,7 @@ height = 36.0
 radius = 12.0
 height = 30.0
 
-[node name="player" type="Area2D" groups=[
-"player",
-]]
+[node name="player" type="Area2D" groups=["player"]]
 script = ExtResource( 2 )
 
 [node name="sprite" type="Sprite" parent="."]
@@ -27,4 +25,5 @@ shape = SubResource( 1 )
 position = Vector2( 0, 12 )
 rotation = 1.5708
 shape = SubResource( 2 )
+
 [connection signal="area_entered" from="." to="." method="_on_player_area_entered"]

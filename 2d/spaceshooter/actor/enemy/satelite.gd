@@ -21,8 +21,8 @@ func _process(delta):
 	update_movement(delta)
 	if player==null:
 		return
-	if abs(position.y-player.position.y) < distance_y:
-		if position.x < player.position.x:
+	if abs(self.position.y-player.position.y) < distance_y:
+		if self.position.x < player.position.x:
 			shot("right")
 		else:
 			shot("left")
