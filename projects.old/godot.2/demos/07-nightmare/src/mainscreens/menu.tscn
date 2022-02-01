@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=1]
+
+[ext_resource path="res://src/mainscreens/menu.gd" type="Script" id=1]
+[ext_resource path="res://src/actors/backgrounds/background1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/actors/backgrounds/tattoine.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/images/title.png" type="Texture" id=4]
+[ext_resource path="res://assets/font/emulogic.fnt" type="BitmapFont" id=5]
+[ext_resource path="res://assets/musics/PremiumMusic-CinematicHardRockTensionAtmosphere.wav" type="Sample" id=6]
+
+[sub_resource type="SampleLibrary" id=1]
+
+samples/default = { "db":0.0, "pitch":1.0, "sample":ExtResource( 6 ) }
+
+[node name="menu" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="background1" parent="." instance=ExtResource( 2 )]
+
+[node name="tattoine" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 744.901, 607.946 )
+
+[node name="title" type="Sprite" parent="."]
+
+transform/pos = Vector2( 546.15, 305.643 )
+texture = ExtResource( 4 )
+
+[node name="buttons" type="Node2D" parent="."]
+
+[node name="btn_play" type="Button" parent="buttons"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 577.0
+margin/top = 325.0
+margin/right = 659.0
+margin/bottom = 365.0
+custom_fonts/font = ExtResource( 5 )
+toggle_mode = true
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Play"
+flat = false
+
+[node name="btn_controls" type="Button" parent="buttons"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 672.0
+margin/top = 325.0
+margin/right = 812.0
+margin/bottom = 365.0
+custom_fonts/font = ExtResource( 5 )
+toggle_mode = true
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Controls"
+flat = false
+
+[node name="btn_exit" type="Button" parent="buttons"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 825.0
+margin/top = 325.0
+margin/right = 907.0
+margin/bottom = 365.0
+custom_fonts/font = ExtResource( 5 )
+toggle_mode = true
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Exit"
+flat = false
+
+[node name="music" type="SamplePlayer2D" parent="."]
+
+params/volume_db = 0.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = SubResource( 1 )
+config/pitch_random = 0.0
+
+[connection signal="pressed" from="buttons/btn_play" to="." method="_on_btn_play_pressed"]
+
+[connection signal="pressed" from="buttons/btn_controls" to="." method="_on_btn_controls_pressed"]
+
+[connection signal="pressed" from="buttons/btn_exit" to="." method="_on_btn_exit_pressed"]
+
+

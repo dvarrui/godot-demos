@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://partials/forest_static_tree.gd" type="Script" id=1]
+[ext_resource path="res://actors/tree/tree.tscn" type="PackedScene" id=2]
+
+[node name="forest_static_tree" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="tree" parent="." instance=ExtResource( 2 )]
+position = Vector2( -12.6934, 72.987 )
+
+[node name="tree2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 71.0795, 69.7871 )
+
+[node name="tree3" parent="." instance=ExtResource( 2 )]
+position = Vector2( -101.764, 162.21 )
+
+[node name="tree4" parent="." instance=ExtResource( 2 )]
+position = Vector2( -95.3777, 72.2058 )
+
+[node name="tree5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 70.263, 152.664 )
+

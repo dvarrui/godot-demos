@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://src/actors/backgrounds/star.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprite/stars.png" type="Texture" id=2]
+
+[node name="star" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="sprites" type="Node2D" parent="."]
+
+[node name="sprite1" type="Sprite" parent="sprites"]
+
+visibility/visible = false
+z/z = -47
+texture = ExtResource( 2 )
+region = true
+region_rect = Rect2( 27, 0, 4, 4 )
+
+[node name="sprite2" type="Sprite" parent="sprites"]
+
+visibility/visible = false
+z/z = -50
+texture = ExtResource( 2 )
+region = true
+region_rect = Rect2( 0, 0, 4, 4 )
+
+[node name="sprite3" type="Sprite" parent="sprites"]
+
+visibility/visible = false
+z/z = -46
+texture = ExtResource( 2 )
+region = true
+region_rect = Rect2( 43, 0, 7, 7 )
+
+[node name="sprite4" type="Sprite" parent="sprites"]
+
+visibility/visible = false
+z/z = -48
+texture = ExtResource( 2 )
+region = true
+region_rect = Rect2( 16, 0, 7, 7 )
+
+[node name="sprite5" type="Sprite" parent="sprites"]
+
+visibility/visible = false
+z/z = -49
+texture = ExtResource( 2 )
+region = true
+region_rect = Rect2( 8, 0, 4, 8 )
+
+[node name="sprite6" type="Sprite" parent="sprites"]
+
+visibility/visible = false
+z/z = -46
+texture = ExtResource( 2 )
+region = true
+region_rect = Rect2( 35, 0, 4, 8 )
+
+

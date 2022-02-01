@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=1]
+
+[ext_resource path="res://src/actors/player/player.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprite/x-wing3.png" type="Texture" id=2]
+[ext_resource path="res://assets/sound/laser-shot-water.wav" type="Sample" id=3]
+[ext_resource path="res://src/actors/player/engine.tscn" type="PackedScene" id=4]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 7.48258, 3.8085, 23.5606, 8.07016, 23.9481, 27.8287, -23.8987, 27.8287, -23.8987, 8.07016, -7.82063, 4.19593 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 7.48258, 3.8085, -7.82063, 4.19593, -4.33382, -20.018, 3.80206, -19.8243 )
+
+[sub_resource type="SampleLibrary" id=3]
+
+samples/shot = { "db":0.0, "pitch":1.0, "sample":ExtResource( 3 ) }
+
+[node name="player" type="KinematicBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+
+[node name="shape" type="CollisionPolygon2D" parent="."]
+
+build_mode = 0
+polygon = Vector2Array( -4.33382, -20.018, 3.80206, -19.8243, 7.48258, 3.8085, 23.5606, 8.07016, 23.9481, 27.8287, -23.8987, 27.8287, -23.8987, 8.07016, -7.82063, 4.19593 )
+shape_range = Vector2( 0, 1 )
+trigger = false
+
+[node name="sprite" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+
+[node name="sound" type="SamplePlayer2D" parent="."]
+
+params/volume_db = 0.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = SubResource( 3 )
+config/pitch_random = 0.0
+
+[node name="bullets" type="Node2D" parent="."]
+
+[node name="engine" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 0, 40 )
+
+

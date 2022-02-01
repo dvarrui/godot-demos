@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://src/actors/player/engine.gd" type="Script" id=1]
+[ext_resource path="res://assets/effect/blue-fire.png" type="Texture" id=2]
+[ext_resource path="res://assets/effect/blue-fire2.png" type="Texture" id=3]
+[ext_resource path="res://assets/effect/blue-fire3.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ], "loop":true, "name":"default", "speed":5.0 } ]
+
+[node name="engine" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+
+transform/pos = Vector2( 0, 2.81819 )
+frames = SubResource( 1 )
+animation = "default"
+frame = 1
+playing = true
+
+

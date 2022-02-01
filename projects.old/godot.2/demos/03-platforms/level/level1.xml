@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resource_file type="PackedScene" subresource_count="4" version="2.1" version_name="Godot Engine v2.1.stable.official">
+	<ext_resource path="res://level/level1.gd" type="Script" index="0"></ext_resource>
+	<ext_resource path="res://player/player.xml" type="PackedScene" index="1"></ext_resource>
+	<ext_resource path="res://platforms/platform.xml" type="PackedScene" index="2"></ext_resource>
+	<main_resource>
+		<dictionary name="_bundled" shared="false">
+			<string> "conn_count" </string>
+			<int> 0 </int>
+			<string> "conns" </string>
+			<int_array  len="0"> 				 </int_array>
+			<string> "editable_instances" </string>
+			<array  len="0" shared="false">
+			</array>
+			<string> "names" </string>
+			<string_array  len="14">
+				<string> "level" </string>
+				<string> "script/script" </string>
+				<string> "Node2D" </string>
+				<string> "player" </string>
+				<string> "platforms" </string>
+				<string> "platform" </string>
+				<string> "transform/pos" </string>
+				<string> "platform1" </string>
+				<string> "platform2" </string>
+				<string> "platform3" </string>
+				<string> "platform4" </string>
+				<string> "platform5" </string>
+				<string> "platform6" </string>
+				<string> "platform7" </string>
+			</string_array>
+			<string> "node_count" </string>
+			<int> 11 </int>
+			<string> "node_paths" </string>
+			<array  len="0" shared="false">
+			</array>
+			<string> "nodes" </string>
+			<int_array  len="95"> 				-1, -1, 2, 0, -1, 1, 1, 0, 0, 0, 0, 2147483647, 3, 1, 0, 0, 0, 0, 2, 4, -1, 0, 0, 2, 0, 2147483647, 5, 2, 1, 6, 3, 0, 2, 0, 2147483647, 7, 2, 1, 6, 4, 0, 2, 0, 2147483647, 8, 2, 1, 6, 5, 0, 2, 0, 2147483647, 9, 2, 1, 6, 6, 0, 2, 0, 2147483647, 10, 2, 1, 6, 7, 0, 2, 0, 2147483647, 11, 2, 1, 6, 8, 0, 2, 0, 2147483647, 12, 2, 1, 6, 9, 0, 2, 0, 2147483647, 13, 2, 1, 6, 10, 0 </int_array>
+			<string> "variants" </string>
+			<array  len="11" shared="false">
+				<resource  external="0">  </resource>
+				<resource  external="1">  </resource>
+				<resource  external="2">  </resource>
+				<vector2> 610.474, 153.683 </vector2>
+				<vector2> 370.38, 383.25 </vector2>
+				<vector2> 376.058, 155.892 </vector2>
+				<vector2> 258.369, 276.823 </vector2>
+				<vector2> 135.369, 507.823 </vector2>
+				<vector2> 462.369, 420.823 </vector2>
+				<vector2> 555.369, 457.823 </vector2>
+				<vector2> 648.369, 493.823 </vector2>
+			</array>
+			<string> "version" </string>
+			<int> 2 </int>
+		</dictionary>
+
+	</main_resource>
+</resource_file>

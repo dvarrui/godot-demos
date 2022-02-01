@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://src/actors/player/explosion.gd" type="Script" id=1]
+[ext_resource path="res://assets/sound/explosion.wav" type="Sample" id=2]
+[ext_resource path="res://assets/effect/explosion.png" type="Texture" id=3]
+
+[sub_resource type="SampleLibrary" id=1]
+
+samples/explosion = { "db":0.0, "pitch":1.0, "sample":ExtResource( 2 ) }
+
+[node name="explosion" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="sound" type="SamplePlayer2D" parent="."]
+
+params/volume_db = 0.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = SubResource( 1 )
+config/pitch_random = 0.0
+
+[node name="effect" type="Particles2D" parent="."]
+
+config/amount = 32
+config/lifetime = 1.0
+config/emit_timeout = 1.2
+config/emitting = false
+config/texture = ExtResource( 3 )
+params/direction = 0.0
+params/spread = 180.0
+params/linear_velocity = 40.0
+params/spin_velocity = 1.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 1.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/spin_velocity = 1.0
+
+

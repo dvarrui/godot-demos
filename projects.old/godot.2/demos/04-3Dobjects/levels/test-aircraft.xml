@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resource_file type="PackedScene" subresource_count="3" version="2.1" version_name="Godot Engine v2.1.stable.official">
+	<ext_resource path="res://player/test-aircraft.gd" type="Script" index="0"></ext_resource>
+	<ext_resource path="res://assets/F15C/F-15C_Eagle.scn" type="PackedScene" index="1"></ext_resource>
+	<main_resource>
+		<dictionary name="_bundled" shared="false">
+			<string> "conn_count" </string>
+			<int> 0 </int>
+			<string> "conns" </string>
+			<int_array  len="0"> 				 </int_array>
+			<string> "editable_instances" </string>
+			<array  len="0" shared="false">
+			</array>
+			<string> "names" </string>
+			<string_array  len="103">
+				<string> "test-aircraft" </string>
+				<string> "script/script" </string>
+				<string> "Node" </string>
+				<string> "aircraft" </string>
+				<string> "particles" </string>
+				<string> "_import_transform" </string>
+				<string> "transform/local" </string>
+				<string> "visibility/visible" </string>
+				<string> "layers" </string>
+				<string> "geometry/visible" </string>
+				<string> "geometry/material_override" </string>
+				<string> "geometry/cast_shadow" </string>
+				<string> "geometry/receive_shadows" </string>
+				<string> "geometry/range_begin" </string>
+				<string> "geometry/range_end" </string>
+				<string> "geometry/extra_cull_margin" </string>
+				<string> "geometry/billboard" </string>
+				<string> "geometry/billboard_y" </string>
+				<string> "geometry/depth_scale" </string>
+				<string> "geometry/visible_in_all_rooms" </string>
+				<string> "geometry/use_baked_light" </string>
+				<string> "geometry/baked_light_tex_id" </string>
+				<string> "material" </string>
+				<string> "amount" </string>
+				<string> "emitting" </string>
+				<string> "visibility" </string>
+				<string> "emission_extents" </string>
+				<string> "emission_base_velocity" </string>
+				<string> "emission_points" </string>
+				<string> "gravity_normal" </string>
+				<string> "local_coords" </string>
+				<string> "emit_timeout" </string>
+				<string> "vars/lifetime" </string>
+				<string> "vars/spread" </string>
+				<string> "vars/gravity" </string>
+				<string> "vars/linear_vel" </string>
+				<string> "vars/angular_vel" </string>
+				<string> "vars/linear_accel" </string>
+				<string> "vars/radial_accel" </string>
+				<string> "vars/tan_accel" </string>
+				<string> "vars/damping" </string>
+				<string> "vars/initial_size" </string>
+				<string> "vars/final_size" </string>
+				<string> "vars/initial_angle" </string>
+				<string> "vars/height_from_velocity" </string>
+				<string> "vars/height" </string>
+				<string> "vars/height_speed_scale" </string>
+				<string> "rand/lifetime" </string>
+				<string> "rand/spread" </string>
+				<string> "rand/gravity" </string>
+				<string> "rand/linear_vel" </string>
+				<string> "rand/angular_vel" </string>
+				<string> "rand/linear_accel" </string>
+				<string> "rand/radial_accel" </string>
+				<string> "rand/tan_accel" </string>
+				<string> "rand/damping" </string>
+				<string> "rand/initial_size" </string>
+				<string> "rand/final_size" </string>
+				<string> "rand/initial_angle" </string>
+				<string> "rand/height" </string>
+				<string> "rand/height_speed_scale" </string>
+				<string> "color_phases/count" </string>
+				<string> "phase_0/pos" </string>
+				<string> "phase_0/color" </string>
+				<string> "phase_1/pos" </string>
+				<string> "phase_1/color" </string>
+				<string> "phase_2/pos" </string>
+				<string> "phase_2/color" </string>
+				<string> "phase_3/pos" </string>
+				<string> "phase_3/color" </string>
+				<string> "Particles" </string>
+				<string> "camera" </string>
+				<string> "projection" </string>
+				<string> "fov" </string>
+				<string> "near" </string>
+				<string> "far" </string>
+				<string> "keep_aspect" </string>
+				<string> "current" </string>
+				<string> "visible_layers" </string>
+				<string> "environment" </string>
+				<string> "h_offset" </string>
+				<string> "v_offset" </string>
+				<string> "Camera" </string>
+				<string> "light" </string>
+				<string> "params/enabled" </string>
+				<string> "params/editor_only" </string>
+				<string> "params/bake_mode" </string>
+				<string> "params/energy" </string>
+				<string> "colors/diffuse" </string>
+				<string> "colors/specular" </string>
+				<string> "shadow/shadow" </string>
+				<string> "shadow/darkening" </string>
+				<string> "shadow/z_offset" </string>
+				<string> "shadow/z_slope_scale" </string>
+				<string> "shadow/esm_multiplier" </string>
+				<string> "shadow/blur_passes" </string>
+				<string> "projector" </string>
+				<string> "operator" </string>
+				<string> "shadow/mode" </string>
+				<string> "shadow/max_distance" </string>
+				<string> "shadow/split_weight" </string>
+				<string> "shadow/zoffset_scale" </string>
+				<string> "DirectionalLight" </string>
+			</string_array>
+			<string> "node_count" </string>
+			<int> 5 </int>
+			<string> "node_paths" </string>
+			<array  len="0" shared="false">
+			</array>
+			<string> "nodes" </string>
+			<int_array  len="233"> 				-1, -1, 2, 0, -1, 1, 1, 0, 0, 0, 0, 2147483647, 3, 1, 0, 0, 1, 0, 70, 4, -1, 65, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 5, 12, 6, 13, 8, 14, 8, 15, 8, 16, 4, 17, 4, 18, 4, 19, 4, 20, 4, 21, 9, 22, 7, 23, 10, 24, 4, 25, 11, 26, 12, 27, 13, 28, 14, 29, 15, 30, 4, 31, 8, 32, 16, 33, 17, 34, 18, 35, 17, 36, 8, 37, 8, 38, 8, 39, 8, 40, 8, 41, 17, 42, 17, 43, 8, 44, 4, 45, 17, 46, 8, 47, 8, 48, 8, 49, 8, 50, 8, 51, 8, 52, 8, 53, 8, 54, 8, 55, 8, 56, 8, 57, 8, 58, 8, 59, 8, 60, 8, 61, 5, 62, 8, 63, 19, 64, 17, 65, 20, 66, 17, 67, 20, 68, 17, 69, 20, 0, 0, 0, 82, 71, -1, 12, 5, 2, 6, 21, 72, 9, 73, 22, 74, 23, 75, 24, 76, 5, 77, 4, 78, 25, 79, 7, 80, 8, 81, 8, 0, 0, 0, 102, 83, -1, 21, 5, 2, 6, 26, 8, 5, 84, 6, 85, 4, 86, 9, 87, 17, 88, 27, 89, 27, 90, 4, 91, 8, 92, 28, 93, 8, 94, 22, 95, 17, 96, 7, 97, 9, 98, 9, 99, 8, 100, 29, 101, 30, 0 </int_array>
+			<string> "variants" </string>
+			<array  len="31" shared="false">
+				<resource  external="0">  </resource>
+				<resource  external="1">  </resource>
+				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 </transform>
+				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0728254, -3.10216, 0 </transform>
+				<bool> False </bool>
+				<int> 1 </int>
+				<bool> True </bool>
+				<resource name=""></resource>				<real> 0 </real>
+				<int> 0 </int>
+				<int> 60 </int>
+				<aabb> -4, -4, -4, 8, 8, 8 </aabb>
+				<vector3> 0.1, 0.1, 0.1 </vector3>
+				<vector3> 0, 0, 0 </vector3>
+				<vector3_array  len="0"> 					 </vector3_array>
+				<vector3> 0, 0, 1 </vector3>
+				<real> 3 </real>
+				<real> 1 </real>
+				<real> 9.8 </real>
+				<color> 0.796875, 0.186768, 0.186768, 1 </color>
+				<color> 0, 0, 0, 1 </color>
+				<transform> 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 52.122, 0 </transform>
+				<real> 60 </real>
+				<real> 0.1 </real>
+				<real> 100 </real>
+				<int> 1048575 </int>
+				<transform> 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 61.0572, 0 </transform>
+				<color> 1, 1, 1, 1 </color>
+				<real> 0.05 </real>
+				<real> 0.5 </real>
+				<real> 2 </real>
+			</array>
+			<string> "version" </string>
+			<int> 2 </int>
+		</dictionary>
+
+	</main_resource>
+</resource_file>

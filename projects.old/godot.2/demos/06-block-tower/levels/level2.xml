@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resource_file type="PackedScene" subresource_count="7" version="2.1" version_name="Godot Engine v2.1.stable.official">
+	<ext_resource path="res://levels/parallax-forest/parallax-forest-back-trees.png" type="Texture" index="1"></ext_resource>
+	<ext_resource path="res://levels/parallax-forest/parallax-forest-middle-trees.png" type="Texture" index="2"></ext_resource>
+	<ext_resource path="res://levels/parallax-forest/parallax-forest-lights.png" type="Texture" index="4"></ext_resource>
+	<ext_resource path="res://hand/hand.xml" type="PackedScene" index="0"></ext_resource>
+	<ext_resource path="res://platforms/platform1.xml" type="PackedScene" index="5"></ext_resource>
+	<ext_resource path="res://levels/parallax-forest/parallax-forest-front-trees.png" type="Texture" index="3"></ext_resource>
+	<main_resource>
+		<dictionary name="_bundled" shared="false">
+			<string> "conn_count" </string>
+			<int> 0 </int>
+			<string> "conns" </string>
+			<int_array  len="0"> 				 </int_array>
+			<string> "editable_instances" </string>
+			<array  len="0" shared="false">
+			</array>
+			<string> "names" </string>
+			<string_array  len="19">
+				<string> "level2" </string>
+				<string> "Node2D" </string>
+				<string> "hand" </string>
+				<string> "transform/pos" </string>
+				<string> "z/z" </string>
+				<string> "forest" </string>
+				<string> "editor/display_folded" </string>
+				<string> "back-trees" </string>
+				<string> "transform/scale" </string>
+				<string> "texture" </string>
+				<string> "Sprite" </string>
+				<string> "midle-trees" </string>
+				<string> "front-trees" </string>
+				<string> "lights" </string>
+				<string> "platforms" </string>
+				<string> "platform1" </string>
+				<string> "platform2" </string>
+				<string> "platform3" </string>
+				<string> "platform4" </string>
+			</string_array>
+			<string> "node_count" </string>
+			<int> 12 </int>
+			<string> "node_paths" </string>
+			<array  len="0" shared="false">
+			</array>
+			<string> "nodes" </string>
+			<int_array  len="130"> 				-1, -1, 1, 0, -1, 0, 0, 0, 0, 2147483647, 2, 0, 2, 3, 1, 4, 2, 0, 0, 0, 1, 5, -1, 1, 6, 3, 0, 2, 0, 10, 7, -1, 4, 3, 4, 8, 5, 4, 6, 9, 7, 0, 2, 0, 10, 11, -1, 4, 3, 8, 8, 5, 4, 9, 9, 10, 0, 2, 0, 10, 12, -1, 3, 3, 11, 8, 5, 9, 12, 0, 2, 0, 10, 13, -1, 4, 3, 13, 8, 5, 4, 14, 9, 15, 0, 0, 0, 1, 14, -1, 1, 3, 1, 0, 7, 0, 2147483647, 15, 16, 1, 3, 17, 0, 7, 0, 2147483647, 16, 16, 1, 3, 18, 0, 7, 0, 2147483647, 17, 16, 1, 3, 19, 0, 7, 0, 2147483647, 18, 16, 1, 3, 20, 0 </int_array>
+			<string> "variants" </string>
+			<array  len="21" shared="false">
+				<resource  external="0">  </resource>
+				<vector2> 533.563, 92.623 </vector2>
+				<int> 10 </int>
+				<bool> True </bool>
+				<vector2> 538.53, 299.8 </vector2>
+				<vector2> 4, 4 </vector2>
+				<int> -20 </int>
+				<resource  external="1">  </resource>
+				<vector2> 527.426, 297.95 </vector2>
+				<int> -10 </int>
+				<resource  external="2">  </resource>
+				<vector2> 525.576, 303.501 </vector2>
+				<resource  external="3">  </resource>
+				<vector2> 539.744, 303.08 </vector2>
+				<int> -15 </int>
+				<resource  external="4">  </resource>
+				<resource  external="5">  </resource>
+				<vector2> -370.123, 396.032 </vector2>
+				<vector2> -305.352, 396.032 </vector2>
+				<vector2> 133.244, 401.584 </vector2>
+				<vector2> 198.016, 399.733 </vector2>
+			</array>
+			<string> "version" </string>
+			<int> 2 </int>
+		</dictionary>
+
+	</main_resource>
+</resource_file>

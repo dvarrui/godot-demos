@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://tiles/sprites/houses/stairs02.png" type="Texture" id=1]
+[ext_resource path="res://tiles/wall_grid_door.gd" type="Script" id=2]
+[ext_resource path="res://tiles/sprites/walls/wall05.png" type="Texture" id=3]
+[ext_resource path="res://tiles/sprites/houses/door01.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 8, 4 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 8, 4 )
+
+[node name="object_tiles" type="Node2D"]
+position = Vector2( 50, 50 )
+
+[node name="stair_up" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 300, 300 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="body" type="StaticBody2D" parent="stair_up"]
+
+[node name="shape" type="CollisionShape2D" parent="stair_up/body"]
+shape = SubResource( 1 )
+
+[node name="wall_grid" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 300, 400 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+script = ExtResource( 2 )
+
+[node name="body" type="StaticBody2D" parent="wall_grid"]
+
+[node name="shape" type="CollisionShape2D" parent="wall_grid/body"]
+position = Vector2( 0, 4 )
+shape = SubResource( 3 )
+
+[node name="wall_grid_door" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 400, 400 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+
+[node name="body" type="StaticBody2D" parent="wall_grid_door"]
+
+[node name="shape" type="CollisionShape2D" parent="wall_grid_door/body"]
+position = Vector2( 0, 4 )
+shape = SubResource( 4 )
+

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://partials/forest_static_tree.tscn" type="PackedScene" id=1]
+[ext_resource path="res://partials/forest_dinamic_tree.tscn" type="PackedScene" id=2]
+[ext_resource path="res://characters/player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://actors/tree/tree.tscn" type="PackedScene" id=4]
+
+[node name="testing" type="Node2D"]
+
+[node name="forest_static_tree" parent="." instance=ExtResource( 1 )]
+position = Vector2( -200, -200 )
+
+[node name="forest_dinamic_tree" parent="." instance=ExtResource( 2 )]
+position = Vector2( 200, -200 )
+ext_items_count = 10
+
+[node name="player" parent="." instance=ExtResource( 3 )]
+
+[node name="tree" parent="." instance=ExtResource( 4 )]
+position = Vector2( 206.347, 120.587 )
+
