@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/spritesheet2.png" type="Texture" id=1]
+[ext_resource path="res://actor/enemy1.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 128, 576, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 576, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 160, 576, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 576, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 576, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 2 ), SubResource( 2 ), SubResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "sleep",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 6, 6 )
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 33.1424
+
+[node name="enemy1" type="Area2D" groups=[
+"enemy",
+]]
+script = ExtResource( 2 )
+
+[node name="anim" type="AnimatedSprite" parent="."]
+self_modulate = Color( 1, 0.278431, 0.239216, 1 )
+position = Vector2( 0, -5 )
+frames = SubResource( 6 )
+animation = "idle"
+frame = 2
+playing = true
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -4 )
+scale = Vector2( 2, 2 )
+shape = SubResource( 7 )
+
+[node name="detect" type="Area2D" parent="."]
+position = Vector2( 0, -4 )
+scale = Vector2( 2, 2 )
+
+[node name="shape" type="CollisionShape2D" parent="detect"]
+shape = SubResource( 8 )
+[connection signal="body_entered" from="." to="." method="_on_enemy1_body_entered"]
+[connection signal="body_entered" from="detect" to="." method="_on_detect_body_entered"]
+[connection signal="body_exited" from="detect" to="." method="_on_detect_body_exited"]
