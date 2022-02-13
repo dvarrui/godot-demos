@@ -9,7 +9,7 @@ A medida que surjan preguntas se irán creando documentación de las partes más
 
 ¡Muchas gracias!
 
-# Demos o experiencias jugables
+## Experiencias o demos jugables
 
 Este repositorio contiene pequeñas demos jugables, diseñadas con la intención de ser fáciles de aprender y enseñar. Los proyectos has sido creadas con el motor **Godot Engine**, y usando otros recursos libres.
 
@@ -23,9 +23,11 @@ Godot version 3.2.2:
 1. [SpaceShooter](docs/game-index.md#spaceshooter)
 1. [Tower Defense](docs/game-index.md#tower-defense)
 
-* Más información: [Enlaces de interés, consejos y artículos relacionados.](docs/README.md)
+## Más información
 
-# Descargar el repositorio
+[Enlaces de interés, consejos y artículos relacionados.](docs/README.md)
+
+## Descargar el repositorio
 
 Para descargar este repositorio la primera vez, hacemos:
 ```
