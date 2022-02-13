@@ -27,7 +27,6 @@ Enlaces de interés:
 * [Youtube - Creación de videojuegos - @Piensa3d](https://www.youtube.com/playlist?list=PLG8UtYUFOQj7MPnVEyyYDiW6WBTlsLYT8)
 * Proyecto [The Epic Adventure](./docs/the-epic-adventure.md) | [Iván Rodríguez](https://github.com/tidus747) |
 
-
 Aquí tienes un trillón de post-morten para lo último
 * https://www.youtube.com/playlist?list=PL2e4mYbwSTbbiX2uwspn0xiYb8_P_cTAr
 * https://t.me/esLibre/13594
