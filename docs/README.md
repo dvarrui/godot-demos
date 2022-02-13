@@ -27,7 +27,7 @@ Enlaces de interés:
 * [Youtube - Creación de videojuegos - @Piensa3d](https://www.youtube.com/playlist?list=PLG8UtYUFOQj7MPnVEyyYDiW6WBTlsLYT8)
 * Proyecto [The Epic Adventure](./docs/the-epic-adventure.md) | [Iván Rodríguez](https://github.com/tidus747) |
 
-Aquí tienes un trillón de post-morten para lo último
-* https://www.youtube.com/playlist?list=PL2e4mYbwSTbbiX2uwspn0xiYb8_P_cTAr
-* https://t.me/esLibre/13594
+**Varios**
+* [Grupo de Telegram](https://t.me/esLibre/13594)
+* [Aquí tienes un trillón de post-morten GDC](https://www.youtube.com/playlist?list=PL2e4mYbwSTbbiX2uwspn0xiYb8_P_cTAr)
 * https://www.reddit.com/r/gamedev/comments/epkd31/engines_used_in_the_most_popular_games_of_2019/: Engines used in the most popular games of 2019. I spent a few hours this weekend following up some research I did previously on game engines. Specifically, compiling a list of the engines...
