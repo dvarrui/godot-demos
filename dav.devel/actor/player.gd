@@ -9,7 +9,7 @@ const MAX_SPEED = Vector2(200,400) # 200, 400
 const ACCELERATION = 600
 const DECELERATION = 1300 # 2000
 const JUMP_FORCE = 210 # 210
-const GRAVITY = 330 # 330
+const GRAVITY = 250 # 330
 
 var on_stairs = false
 
@@ -101,7 +101,7 @@ func _on_visibility_screen_exited():
 func _on_detect_area_entered(area):
 	if area.is_in_group("stairs"):
 		on_stairs = true
-		z_index = -1
+		z_index = 0
 
 func _on_detect_area_exited(area):
 	if area.is_in_group("stairs"):

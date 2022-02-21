@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/spritesheet2.png" type="Texture" id=1]
+[ext_resource path="res://assets/tileset.png" type="Texture" id=1]
 [ext_resource path="res://environment/platform.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -10,10 +10,11 @@ extents = Vector2( 48, 5 )
 script = ExtResource( 2 )
 
 [node name="sprite" type="Sprite" parent="."]
-position = Vector2( 0, 12 )
+position = Vector2( 0.250004, 4.81034 )
+scale = Vector2( 0.994737, 1.22629 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 128, 128, 96, 32 )
+region_rect = Rect2( 33.2498, 208.189, 95.6437, 16.0609 )
 
 [node name="shape" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
