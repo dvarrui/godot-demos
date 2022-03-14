@@ -30,7 +30,7 @@ __meta__ = {
 [node name="v_container" type="VBoxContainer" parent="margin"]
 margin_top = 183.0
 margin_right = 274.0
-margin_bottom = 312.0
+margin_bottom = 296.0
 size_flags_vertical = 4
 alignment = 1
 __meta__ = {
@@ -38,30 +38,30 @@ __meta__ = {
 }
 
 [node name="title" type="Label" parent="margin/v_container"]
-margin_top = 8.0
 margin_right = 274.0
-margin_bottom = 73.0
+margin_bottom = 65.0
 custom_fonts/font = SubResource( 1 )
 text = "Arkanoid"
 align = 1
 autowrap = true
 
 [node name="start" type="Button" parent="margin/v_container"]
-margin_top = 77.0
+margin_top = 69.0
 margin_right = 274.0
-margin_bottom = 97.0
+margin_bottom = 89.0
 text = "Start New Game"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="quit" type="Button" parent="margin/v_container"]
-margin_top = 101.0
+margin_top = 93.0
 margin_right = 274.0
-margin_bottom = 121.0
+margin_bottom = 113.0
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="margin/v_container/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="margin/v_container/quit" to="." method="_on_quit_pressed"]
