@@ -1,11 +1,15 @@
 extends Node2D
 
-export var lifetime = 10
+export var lifetime = 1
 
 func _ready():
-	pass # Replace with function body.
+	$timer.wait_time = lifetime
+	$timer.autostart = true
 
 func _process(delta):
 	lifetime -= delta * 10
 	if lifetime < 0:
-		queue_free()
+		queue_free() 
+
+func _on_timer_timeout():
+	queue_free()

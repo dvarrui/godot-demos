@@ -25,8 +25,14 @@ animations = [ {
 
 [node name="spark" type="Node2D"]
 script = ExtResource( 2 )
+lifetime = 5
 
 [node name="anim" type="AnimatedSprite" parent="."]
 frames = SubResource( 4 )
-frame = 1
 playing = true
+
+[node name="timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

@@ -55,6 +55,7 @@ func _physics_process(delta):
 		speed.x += ACCELERATION * delta
 	else:
 		speed.x -= DECELERATION * delta
+	
 	speed.x = clamp(speed.x, 0, MAX_SPEED.x)
 	#elif is_on_wall():
 	# Limit X speed when collide with wall and is jumping
