@@ -10,7 +10,10 @@ config_version=4
 
 [application]
 
-config/name="Divarutastic Adveture"
+config/name="Divarutastic Adventure"
+config/description="* Juego de plataformas 2D.
+* Estilo pixelado y con pocos colores.
+* Ambientación y mecánicas retro."
 run/main_scene="res://levels/level1.tscn"
 config/icon="res://icon.png"
 
