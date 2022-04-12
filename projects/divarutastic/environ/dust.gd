@@ -1,4 +1,4 @@
-extends AnimatedSprite
+extends Node2D
 
 export var lifetime = 10
 
