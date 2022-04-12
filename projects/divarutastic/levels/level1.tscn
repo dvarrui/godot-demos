@@ -384,6 +384,34 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 5/shape_one_way_margin = 0.0
 5/shapes = [  ]
 5/z_index = 0
+6/name = "tree3B"
+6/texture = ExtResource( 2 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 160, 240, 16, 16 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+7/name = "tree2B"
+7/texture = ExtResource( 2 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 160, 224, 16, 16 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
+7/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 2, 140 )
@@ -416,7 +444,7 @@ tile_set = SubResource( 25 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 458765, 0, 0, 458766, 1, 0, 458767, 1, 0, 458768, 3, 0, 851969, 4, 0, 851970, 5, 0, 851976, 0, 0, 917513, 4, 0, 917514, 2, 0, 917515, 0, 0, 917516, 3, 0, 917517, 0, 0, 917518, 2, 0, 917519, 3, 0, 917522, 3, 0, 983049, 5, 0, 983056, 4, 0, 983057, 5, 0, 1114127, 4, 0, 1114128, 5, 0, 1900589, 3, 0 )
+tile_data = PoolIntArray( 65559, 4, 0, 65560, 5, 0, 196616, 2, 0, 196617, 1, 0, 262170, 0, 0, 327703, 0, 0, 458765, 0, 0, 458766, 1, 0, 458767, 1, 0, 458768, 3, 0, 458773, 4, 0, 458774, 5, 0, 458775, 4, 0, 458776, 5, 0, 458777, 4, 0, 458778, 5, 0, 524295, 4, 0, 524296, 5, 0, 524297, 4, 0, 524298, 5, 0, 524314, 7, 0, 589846, 4, 0, 589847, 5, 0, 589850, 6, 0, 655381, 4, 0, 655382, 5, 0, 655386, 6, 0, 655390, 7, 0, 720922, 6, 0, 720926, 6, 0, 786453, 2, 0, 786458, 6, 0, 851969, 4, 0, 851970, 5, 0, 851976, 0, 0, 917513, 4, 0, 917514, 2, 0, 917515, 0, 0, 917516, 3, 0, 917517, 0, 0, 917518, 2, 0, 917519, 3, 0, 917522, 3, 0, 917524, 4, 0, 917525, 5, 0, 917526, 5, 0, 983049, 5, 0, 983056, 4, 0, 983057, 5, 0, 1114127, 4, 0, 1114128, 5, 0, 1900589, 3, 0 )
 
 [node name="black" type="CanvasLayer" parent="background"]
 layer = -2
@@ -473,7 +501,7 @@ __meta__ = {
 }
 
 [node name="platform" parent="platforms" instance=ExtResource( 4 )]
-position = Vector2( 790, 315 )
+position = Vector2( 731, 314 )
 limit = Vector2( -100, 100 )
 
 [node name="coins" type="Node2D" parent="."]

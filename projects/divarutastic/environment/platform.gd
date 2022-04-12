@@ -10,6 +10,8 @@ func _ready():
 	origin = position
 	
 func _physics_process(delta):
+	position.y = origin.y 
+	
 	if position.x - origin.x > limit.y:
 		direction = -1
 	if position.x - origin.x < limit.x:
