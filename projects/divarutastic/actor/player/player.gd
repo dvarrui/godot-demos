@@ -29,28 +29,13 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("player_jump") and is_on_floor():
 		speed.y = -UP_FORCE
+	if event.is_action_pressed("player_exit"):
+		get_tree().quit()
 
 func _physics_process(delta):
 	_get_input_direction()
-
-	if is_on_floor():
-		_update_speed_on_floor(delta)
-	elif on_stairs:
-		_update_speed_on_stairs(delta)
-	elif is_on_ceiling():
-		speed.x = clamp(speed.x, 0, MAX_AIR_SPEED_X)
-		speed.y = DOWN_FORCE * delta
-		speed.y = clamp(speed.y, MAX_SPEED_UP, MAX_SPEED_DOWN)
-	else:
-		_update_speed_on_air(delta)
-		
-	# Apply motion
-	var motion = Vector2()
-	motion.x = speed.x * direction.x
-	motion.y = speed.y
-# warning-ignore:return_value_discarded
-	move_and_slide(motion, Vector2(0, -1))
-	update_anim(motion)
+	_update_speed(delta)
+	_update_motion(speed)
 
 func _get_input_direction():
 	# INPUT horizontal direction
@@ -68,6 +53,18 @@ func _get_input_direction():
 			input_direction.y = -1
 		if Input.is_action_pressed("player_down"):
 			input_direction.y = 1
+
+func _update_speed(delta):
+	if is_on_floor():
+		_update_speed_on_floor(delta)
+	elif on_stairs:
+		_update_speed_on_stairs(delta)
+	elif is_on_ceiling():
+		speed.x = clamp(speed.x, 0, MAX_AIR_SPEED_X)
+		speed.y = DOWN_FORCE * delta
+		speed.y = clamp(speed.y, MAX_SPEED_UP, MAX_SPEED_DOWN)
+	else:
+		_update_speed_on_air(delta)
 
 func _update_speed_on_floor(delta):
 	if input_direction.x == - direction.x:
@@ -101,15 +98,23 @@ func _update_speed_on_air(delta):
 		speed.x /= 3
 	elif input_direction.x:
 		speed.x += X_ACCELERATION/3.0 * delta
-	else:
-		speed.x -= X_DECELERATION/3.0 * delta
+	#else:
+		#speed.x -= X_DECELERATION/3.0 * delta
 	direction.x = input_direction.x
 	
 	speed.x = clamp(speed.x, 0, MAX_AIR_SPEED_X)
 	speed.y += DOWN_FORCE * delta
 	speed.y = clamp(speed.y, MAX_SPEED_UP, MAX_SPEED_DOWN)
 
-func update_anim(motion):
+func _update_motion(speed):
+	var motion = Vector2()
+	motion.x = speed.x * direction.x
+	motion.y = speed.y
+# warning-ignore:return_value_discarded
+	move_and_slide(motion, Vector2(0, -1))
+	_update_anim(motion)
+
+func _update_anim(motion):
 	# ANIM
 	if on_stairs:
 		_update_anim_on_stairs(motion)
