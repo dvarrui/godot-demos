@@ -5,16 +5,18 @@ var input_direction = Vector2.ZERO # Input XY direction
 var direction = Vector2.ZERO       # Current XY direction
 var speed = Vector2.ZERO # Character speed
 
-const MAX_FLOOR_SPEED_X = 120
-const MAX_AIR_SPEED_X = 100
-const MAX_STAIRS_SPEED_X = 50
-const MAX_STAIRS_SPEED_Y = 100
-const MAX_SPEED_UP = -400
-const MAX_SPEED_DOWN = 300
 const X_ACCELERATION = 600
 const X_DECELERATION = 1300 # 2000
-const UP_FORCE = 200 # 210
-const DOWN_FORCE = 250 # 210
+const MAX_FLOOR_SPEED_X = 120
+
+const MAX_STAIRS_SPEED_X = 50
+const MAX_STAIRS_SPEED_Y = 100
+
+const MAX_AIR_SPEED_X = 100
+const UP_FORCE = 210 # 210
+const DOWN_FORCE = 280 # 210
+const MAX_SPEED_UP = -400
+const MAX_SPEED_DOWN = 300
 
 var on_stairs = false
 
@@ -98,9 +100,9 @@ func _update_speed_on_air(delta):
 	if input_direction.x == - direction.x:
 		speed.x /= 3
 	elif input_direction.x:
-		speed.x += X_ACCELERATION/3 * delta
+		speed.x += X_ACCELERATION/3.0 * delta
 	else:
-		speed.x -= X_DECELERATION * delta
+		speed.x -= X_DECELERATION/3.0 * delta
 	direction.x = input_direction.x
 	
 	speed.x = clamp(speed.x, 0, MAX_AIR_SPEED_X)
