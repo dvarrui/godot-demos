@@ -1,9 +1,5 @@
 extends Panel
 
-func _ready():
-	pass # Replace with function body.
-
-
 func _on_button_pressed():
 	# Reading command
 	var command = get_node("textedit").text
