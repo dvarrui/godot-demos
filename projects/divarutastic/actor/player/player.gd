@@ -146,7 +146,18 @@ func _update_anim_on_stairs(motion):
 		$anim.play("stairs")
 
 func _on_visibility_screen_exited():
-	get_tree().quit()
+	var exit_direction = "W"
+	var size = MyConfig.screen_size()
+	if position.y > size.y:
+		exit_direction = "S"
+	elif position.y < 0:
+		exit_direction = "N"
+	elif position.x > size.x:
+		exit_direction = "E"
+	else:
+		exit_direction = "W"
+	var level = get_parent()
+	level.notify_player_exit(exit_direction)
 
 func _on_detect_area_entered(area):
 	if area.is_in_group("stairs"):
