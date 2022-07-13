@@ -36,6 +36,7 @@ func _physics_process(delta):
 	_get_input_direction()
 	_update_speed(delta)
 	_update_motion(speed)
+	_detect_screen_exited()
 
 func _get_input_direction():
 	# INPUT horizontal direction
@@ -145,19 +146,22 @@ func _update_anim_on_stairs(motion):
 	else:
 		$anim.play("stairs")
 
-func _on_visibility_screen_exited():
-	var exit_direction = "W"
+func _detect_screen_exited():
+	var exit_direction = ""
 	var size = MyConfig.screen_size()
+
 	if position.y > size.y:
 		exit_direction = "S"
 	elif position.y < 0:
 		exit_direction = "N"
 	elif position.x > size.x:
 		exit_direction = "E"
-	else:
+	elif position.x < 0:
 		exit_direction = "W"
-	var level = get_parent()
-	level.notify_player_exit(exit_direction)
+	if exit_direction == "":
+		return
+		
+	get_parent().change_level(exit_direction)
 
 func _on_detect_area_entered(area):
 	if area.is_in_group("stairs"):
@@ -166,3 +170,6 @@ func _on_detect_area_entered(area):
 func _on_detect_area_exited(area):
 	if area.is_in_group("stairs"):
 		on_stairs = false
+
+func _debug():
+	print("[DEBUG] Player position:", position)

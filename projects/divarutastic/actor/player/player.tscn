@@ -152,8 +152,6 @@ animation = "idle"
 position = Vector2( 0, -2 )
 shape = SubResource( 32 )
 
-[node name="visibility" type="VisibilityNotifier2D" parent="."]
-
 [node name="detect" type="Area2D" parent="."]
 position = Vector2( 0, 2 )
 
@@ -161,6 +159,5 @@ position = Vector2( 0, 2 )
 position = Vector2( 1, -6 )
 shape = SubResource( 33 )
 
-[connection signal="screen_exited" from="visibility" to="." method="_on_visibility_screen_exited"]
 [connection signal="area_entered" from="detect" to="." method="_on_detect_area_entered"]
 [connection signal="area_exited" from="detect" to="." method="_on_detect_area_exited"]

@@ -8,28 +8,7 @@
 [ext_resource path="res://actor/player/player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://actor/enemies/enemy1.tscn" type="PackedScene" id=7]
 [ext_resource path="res://actor/coin/coin.tscn" type="PackedScene" id=8]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends Node2D
-
-export var room_n = \"\"
-export var room_s = \"\"
-export var room_e = \"\"
-export var room_w = \"\"
-
-func _ready():
-	#get_node(\"tilemap/black/color\").visible = true
-	get_node(\"effects/music\").playing = true
-
-func _process(delta):
-	if Input.is_action_just_pressed(\"game_quit\"):
-		get_tree().quit()
-
-func notify_player_exit(dir):
-	print(\"[DEBUG] Player exit \", dir)
-	get_tree().quit()
-
-"
+[ext_resource path="res://levels/level.gd" type="Script" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -359,7 +338,7 @@ extents = Vector2( 2, 96 )
 extents = Vector2( 2.5, 56 )
 
 [node name="level" type="Node2D"]
-script = SubResource( 1 )
+script = ExtResource( 9 )
 
 [node name="tilemap" type="Node2D" parent="."]
 
