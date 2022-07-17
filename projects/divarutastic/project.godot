@@ -14,7 +14,7 @@ config/name="Divarutastic Adventure"
 config/description="* Juego de plataformas 2D.
 * Estilo pixelado y con pocos colores.
 * Ambientación y mecánicas retro."
-run/main_scene="res://levels/main.tscn"
+run/main_scene="res://ui/title.tscn"
 config/icon="res://icon.png"
 
 [autoload]
