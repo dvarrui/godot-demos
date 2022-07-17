@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/tileset.png" type="Texture" id=1]
+[ext_resource path="res://environ/door/door.gd" type="Script" id=2]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -29,32 +30,34 @@ region = Rect2( 224, 64, 16, 32 )
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ SubResource( 1 ) ],
-"loop": true,
+"loop": false,
 "name": "closed",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
-"loop": true,
+"loop": false,
 "name": "opening",
-"speed": 5.0
+"speed": 0.2
 }, {
 "frames": [ SubResource( 6 ) ],
-"loop": true,
+"loop": false,
 "name": "opened",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 7, 16 )
+extents = Vector2( 10, 32 )
 
 [node name="door" type="Node2D"]
+script = ExtResource( 2 )
 
-[node name="sprite" type="AnimatedSprite" parent="."]
+[node name="anim" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
 frames = SubResource( 7 )
 animation = "closed"
 
-[node name="body" type="RigidBody2D" parent="."]
+[node name="body" type="StaticBody2D" parent="."]
 
 [node name="shape" type="CollisionShape2D" parent="body"]
-position = Vector2( -1, 0 )
+position = Vector2( -2, 0 )
 shape = SubResource( 8 )

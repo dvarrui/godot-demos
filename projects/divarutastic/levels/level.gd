@@ -11,7 +11,10 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("game_quit"):
-		get_tree().quit()
+		get_tree().change_scene("res://ui/title.tscn")
+	
+	if $keys.get_child_count() == 0:
+		$platforms/door.open()
 
 func change_level(dir):
 	print("[Level] Player exit ", dir)
@@ -29,6 +32,5 @@ func change_level(dir):
 	if room_name.length() == 0:
 		get_tree().quit()
 	else:
-		print("[Level] change scene: ", room_name)
 		get_tree().change_scene("res://levels/"+room_name+".tscn")
 

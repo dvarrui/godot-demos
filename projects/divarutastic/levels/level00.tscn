@@ -1,7 +1,9 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/tileset.png" type="Texture" id=1]
 [ext_resource path="res://levels/level.gd" type="Script" id=2]
+[ext_resource path="res://environ/door/door.tscn" type="PackedScene" id=3]
+[ext_resource path="res://actor/key/key.tscn" type="PackedScene" id=4]
 [ext_resource path="res://environ/tileset-decorator-1.tres" type="TileSet" id=6]
 [ext_resource path="res://assets/music/01-bach-little_fugue.mp3" type="AudioStream" id=7]
 [ext_resource path="res://actor/player/player.tscn" type="PackedScene" id=8]
@@ -339,7 +341,7 @@ cell_quadrant_size = 32
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( 262167, 4, 0, 262168, 4, 0, 262169, 4, 0, 262170, 5, 0, 786444, 3, 0, 786445, 5, 0, 983039, 13, 0, 917531, 13, 0, 1048575, 13, 0, 983040, 13, 0 )
+tile_data = PoolIntArray( 262167, 4, 0, 262168, 4, 0, 262169, 4, 0, 262170, 5, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 786444, 3, 0, 786445, 5, 0, 983039, 13, 0, 917531, 13, 0, 1048575, 13, 0, 983040, 13, 0 )
 
 [node name="back" type="TileMap" parent="tilemap"]
 modulate = Color( 0.32549, 0.32549, 0.32549, 1 )
@@ -348,7 +350,7 @@ tile_set = ExtResource( 6 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 262170, 0, 0, 327703, 0, 0, 458765, 0, 0, 786453, 2, 0, 917518, 2, 0, 983049, 5, 0, 983056, 4, 0, 983057, 5, 0, 1048584, 5, 0, 1114127, 4, 0, 1114128, 5, 0, 1114144, 3, 0, 1900589, 3, 0 )
+tile_data = PoolIntArray( 655373, 3, 0, 655374, 3, 0, 655375, 2, 0, 655376, 3, 0, 655377, 3, 0, 655378, 3, 0, 1114144, 3, 0, 1900589, 3, 0 )
 
 [node name="front" type="TileMap" parent="tilemap"]
 scale = Vector2( 2, 2 )
@@ -357,7 +359,7 @@ tile_set = ExtResource( 6 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 1114144, 3, 0, 1900589, 3, 0 )
+tile_data = PoolIntArray( 655373, 7, 0, 1114144, 3, 0, 1900589, 3, 0 )
 
 [node name="canvas" type="CanvasLayer" parent="tilemap"]
 layer = -2
@@ -381,7 +383,13 @@ autoplay = true
 
 [node name="platforms" type="Node2D" parent="."]
 
+[node name="door" parent="platforms" instance=ExtResource( 3 )]
+position = Vector2( 563, 316 )
+
 [node name="keys" type="Node2D" parent="."]
+
+[node name="coin" parent="keys" instance=ExtResource( 4 )]
+position = Vector2( 399, 333 )
 
 [node name="enemies" type="Node2D" parent="."]
 
