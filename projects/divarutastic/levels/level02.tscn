@@ -3,11 +3,11 @@
 [ext_resource path="res://assets/tileset.png" type="Texture" id=1]
 [ext_resource path="res://environ/tileset-decorator-1.tres" type="TileSet" id=2]
 [ext_resource path="res://assets/music/01-bach-little_fugue.mp3" type="AudioStream" id=3]
-[ext_resource path="res://environ/platform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://environ/platform/platform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://actor/enemies/enemy2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://actor/player/player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://actor/enemies/enemy1.tscn" type="PackedScene" id=7]
-[ext_resource path="res://actor/coin/coin.tscn" type="PackedScene" id=8]
+[ext_resource path="res://actor/key/key.tscn" type="PackedScene" id=8]
 [ext_resource path="res://levels/level.gd" type="Script" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=5]
@@ -345,6 +345,7 @@ room_w = "level01"
 
 [node name="wall" type="TileMap" parent="tilemap"]
 scale = Vector2( 2, 2 )
+z_index = 2
 tile_set = SubResource( 6 )
 cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 32
@@ -356,12 +357,11 @@ tile_data = PoolIntArray( 9, 0, 0, 31, 6, 0, 32, 6, 2, 65545, 0, 0, 65567, 6, 65
 [node name="back" type="TileMap" parent="tilemap"]
 modulate = Color( 0.32549, 0.32549, 0.32549, 1 )
 scale = Vector2( 2, 2 )
-z_index = 2
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 65547, 8, 0, 65549, 4, 0, 65555, 4, 0, 131085, 7, 0, 131096, 4, 0, 196608, 8, 0, 196617, 1, 0, 196619, 7, 0, 196621, 6, 0, 262144, 8, 0, 262145, 8, 0, 262150, 5, 0, 262170, 4, 0, 327680, 8, 0, 327681, 8, 0, 327682, 8, 0, 327697, 4, 0, 393216, 8, 0, 393217, 8, 0, 393218, 8, 0, 393219, 8, 0, 393223, 4, 0, 458773, 4, 0, 524295, 7, 0, 524297, 5, 0, 589842, 5, 0, 589854, 5, 0, 655380, 0, 0, 655382, 7, 0, 655393, 3, 0, 786453, 2, 0, 851971, 4, 0, 917521, 0, 0, 917522, 3, 0, 917524, 4, 0, 917525, 5, 0, 917526, 5, 0, 917533, 7, 0, 917535, 7, 0, 983044, 5, 0, 983052, 7, 0, 1048584, 0, 0, 1114144, 3, 0, 1900589, 3, 0 )
+tile_data = PoolIntArray( 65547, 8, 0, 65549, 4, 0, 65555, 4, 0, 131077, 5, 0, 131085, 7, 0, 131096, 4, 0, 196608, 8, 0, 196613, 5, 0, 196614, 5, 0, 196615, 4, 0, 196617, 1, 0, 196619, 7, 0, 196621, 6, 0, 262144, 8, 0, 262145, 8, 0, 262148, 4, 0, 262149, 4, 0, 262150, 5, 0, 262151, 5, 0, 262170, 4, 0, 327680, 8, 0, 327681, 8, 0, 327682, 8, 0, 327687, 5, 0, 327697, 4, 0, 393216, 8, 0, 393217, 8, 0, 393218, 8, 0, 393219, 8, 0, 393223, 4, 0, 393227, 4, 0, 458761, 4, 0, 458762, 5, 0, 458763, 5, 0, 458773, 4, 0, 524295, 7, 0, 524297, 4, 0, 524298, 4, 0, 524299, 5, 0, 524301, 5, 0, 524303, 4, 0, 524304, 4, 0, 589826, 5, 0, 589837, 5, 0, 589838, 5, 0, 589839, 4, 0, 589840, 5, 0, 589842, 5, 0, 589854, 5, 0, 655362, 4, 0, 655363, 5, 0, 655374, 4, 0, 655375, 4, 0, 655376, 5, 0, 655380, 0, 0, 655382, 7, 0, 655393, 3, 0, 720898, 4, 0, 720899, 5, 0, 720900, 4, 0, 720909, 4, 0, 720910, 4, 0, 720912, 5, 0, 720913, 5, 0, 786433, 4, 0, 786434, 4, 0, 786435, 4, 0, 786436, 4, 0, 786437, 5, 0, 786448, 5, 0, 786449, 5, 0, 786453, 2, 0, 851970, 4, 0, 851971, 4, 0, 851972, 4, 0, 851973, 5, 0, 851974, 5, 0, 917506, 4, 0, 917521, 0, 0, 917522, 3, 0, 917524, 4, 0, 917525, 5, 0, 917526, 5, 0, 917533, 7, 0, 917535, 7, 0, 983044, 5, 0, 983052, 7, 0, 1048584, 0, 0, 1114144, 3, 0, 1900589, 3, 0 )
 
 [node name="front" type="TileMap" parent="tilemap"]
 scale = Vector2( 2, 2 )
@@ -438,32 +438,32 @@ __meta__ = {
 position = Vector2( 688, 140 )
 limit = Vector2( -100, 100 )
 
-[node name="coins" type="Node2D" parent="."]
+[node name="keys" type="Node2D" parent="."]
 
-[node name="coin" parent="coins" instance=ExtResource( 8 )]
+[node name="coin" parent="keys" instance=ExtResource( 8 )]
 position = Vector2( 722, 400 )
 
-[node name="coin2" parent="coins" instance=ExtResource( 8 )]
+[node name="coin2" parent="keys" instance=ExtResource( 8 )]
 position = Vector2( 491, 530 )
 
-[node name="coin3" parent="coins" instance=ExtResource( 8 )]
+[node name="coin3" parent="keys" instance=ExtResource( 8 )]
 position = Vector2( 334, 109 )
 
-[node name="coin4" parent="coins" instance=ExtResource( 8 )]
+[node name="coin4" parent="keys" instance=ExtResource( 8 )]
 position = Vector2( 943, 371 )
 
-[node name="coin5" parent="coins" instance=ExtResource( 8 )]
+[node name="coin5" parent="keys" instance=ExtResource( 8 )]
 position = Vector2( 169, 483 )
 
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="enemy1" parent="enemies" instance=ExtResource( 7 )]
-position = Vector2( 395, 111 )
+position = Vector2( 400, 114 )
 
 [node name="enemy2" parent="enemies" instance=ExtResource( 5 )]
-position = Vector2( 757, 400 )
+position = Vector2( 757, 404 )
 x_min = -50
 
 [node name="player" parent="." instance=ExtResource( 6 )]
 position = Vector2( 47, 204 )
-z_index = 3
+z_index = 4

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/tileset.png" type="Texture" id=1]
-[ext_resource path="res://actor/coin/coin.gd" type="Script" id=2]
+[ext_resource path="res://actor/key/key.gd" type="Script" id=2]
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 1 )
@@ -28,6 +28,7 @@ script = ExtResource( 2 )
 self_modulate = Color( 0.84, 0.78624, 0.0336, 0.976471 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="shape" type="CollisionShape2D" parent="."]

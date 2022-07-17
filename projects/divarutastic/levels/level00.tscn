@@ -381,10 +381,10 @@ autoplay = true
 
 [node name="platforms" type="Node2D" parent="."]
 
-[node name="coins" type="Node2D" parent="."]
+[node name="keys" type="Node2D" parent="."]
 
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 500, 300 )
-z_index = 3
+z_index = 4

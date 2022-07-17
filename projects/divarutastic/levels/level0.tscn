@@ -3,11 +3,11 @@
 [ext_resource path="res://assets/tileset.png" type="Texture" id=1]
 [ext_resource path="res://environ/tileset-decorator-1.tres" type="TileSet" id=2]
 [ext_resource path="res://assets/music/01-bach-little_fugue.mp3" type="AudioStream" id=3]
-[ext_resource path="res://environ/platform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://environ/platform/platform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://actor/enemies/enemy2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://actor/player/player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://actor/enemies/enemy1.tscn" type="PackedScene" id=7]
-[ext_resource path="res://actor/coin/coin.tscn" type="PackedScene" id=8]
+[ext_resource path="res://actor/key/key.tscn" type="PackedScene" id=8]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D

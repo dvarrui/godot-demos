@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/tileset.png" type="Texture" id=1]
-[ext_resource path="res://environ/platform.gd" type="Script" id=2]
+[ext_resource path="res://environ/platform/platform.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15.75, 3.5 )
