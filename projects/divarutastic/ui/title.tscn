@@ -1,11 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://ui/title.gd" type="Script" id=1]
-[ext_resource path="res://assets/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=2]
-
-[sub_resource type="DynamicFont" id=1]
-size = 64
-font_data = ExtResource( 2 )
 
 [node name="title" type="Node2D"]
 script = ExtResource( 1 )
@@ -19,18 +14,18 @@ __meta__ = {
 }
 
 [node name="margin" type="MarginContainer" parent="."]
-margin_left = 63.0
-margin_top = 49.0
-margin_right = 337.0
-margin_bottom = 529.0
+margin_left = 380.0
+margin_top = 190.0
+margin_right = 694.0
+margin_bottom = 383.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="v_container" type="VBoxContainer" parent="margin"]
-margin_top = 215.0
-margin_right = 274.0
-margin_bottom = 265.0
+margin_top = 57.0
+margin_right = 314.0
+margin_bottom = 136.0
 size_flags_vertical = 4
 alignment = 1
 __meta__ = {
@@ -38,27 +33,29 @@ __meta__ = {
 }
 
 [node name="title" type="Label" parent="margin/v_container"]
-margin_right = 274.0
-margin_bottom = 2.0
-custom_fonts/font = SubResource( 1 )
-text = "Arkanoid"
+margin_right = 314.0
+margin_bottom = 31.0
+text = "Divarutastic Adventure
+"
 align = 1
-autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="start" type="Button" parent="margin/v_container"]
-margin_top = 6.0
-margin_right = 274.0
-margin_bottom = 26.0
-text = "Start New Game"
+margin_top = 35.0
+margin_right = 314.0
+margin_bottom = 55.0
+text = "New Game (N)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="quit" type="Button" parent="margin/v_container"]
-margin_top = 30.0
-margin_right = 274.0
-margin_bottom = 50.0
-text = "Quit"
+margin_top = 59.0
+margin_right = 314.0
+margin_bottom = 79.0
+text = "Quit (Q)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
