@@ -28,66 +28,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="control" type="Node2D" parent="."]
-z_index = 2
-
-[node name="margin" type="MarginContainer" parent="control"]
-margin_left = 124.0
-margin_right = 893.0
-margin_bottom = 597.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="v_container" type="VBoxContainer" parent="control/margin"]
-margin_top = 100.0
-margin_right = 769.0
-margin_bottom = 497.0
-size_flags_vertical = 4
-alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="title" type="Label" parent="control/margin/v_container"]
-margin_right = 769.0
-margin_bottom = 119.0
-custom_fonts/font = SubResource( 1 )
-text = "Divarutastic Adventure
-"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="inputs" type="Label" parent="control/margin/v_container"]
-margin_top = 123.0
-margin_right = 769.0
-margin_bottom = 204.0
-custom_fonts/font = SubResource( 5 )
-text = "New Game (N)
-Quit (Q)"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="authors" type="Label" parent="control/margin/v_container"]
-margin_top = 208.0
-margin_right = 769.0
-margin_bottom = 397.0
-custom_fonts/font = SubResource( 4 )
-text = "
-
-Aaron Vargas Jorge - Desing and Art
-David Vargas Ruiz - Programing
-
-Copyright (c) 2022"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="map" type="Node2D" parent="."]
 
 [node name="wall" type="TileMap" parent="map"]
@@ -106,3 +46,64 @@ cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
 tile_data = PoolIntArray( 393241, 7, 0, 458777, 6, 0, 524310, 7, 0, 524313, 6, 0, 589846, 6, 0, 589847, 7, 0, 589849, 6, 0, 655380, 1, 0, 655381, 2, 0, 655382, 6, 0, 655383, 6, 0, 655384, 1, 0, 655385, 6, 0, 655386, 2, 0, 1179714, 3, 0 )
+
+[node name="texts" type="Node2D" parent="."]
+z_index = 2
+
+[node name="margin" type="MarginContainer" parent="texts"]
+margin_left = 124.0
+margin_right = 893.0
+margin_bottom = 597.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="v_container" type="VBoxContainer" parent="texts/margin"]
+margin_top = 84.0
+margin_right = 769.0
+margin_bottom = 513.0
+size_flags_vertical = 4
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="texts/margin/v_container"]
+margin_right = 769.0
+margin_bottom = 119.0
+custom_fonts/font = SubResource( 1 )
+text = "Divarutastic Adventure
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="inputs" type="Label" parent="texts/margin/v_container"]
+margin_top = 123.0
+margin_right = 769.0
+margin_bottom = 204.0
+custom_fonts/font = SubResource( 5 )
+text = "New Game (N)
+Quit (Q)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="authors" type="Label" parent="texts/margin/v_container"]
+margin_top = 208.0
+margin_right = 769.0
+margin_bottom = 429.0
+custom_fonts/font = SubResource( 4 )
+text = "
+
+
+Aaron Vargas Jorge - Game Desing and Art
+Dvarrui - Programing
+
+Copyright (c) 2022"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

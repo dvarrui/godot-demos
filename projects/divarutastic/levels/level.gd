@@ -8,6 +8,7 @@ export var room_w = ""
 func _ready():
 	#get_node("tilemap/black/color").visible = true
 	get_node("effects/music").playing = true
+	update_keys(0)
 	pass
 
 func _process(delta):
@@ -17,6 +18,10 @@ func _process(delta):
 	if $keys.get_child_count() == 0:
 		$platforms/door.open()
 
+func update_keys(value):
+	MyConfig.keys = MyConfig.keys + value
+	$effects/keys.text = "Keys: " + str(MyConfig.keys)
+	
 func change_level(dir):
 	if dir == "menu":
 		get_tree().change_scene("res://levels/menu.tscn")

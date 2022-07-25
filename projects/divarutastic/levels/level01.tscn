@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://environ/tileset/tileset-wall.tres" type="TileSet" id=1]
 [ext_resource path="res://levels/level.gd" type="Script" id=2]
@@ -10,6 +10,12 @@
 [ext_resource path="res://actor/player/player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://environ/platform/platform.tscn" type="PackedScene" id=9]
 [ext_resource path="res://environ/door/door.tscn" type="PackedScene" id=10]
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://assets/font/chava/Chava-Regular.otf"
+
+[sub_resource type="DynamicFont" id=6]
+font_data = SubResource( 5 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 2, 140 )
@@ -75,6 +81,17 @@ __meta__ = {
 stream = ExtResource( 7 )
 volume_db = -20.091
 autoplay = true
+
+[node name="keys" type="Label" parent="effects"]
+margin_left = 24.0
+margin_top = 560.0
+margin_right = 94.0
+margin_bottom = 580.0
+custom_fonts/font = SubResource( 6 )
+text = "Keys: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="temp" type="Node2D" parent="."]
 
