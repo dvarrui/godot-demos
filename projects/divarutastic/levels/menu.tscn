@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://ui/title.gd" type="Script" id=1]
+[ext_resource path="res://levels/menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/font/chava/Chava-Regular.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://environ/tileset/tileset-decorator.tres" type="TileSet" id=3]
 [ext_resource path="res://environ/tileset/tileset-wall.tres" type="TileSet" id=4]
@@ -9,11 +9,7 @@
 size = 48
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=2]
-size = 32
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=5]
 size = 32
 font_data = ExtResource( 2 )
 
@@ -21,7 +17,7 @@ font_data = ExtResource( 2 )
 size = 24
 font_data = ExtResource( 2 )
 
-[node name="title" type="Node2D"]
+[node name="menu" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="background" type="ColorRect" parent="."]
@@ -44,9 +40,9 @@ __meta__ = {
 }
 
 [node name="v_container" type="VBoxContainer" parent="control/margin"]
-margin_top = 93.0
+margin_top = 100.0
 margin_right = 769.0
-margin_bottom = 503.0
+margin_bottom = 497.0
 size_flags_vertical = 4
 alignment = 1
 __meta__ = {
@@ -64,30 +60,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="start" type="Button" parent="control/margin/v_container"]
+[node name="inputs" type="Label" parent="control/margin/v_container"]
 margin_top = 123.0
 margin_right = 769.0
-margin_bottom = 168.0
-custom_fonts/font = SubResource( 2 )
-text = "New Game (N)"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="quit" type="Button" parent="control/margin/v_container"]
-margin_top = 172.0
-margin_right = 769.0
-margin_bottom = 217.0
-custom_fonts/font = SubResource( 3 )
-text = "Quit (Q)"
+margin_bottom = 204.0
+custom_fonts/font = SubResource( 5 )
+text = "New Game (N)
+Quit (Q)"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="authors" type="Label" parent="control/margin/v_container"]
-margin_top = 221.0
+margin_top = 208.0
 margin_right = 769.0
-margin_bottom = 410.0
+margin_bottom = 397.0
 custom_fonts/font = SubResource( 4 )
 text = "
 
@@ -118,6 +106,3 @@ cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
 tile_data = PoolIntArray( 393241, 7, 0, 458777, 6, 0, 524310, 7, 0, 524313, 6, 0, 589846, 6, 0, 589847, 7, 0, 589849, 6, 0, 655380, 1, 0, 655381, 2, 0, 655382, 6, 0, 655383, 6, 0, 655384, 1, 0, 655385, 6, 0, 655386, 2, 0, 1179714, 3, 0 )
-
-[connection signal="pressed" from="control/margin/v_container/start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="control/margin/v_container/quit" to="." method="_on_quit_pressed"]

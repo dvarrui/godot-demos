@@ -17,9 +17,11 @@ func _process(delta):
 		$platforms/door.open()
 
 func change_level(dir):
-	print("[Level] Player exit ", dir)
-	print("[Level] Player position ", get_node("player").position)
-	var room_name = "QUIT"
+	if dir == "EXIT":
+		get_tree().change_scene("res://levels/menu.tscn")
+		pass
+
+	var room_name = "res://levels/menu.tscn"
 	if dir == "N":
 		room_name = room_n
 	elif dir == "S":
@@ -30,7 +32,7 @@ func change_level(dir):
 		room_name = room_w
 		
 	if room_name.length() == 0:
-		get_tree().quit()
+		get_tree().change_scene("res://levels/menu.tscn")
 	else:
 		get_tree().change_scene("res://levels/"+room_name+".tscn")
 

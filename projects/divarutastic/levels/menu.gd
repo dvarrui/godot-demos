@@ -9,7 +9,7 @@ func _on_quit_pressed():
 func _process(delta):
 	if Input.is_action_just_pressed("game_new"):
 		start_new_game()
-	if Input.is_action_just_pressed("game_quit"):
+	if Input.is_action_just_pressed("game_exit"):
 		close_game()
 
 func start_new_game():
