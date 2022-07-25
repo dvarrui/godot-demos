@@ -1,13 +1,13 @@
 [gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://assets/tileset.png" type="Texture" id=1]
-[ext_resource path="res://environ/tileset/tileset-decorator.tres" type="TileSet" id=2]
-[ext_resource path="res://assets/music/01-bach-little_fugue.mp3" type="AudioStream" id=3]
-[ext_resource path="res://environ/platform/platform.tscn" type="PackedScene" id=4]
-[ext_resource path="res://actor/enemies/enemy2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://actor/enemies/enemy1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://actor/key/key.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/music/01-bach-little_fugue.mp3" type="AudioStream" id=4]
+[ext_resource path="res://environ/tileset/tileset-decorator.tres" type="TileSet" id=5]
 [ext_resource path="res://actor/player/player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://actor/enemies/enemy1.tscn" type="PackedScene" id=7]
-[ext_resource path="res://actor/key/key.tscn" type="PackedScene" id=8]
+[ext_resource path="res://environ/platform/platform.tscn" type="PackedScene" id=7]
+[ext_resource path="res://actor/enemies/enemy2.tscn" type="PackedScene" id=8]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -376,7 +376,7 @@ tile_data = PoolIntArray( -65533, 14, 0, 65535, 6, 0, 0, 6, 2, 3, 14, 0, 131071,
 [node name="back" type="TileMap" parent="tilemap"]
 modulate = Color( 0.32549, 0.32549, 0.32549, 1 )
 scale = Vector2( 2, 2 )
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 5 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
@@ -385,7 +385,7 @@ tile_data = PoolIntArray( 65547, 8, 0, 65559, 4, 0, 65560, 5, 0, 196616, 2, 0, 1
 [node name="front" type="TileMap" parent="tilemap"]
 scale = Vector2( 2, 2 )
 z_index = 10
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 5 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
@@ -405,7 +405,7 @@ __meta__ = {
 [node name="effects" type="Node2D" parent="."]
 
 [node name="music" type="AudioStreamPlayer" parent="effects"]
-stream = ExtResource( 3 )
+stream = ExtResource( 4 )
 volume_db = -20.091
 autoplay = true
 
@@ -452,33 +452,33 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="platform" parent="platforms" instance=ExtResource( 4 )]
+[node name="platform" parent="platforms" instance=ExtResource( 7 )]
 position = Vector2( 731, 314 )
 limit = Vector2( -100, 100 )
 
 [node name="coins" type="Node2D" parent="."]
 
-[node name="coin" parent="coins" instance=ExtResource( 8 )]
+[node name="coin" parent="coins" instance=ExtResource( 3 )]
 position = Vector2( 316, 381 )
 
-[node name="coin2" parent="coins" instance=ExtResource( 8 )]
+[node name="coin2" parent="coins" instance=ExtResource( 3 )]
 position = Vector2( 704, 468 )
 
-[node name="coin3" parent="coins" instance=ExtResource( 8 )]
+[node name="coin3" parent="coins" instance=ExtResource( 3 )]
 position = Vector2( 683, 235 )
 
-[node name="coin4" parent="coins" instance=ExtResource( 8 )]
+[node name="coin4" parent="coins" instance=ExtResource( 3 )]
 position = Vector2( 979, 431 )
 
-[node name="coin5" parent="coins" instance=ExtResource( 8 )]
+[node name="coin5" parent="coins" instance=ExtResource( 3 )]
 position = Vector2( 184, 54 )
 
 [node name="enemies" type="Node2D" parent="."]
 
-[node name="enemy1" parent="enemies" instance=ExtResource( 7 )]
+[node name="enemy1" parent="enemies" instance=ExtResource( 2 )]
 position = Vector2( 200, 438 )
 
-[node name="enemy2" parent="enemies" instance=ExtResource( 5 )]
+[node name="enemy2" parent="enemies" instance=ExtResource( 8 )]
 position = Vector2( 644, 468 )
 x_min = -50
 
