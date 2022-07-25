@@ -30,7 +30,7 @@ func _input(event):
 	if event.is_action_pressed("player_jump") and is_on_floor():
 		speed.y = -UP_FORCE
 	if event.is_action_pressed("game_menu"):
-		get_parent().change_level("EXIT")
+		get_parent().change_level("menu")
 
 func _physics_process(delta):
 	_get_input_direction()

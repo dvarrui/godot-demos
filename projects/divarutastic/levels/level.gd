@@ -17,7 +17,7 @@ func _process(delta):
 		$platforms/door.open()
 
 func change_level(dir):
-	if dir == "EXIT":
+	if dir == "menu":
 		get_tree().change_scene("res://levels/menu.tscn")
 		pass
 
