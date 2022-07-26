@@ -1,11 +1,8 @@
 extends Node2D
 
-func _on_start_pressed():
-	start_new_game()
-
-func _on_quit_pressed():
-	close_game()
-
+func _ready():
+	MyConfig.keys = 0
+	
 func _process(delta):
 	if Input.is_action_just_pressed("game_new"):
 		start_new_game()
