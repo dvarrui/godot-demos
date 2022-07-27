@@ -1,9 +1,8 @@
 extends KinematicBody2D
 
-# Input
 var input_direction = Vector2.ZERO # Input XY direction
 var direction = Vector2.ZERO       # Current XY direction
-var speed = Vector2.ZERO # Character speed
+var speed = Vector2.ZERO           # Character speed
 
 const X_ACCELERATION = 600
 const X_DECELERATION = 1300 # 2000
@@ -114,7 +113,6 @@ func _update_motion(speed):
 	_update_anim(motion)
 
 func _update_anim(motion):
-	# ANIM
 	if on_stairs:
 		_update_anim_on_stairs(motion)
 	elif is_on_floor():
@@ -158,7 +156,6 @@ func _detect_screen_exited():
 		exit_direction = "W"
 	if exit_direction == "":
 		return
-		
 	get_parent().change_level(exit_direction)
 
 func _on_detect_area_entered(area):
@@ -168,6 +165,3 @@ func _on_detect_area_entered(area):
 func _on_detect_area_exited(area):
 	if area.is_in_group("stairs"):
 		on_stairs = false
-
-func _debug():
-	print("[DEBUG] Player position:", position)
