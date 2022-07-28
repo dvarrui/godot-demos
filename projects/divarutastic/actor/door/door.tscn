@@ -59,6 +59,16 @@ scale = Vector2( 2, 2 )
 frames = SubResource( 7 )
 animation = "closed"
 
+[node name="keys" type="Label" parent="anim"]
+margin_left = -4.0
+margin_top = -14.0
+margin_right = 36.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1	"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="body" type="StaticBody2D" parent="."]
 
 [node name="shape" type="CollisionShape2D" parent="body"]
