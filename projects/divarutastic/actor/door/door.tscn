@@ -51,7 +51,7 @@ extents = Vector2( 12, 32 )
 [sub_resource type="CircleShape2D" id=9]
 radius = 35.0
 
-[node name="door" type="Node2D"]
+[node name="door" type="Node2D" groups=["door"]]
 script = ExtResource( 2 )
 
 [node name="anim" type="AnimatedSprite" parent="."]

@@ -17,7 +17,7 @@ func _process(delta):
 func update_keys(value):
 	MyConfig.keys = MyConfig.keys + value
 	$effects/keys.text = "Keys: " + str(MyConfig.keys)
-	
+
 func change_level(dir):
 	if dir == "menu":
 		get_tree().change_scene("res://levels/menu.tscn")

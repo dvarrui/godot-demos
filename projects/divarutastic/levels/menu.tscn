@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://levels/menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/font/chava/Chava-Regular.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://environ/tileset/tileset-decorator.tres" type="TileSet" id=3]
 [ext_resource path="res://environ/tileset/tileset-wall.tres" type="TileSet" id=4]
+[ext_resource path="res://assets/music/02-bach-minuet.mp3" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -109,3 +110,6 @@ __meta__ = {
 }
 
 [node name="effects" type="Node2D" parent="."]
+
+[node name="music" type="AudioStreamPlayer2D" parent="effects"]
+stream = ExtResource( 5 )

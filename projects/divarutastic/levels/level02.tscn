@@ -461,6 +461,7 @@ limit = Vector2( -100, 100 )
 
 [node name="door" parent="platforms" instance=ExtResource( 10 )]
 position = Vector2( 1012, 448 )
+keys = 6
 
 [node name="keys" type="Node2D" parent="."]
 
