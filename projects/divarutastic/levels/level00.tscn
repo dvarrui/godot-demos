@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://environ/tileset/tileset-wall.tres" type="TileSet" id=1]
 [ext_resource path="res://levels/level.gd" type="Script" id=2]
 [ext_resource path="res://actor/door/door.tscn" type="PackedScene" id=3]
 [ext_resource path="res://actor/key/key.tscn" type="PackedScene" id=4]
+[ext_resource path="res://environ/dialog/dialog.tscn" type="PackedScene" id=5]
 [ext_resource path="res://environ/tileset/tileset-decorator.tres" type="TileSet" id=6]
 [ext_resource path="res://assets/music/01-bach-little_fugue.mp3" type="AudioStream" id=7]
 [ext_resource path="res://actor/player/player.tscn" type="PackedScene" id=8]
@@ -32,7 +33,7 @@ cell_quadrant_size = 32
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 show_collision = true
 format = 1
-tile_data = PoolIntArray( 262167, 4, 0, 262168, 4, 0, 262169, 4, 0, 262170, 5, 0, 458769, 5, 0, 524306, 5, 0, 524307, 5, 0, 524308, 5, 0, 720926, 13, 0, 786444, 3, 0, 786445, 5, 0, 786459, 13, 0, 851995, 13, 0, 851996, 13, 0, 983039, 13, 0, 917511, 6, 0, 917512, 6, 1, 917513, 6, 1, 917514, 6, 1, 917515, 6, 1, 917516, 6, 1, 917517, 6, 1, 917518, 6, 1, 917519, 6, 1, 917520, 6, 1, 917521, 6, 1, 917522, 6, 1, 917523, 6, 1, 917524, 6, 1, 917525, 6, 1, 917526, 6, 1, 917527, 6, 1, 917528, 6, 1, 917529, 6, 2, 917532, 13, 0, 1048575, 13, 0, 983040, 13, 0, 983047, 6, 131072, 983048, 6, 131073, 983049, 6, 131073, 983050, 6, 131073, 983051, 6, 131073, 983052, 6, 131073, 983053, 6, 131073, 983054, 6, 131073, 983055, 6, 131073, 983056, 6, 131073, 983057, 6, 131073, 983058, 6, 131073, 983059, 6, 131073, 983060, 6, 131073, 983061, 6, 131073, 983062, 6, 131073, 983063, 6, 131073, 983064, 6, 131073, 983065, 6, 131074 )
+tile_data = PoolIntArray( 262167, 4, 0, 262168, 4, 0, 262169, 4, 0, 262170, 5, 0, 458769, 5, 0, 524306, 5, 0, 524307, 5, 0, 524308, 5, 0, 720926, 13, 0, 786444, 3, 0, 786445, 5, 0, 786459, 13, 0, 851995, 13, 0, 851996, 13, 0, 983039, 13, 0, 917507, 6, 0, 917508, 6, 1, 917509, 6, 1, 917510, 6, 1, 917511, 6, 1, 917512, 6, 1, 917513, 6, 1, 917514, 6, 1, 917515, 6, 1, 917516, 6, 1, 917517, 6, 1, 917518, 6, 1, 917519, 6, 1, 917520, 6, 1, 917521, 6, 1, 917522, 6, 1, 917523, 6, 1, 917524, 6, 1, 917525, 6, 1, 917526, 6, 1, 917527, 6, 1, 917528, 6, 1, 917529, 6, 2, 917532, 13, 0, 1048575, 13, 0, 983040, 13, 0, 983043, 6, 131072, 983044, 6, 131073, 983045, 6, 131073, 983046, 6, 131073, 983047, 6, 131073, 983048, 6, 131073, 983049, 6, 131073, 983050, 6, 131073, 983051, 6, 131073, 983052, 6, 131073, 983053, 6, 131073, 983054, 6, 131073, 983055, 6, 131073, 983056, 6, 131073, 983057, 6, 131073, 983058, 6, 131073, 983059, 6, 131073, 983060, 6, 131073, 983061, 6, 131073, 983062, 6, 131073, 983063, 6, 131073, 983064, 6, 131073, 983065, 6, 131074 )
 
 [node name="back" type="TileMap" parent="tilemap"]
 modulate = Color( 0.32549, 0.32549, 0.32549, 1 )
@@ -106,6 +107,10 @@ position = Vector2( 546, 415 )
 position = Vector2( 252, 429 )
 
 [node name="enemies" type="Node2D" parent="."]
+
+[node name="dialog" parent="enemies" instance=ExtResource( 5 )]
+position = Vector2( 32, 330 )
+z_index = 10
 
 [node name="player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 304, 425 )
