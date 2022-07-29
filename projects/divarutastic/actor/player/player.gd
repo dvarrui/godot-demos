@@ -156,6 +156,7 @@ func _detect_screen_exited():
 		exit_direction = "W"
 	if exit_direction == "":
 		return
+	MyConfig.position = self.position
 	get_parent().change_level(exit_direction)
 
 func _on_detect_area_entered(area):
@@ -165,3 +166,6 @@ func _on_detect_area_entered(area):
 func _on_detect_area_exited(area):
 	if area.is_in_group("stairs"):
 		on_stairs = false
+
+func game_over():
+	get_parent().change_level("menu")

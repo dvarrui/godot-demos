@@ -22,6 +22,10 @@ config/icon="res://icon.png"
 Loader="*res://global/loader.gd"
 MyConfig="*res://global/config.gd"
 
+[display]
+
+window/size/resizable=false
+
 [input]
 
 player_up={

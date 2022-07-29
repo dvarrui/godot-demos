@@ -29,7 +29,7 @@ extents = Vector2( 2, 45 )
 [node name="level" type="Node2D"]
 script = ExtResource( 2 )
 room_n = "menu"
-room_s = "menu"
+room_s = "level91"
 room_e = "level02"
 room_w = "menu"
 

@@ -5,12 +5,11 @@ func _ready():
 
 func _on_enemy1_body_entered(body):
 	if body.is_in_group("player"):
-		get_tree().quit()
+		body.game_over()
 
 func _on_detect_body_entered(body):
 	if body.is_in_group("player"):
 		$anim.play("idle")
-	pass # Replace with function body.
 
 func _on_detect_body_exited(body):
 	if body.is_in_group("player"):

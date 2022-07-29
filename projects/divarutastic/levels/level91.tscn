@@ -1,0 +1,115 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://environ/tileset/tileset-wall.tres" type="TileSet" id=1]
+[ext_resource path="res://levels/level.gd" type="Script" id=2]
+[ext_resource path="res://actor/player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://environ/tileset/tileset-decorator.tres" type="TileSet" id=4]
+[ext_resource path="res://assets/music/01-bach-little_fugue.mp3" type="AudioStream" id=5]
+[ext_resource path="res://actor/enemies/enemy2.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://assets/font/chava/Chava-Regular.otf"
+
+[sub_resource type="DynamicFont" id=6]
+font_data = SubResource( 5 )
+
+[node name="level" type="Node2D"]
+script = ExtResource( 2 )
+room_n = "menu"
+room_s = "menu"
+room_e = "level02"
+room_w = "menu"
+
+[node name="tilemap" type="Node2D" parent="."]
+
+[node name="wall" type="TileMap" parent="tilemap"]
+scale = Vector2( 2, 2 )
+z_index = 2
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 32
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 65535, 6, 0, 0, 6, 2, 31, 6, 0, 32, 6, 2, 131071, 6, 65536, 65536, 6, 65538, 65567, 6, 65536, 65568, 6, 65538, 196607, 6, 65536, 131072, 6, 65538, 131103, 6, 65536, 131104, 6, 65538, 262143, 6, 65536, 196608, 6, 65538, 196639, 6, 65536, 196640, 6, 65538, 327679, 6, 65536, 262144, 6, 65538, 262167, 4, 0, 262168, 4, 0, 262169, 4, 0, 262175, 6, 65536, 262176, 6, 65538, 393215, 6, 65536, 327680, 6, 65538, 327711, 6, 65536, 327712, 6, 65538, 458751, 6, 65536, 393216, 6, 65538, 393247, 6, 65536, 393248, 6, 65538, 524287, 6, 65536, 458752, 6, 65538, 458767, 5, 0, 458769, 5, 0, 458783, 6, 65536, 458784, 6, 65538, 589823, 6, 65536, 524288, 6, 65538, 524306, 5, 0, 524307, 5, 0, 524308, 5, 0, 524319, 6, 65536, 524320, 6, 65538, 655359, 6, 131072, 589824, 6, 131074, 589855, 6, 131072, 589856, 6, 131074, 655360, 6, 0, 655361, 6, 1, 655362, 6, 1, 655363, 6, 1, 655364, 6, 1, 655365, 6, 1, 655366, 6, 1, 655367, 6, 1, 655368, 6, 1, 655369, 6, 1, 655370, 6, 1, 655371, 6, 1, 655372, 6, 1, 655373, 6, 1, 655374, 6, 1, 655375, 6, 1, 655376, 6, 1, 655377, 6, 1, 655378, 6, 1, 655379, 6, 1, 655380, 6, 1, 655381, 6, 1, 655382, 6, 1, 655383, 6, 1, 655384, 6, 1, 655385, 6, 1, 655386, 6, 1, 655387, 6, 1, 655388, 6, 1, 655389, 6, 1, 655390, 6, 1, 655391, 6, 2, 720896, 6, 131072, 720897, 6, 131073, 720898, 6, 131073, 720899, 6, 131073, 720900, 6, 131073, 720901, 6, 131073, 720902, 6, 131073, 720903, 6, 131073, 720904, 6, 131073, 720905, 6, 131073, 720906, 6, 131073, 720907, 6, 131073, 720908, 6, 131073, 720909, 6, 131073, 720910, 6, 131073, 720911, 6, 131073, 720912, 6, 131073, 720913, 6, 131073, 720914, 6, 131073, 720915, 6, 131073, 720916, 6, 131073, 720917, 6, 131073, 720918, 6, 131073, 720919, 6, 131073, 720920, 6, 131073, 720921, 6, 131073, 720922, 6, 131073, 720923, 6, 131073, 720924, 6, 131073, 720925, 6, 131073, 720926, 6, 131073, 720927, 6, 131074, 851996, 13, 0 )
+
+[node name="back" type="TileMap" parent="tilemap"]
+modulate = Color( 0.32549, 0.32549, 0.32549, 1 )
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 393247, 7, 0, 655381, 4, 0, 1114143, 4, 0, 1900589, 3, 0 )
+
+[node name="front" type="TileMap" parent="tilemap"]
+scale = Vector2( 2, 2 )
+z_index = 10
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 1900589, 3, 0 )
+
+[node name="canvas" type="CanvasLayer" parent="tilemap"]
+layer = -2
+
+[node name="color" type="ColorRect" parent="tilemap/canvas"]
+margin_right = 1028.0
+margin_bottom = 603.0
+color = Color( 0.00392157, 0.00392157, 0.00392157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="effects" type="Node2D" parent="."]
+
+[node name="music" type="AudioStreamPlayer" parent="effects"]
+stream = ExtResource( 5 )
+volume_db = -20.091
+autoplay = true
+
+[node name="keys" type="Label" parent="effects"]
+margin_left = 24.0
+margin_top = 560.0
+margin_right = 94.0
+margin_bottom = 580.0
+custom_fonts/font = SubResource( 6 )
+text = "Keys: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="temp" type="Node2D" parent="."]
+
+[node name="platforms" type="Node2D" parent="."]
+
+[node name="keys" type="Node2D" parent="."]
+
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="enemy2" parent="enemies" instance=ExtResource( 6 )]
+position = Vector2( 719, 306 )
+x_min = -50
+
+[node name="enemy6" parent="enemies" instance=ExtResource( 6 )]
+position = Vector2( 719, 306 )
+x_min = -50
+
+[node name="enemy3" parent="enemies" instance=ExtResource( 6 )]
+position = Vector2( 111, 306 )
+x_min = -50
+
+[node name="enemy4" parent="enemies" instance=ExtResource( 6 )]
+position = Vector2( 460, 306 )
+speed = 70
+x_min = -200
+
+[node name="enemy5" parent="enemies" instance=ExtResource( 6 )]
+position = Vector2( 860, 306 )
+speed = 70
+x_min = -200
+
+[node name="player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 52, 26 )
+z_index = 4

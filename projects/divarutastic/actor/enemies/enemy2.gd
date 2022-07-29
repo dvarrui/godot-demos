@@ -14,7 +14,7 @@ func _ready():
 
 func _on_enemy2_body_entered(body):
 	if body.is_in_group("player"):
-		get_tree().quit()
+		body.game_over()
 
 func _process(delta):
 	position.x += speed * direction * delta

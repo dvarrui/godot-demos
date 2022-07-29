@@ -1,7 +1,7 @@
 extends Node2D
 
 func _ready():
-	MyConfig.keys = 0
+	MyConfig.reset()
 	$effects/music.playing = true
 	
 func _process(delta):
