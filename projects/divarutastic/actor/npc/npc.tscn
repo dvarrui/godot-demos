@@ -39,8 +39,13 @@ playing = true
 shape = SubResource( 4 )
 
 [node name="dialog" parent="detect" instance=ExtResource( 3 )]
-position = Vector2( -128, 20 )
+visible = false
+position = Vector2( -150, -100 )
 z_index = 10
+
+[node name="timer" type="Timer" parent="detect"]
+process_mode = 0
 
 [connection signal="body_entered" from="detect" to="." method="_on_detect_body_entered"]
 [connection signal="body_exited" from="detect" to="." method="_on_detect_body_exited"]
+[connection signal="timeout" from="detect/timer" to="." method="_on_timer_timeout"]

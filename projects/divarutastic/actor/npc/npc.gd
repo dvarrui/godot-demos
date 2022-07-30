@@ -15,3 +15,7 @@ func _on_detect_body_entered(body):
 func _on_detect_body_exited(body):
 	if body.is_in_group("player"):
 		$detect/dialog.visible = false
+
+
+func _on_timer_timeout():
+	$detect/dialog.visible = false
