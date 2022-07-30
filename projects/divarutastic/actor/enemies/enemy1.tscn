@@ -55,6 +55,5 @@ scale = Vector2( 2, 2 )
 [node name="shape" type="CollisionShape2D" parent="detect"]
 shape = SubResource( 8 )
 
-[connection signal="body_entered" from="." to="." method="_on_enemy1_body_entered"]
 [connection signal="body_entered" from="detect" to="." method="_on_detect_body_entered"]
 [connection signal="body_exited" from="detect" to="." method="_on_detect_body_exited"]

@@ -2,7 +2,7 @@ extends Node2D
 
 func _ready():
 	MyConfig.reset()
-	$effects/music.playing = true
+	$effects/music.playing = false
 	
 func _process(delta):
 	if Input.is_action_just_pressed("game_new"):

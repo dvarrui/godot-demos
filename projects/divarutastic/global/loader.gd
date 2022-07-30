@@ -3,6 +3,7 @@ extends Node
 var resources = {}
 
 func _ready():
+	resources["dialog"] = preload("res://environ/dialog/dialog.tscn")
 	resources["dust"] = preload("res://environ/dust/dust.tscn")
 	resources["spark"] = preload("res://environ/spark/spark.tscn")
 

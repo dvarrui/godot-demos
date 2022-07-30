@@ -28,7 +28,6 @@ script = ExtResource( 2 )
 self_modulate = Color( 0.84, 0.78624, 0.0336, 0.976471 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="shape" type="CollisionShape2D" parent="."]

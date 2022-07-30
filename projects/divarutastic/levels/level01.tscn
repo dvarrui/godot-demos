@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://environ/tileset/tileset-wall.tres" type="TileSet" id=1]
 [ext_resource path="res://levels/level.gd" type="Script" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://actor/player/player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://environ/platform/platform.tscn" type="PackedScene" id=9]
 [ext_resource path="res://actor/door/door.tscn" type="PackedScene" id=10]
-[ext_resource path="res://environ/dialog/dialog.tscn" type="PackedScene" id=11]
 [ext_resource path="res://actor/npc/npc.tscn" type="PackedScene" id=12]
 
 [sub_resource type="DynamicFontData" id=5]
@@ -174,9 +173,7 @@ x_min = -50
 
 [node name="npc" parent="enemies" instance=ExtResource( 12 )]
 position = Vector2( 441, 462 )
-
-[node name="dialog" parent="enemies/npc" instance=ExtResource( 11 )]
-visible = false
+text = "Coge las llaves."
 
 [node name="player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 52, 26 )
