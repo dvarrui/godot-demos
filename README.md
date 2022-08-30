@@ -39,3 +39,9 @@ Para actualizarlo cada día, hacemos:
 cd godot
 git pull
 ```
+
+# Enlaces de interés
+
+* [rFXGen by raylib technologies](https://raylibtech.itch.io/rfxgen): A simple and easy-to-use fx sounds generator. Play in your browser
+
+https://t.co/UIDJgx26HA?s=35
