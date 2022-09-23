@@ -20,7 +20,7 @@ func build_file_into_level(filename,level):
 	load_filename(filename)
 	for line in data:
 		if line[0]=="info": 
-			print("[INFO] "+ line[1])
+			print_debug("[INFO] "+ line[1])
 		elif line[0]=="def":
 			define_object_with(line[1],line[2],line[3])
 		elif line[0]=="new":
@@ -33,7 +33,7 @@ func load_filename(filename):
 		print("[INFO] Loading "+filename)
 	var file = File.new()
 	var content = []
-	file.open("res://level/" + filename, File.READ)
+	file.open("res://" + filename, File.READ)
 	while not file.eof_reached():
 		var line = file.get_line()
 		var items = line.split(":")
