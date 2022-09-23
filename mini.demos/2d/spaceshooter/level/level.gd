@@ -3,6 +3,7 @@ extends Node2D
 var state = "play"
 
 func _ready():
+	# Loader.build_file_into_level("user://level2.txt", self)
 	Loader.build_file_into_level("level2.txt", self)
 	$timer/startgame.start(2)
 
