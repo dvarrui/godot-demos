@@ -61,3 +61,10 @@ H5P (creación de actividades interactivas html5 para incrustar, por ejemplo, en
 
 https://h5p.org/
 
+Edu Game by tlopik
+https://tlopik.itch.io/edu-game
+
+itch.io (https://tlopik.itch.io/edu-game)
+Edu Game by tlopik
+Using Ruby scripts, an instructional game transports you to the archaeological field. Play in your browser
+
