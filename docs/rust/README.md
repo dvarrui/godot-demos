@@ -95,10 +95,16 @@ NOTA: _Es mejor tener el proyecto de Rust y el proyecto Godot en carpetas separa
 * Creamos un proyecto vacío usando Godot GUI (`my-godot-project`).
 * Copiamos `my-gdnative-lib/target/debug/libmy_gdnative_lib.so` (o crear un enlace simbólico) del proyecto de Rust dentro de la carpeta del proyecto de Godot.
 * En el editor de Godot, vamos al panel `Inspector -> Agregar Nuevo recurso -> GDNativeLibrary`.
+
+----
+REVISAR!!!
+----
+
     * Para la plataforma `Linux`, seleccionar el fichero `res://libmy_gdnative_lib.so`.
 * Lo grabamos como `gdnativelibrary.tres`
-    * En Path tenemos `res://gdnativelibrary.tres`
-    * En Name ponemod `HelloWorld`
+    * Entry: `res://libmy_gdnative_lib.so`
+    * Path: `res://gdnativelibrary.tres`
+    * En Name ponemos `HelloWorld`
     * Grabamos
 
 Ahora, la clase HelloWorld se puede agregar a cualquier nodo:
