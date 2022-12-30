@@ -1,0 +1,6 @@
+[gd_resource type="GDNativeLibrary" format=2]
+
+[resource]
+resource_name = "HelloWorld"
+entry/X11.64 = "res://libmy_gdnative_lib.so"
+dependency/X11.64 = [  ]
