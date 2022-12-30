@@ -45,11 +45,9 @@ Vamos a crear un proyecto de prueba que simplemente muestre el mensaje "¡Hola, 
 
 > El código está disponible en https://github.com/godot-rust/godot-rust/tree/master/examples/hello-world.
 
-Godot:
-* Primero creamos un proyecto vacío usando Godot GUI.
+## Rust
 
-Rust:
-* A continuación creamos un `crate` vacío al lado de la carpeta del proyecto de Godot: `cargo init --lib my-gdnative-lib`. NOTA: _Es mejor colocar el proyecto de Rust fuera del directorio del proyecto Godot_.
+* Creamos un `crate` vacío: `cargo init --lib my-gdnative-lib`.
 * Editar el fichero `Cargo.toml` del proyecto Rust para añadir el "crate" `cdylib` y la dependencia con `gdnative`:
 
 ```
@@ -87,3 +85,24 @@ fn init(handle: InitHandle) {
 
 godot_init!(init);
 ```
+
+* `cd my-gdnative-lib`, `cargo build`. Con esto construimos la librería del proyecto Rust que tenemos en `my-gdnative-lib/target/debug/libmy_gdnative_lib...`.
+
+## Godot
+
+NOTA: _Es mejor tener el proyecto de Rust y el proyecto Godot en carpetas separadas_.
+
+* Creamos un proyecto vacío usando Godot GUI (`my-godot-project`).
+* Copiamos `my-gdnative-lib/target/debug/libmy_gdnative_lib.so` (o crear un enlace simbólico) del proyecto de Rust dentro de la carpeta del proyecto de Godot.
+* En el editor de Godot, vamos al panel `Inspector -> Agregar Nuevo recurso -> GDNativeLibrary`.
+    * Para la plataforma `Linux`, seleccionar el fichero `res://libmy_gdnative_lib.so`.
+* Lo grabamos como `gdnativelibrary.tres`
+    * En Path tenemos `res://gdnativelibrary.tres`
+    * En Name ponemod `HelloWorld`
+    * Grabamos
+
+Ahora, la clase HelloWorld se puede agregar a cualquier nodo:
+* Clic en el botón "agregar script".
+* Seleccione "NativeScript" como idioma y establezca el nombre de la clase en HelloWorld.
+* Seleccione el recurso NativeScript en el Inspector
+* Haga clic en el campo de la biblioteca y apunte al recurso GDNativeLibrary que creó anteriormente.
