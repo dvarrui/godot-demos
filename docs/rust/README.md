@@ -45,5 +45,45 @@ Vamos a crear un proyecto de prueba que simplemente muestre el mensaje "¡Hola, 
 
 > El código está disponible en https://github.com/godot-rust/godot-rust/tree/master/examples/hello-world.
 
+Godot:
 * Primero creamos un proyecto vacío usando Godot GUI.
-* A continuación creamos un `crate` vacío al lado de la carpeta del proyecto de Godot: `cargo init --lib my-gdnative-lib`.
+
+Rust:
+* A continuación creamos un `crate` vacío al lado de la carpeta del proyecto de Godot: `cargo init --lib my-gdnative-lib`. NOTA: _Es mejor colocar el proyecto de Rust fuera del directorio del proyecto Godot_.
+* Editar el fichero `Cargo.toml` del proyecto Rust para añadir el "crate" `cdylib` y la dependencia con `gdnative`:
+
+```
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+gdnative = "0.10"
+```
+
+* Reemplazar el contenido de `src/lib.rs` con lo siguiente:
+
+```rust
+use gdnative::prelude::*;
+
+#[derive(NativeClass)]
+#[inherit(Node)]
+struct HelloWorld;
+
+#[methods]
+impl HelloWorld {
+    fn new(_owner: &Node) -> Self {
+        HelloWorld
+    }
+
+    #[method]
+    fn _ready(&self) {
+        godot_print!("hello, world.")
+    }
+}
+
+fn init(handle: InitHandle) {
+    handle.add_class::<HelloWorld>();
+}
+
+godot_init!(init);
+```
