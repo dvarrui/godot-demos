@@ -44,3 +44,6 @@ clang version 15.0.6
 Vamos a crear un proyecto de prueba que simplemente muestre el mensaje "¡Hola, mundo!"
 
 > El código está disponible en https://github.com/godot-rust/godot-rust/tree/master/examples/hello-world.
+
+* Primero creamos un proyecto vacío usando Godot GUI.
+* A continuación creamos un `crate` vacío al lado de la carpeta del proyecto de Godot: `cargo init --lib my-gdnative-lib`.
