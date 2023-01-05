@@ -15,6 +15,7 @@ _global_script_class_icons={
 [application]
 
 config/name="basic"
+run/main_scene="res://level/level1.tscn"
 config/icon="res://icon.png"
 
 [rendering]
