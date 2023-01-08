@@ -1,7 +1,0 @@
-Godot Engine v3.4.stable.official.206ba70f4 - https://godotengine.org
-OpenGL ES 3.0 Renderer: Mesa Intel(R) UHD Graphics (CML GT2)
-OpenGL ES Batching: ON
- 
-ERROR: Condition "default_certs != nullptr" is true.
-   at: load_default_certificates (modules/mbedtls/crypto_mbedtls.cpp:314) - Condition "default_certs != nullptr" is true.
-Editing project: /home/david/proy/repos/godot/projects/divarutastic (::home::david::proy::repos::godot::projects::divarutastic)
