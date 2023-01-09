@@ -2,7 +2,7 @@
 
 [ext_resource path="res://actor/enemy/satelite.gd" type="Script" id=1]
 [ext_resource path="res://assets/ship/satelite96.png" type="Texture" id=2]
-[ext_resource path="res://world/effect/white_flash.tscn" type="PackedScene" id=4]
+[ext_resource path="res://actor/effect/white_flash.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape2D" id=2]
 height = 80.0

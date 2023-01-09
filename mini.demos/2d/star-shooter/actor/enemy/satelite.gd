@@ -11,7 +11,7 @@ var can_shot = true
 
 func _ready():
 	bullet_res = preload("res://actor/enemy/bullet_down.tscn")
-	explosion_res = preload("res://world/effect/explosion.tscn")
+	explosion_res = preload("res://actor/effect/explosion.tscn")
 	player = get_tree().root.get_node("level/player")
 
 func _process(delta):

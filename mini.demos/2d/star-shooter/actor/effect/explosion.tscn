@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://world/effect/explosion.gd" type="Script" id=1]
+[ext_resource path="res://actor/effect/explosion.gd" type="Script" id=1]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 1
@@ -161,4 +161,5 @@ explosiveness = 0.8
 process_material = SubResource( 21 )
 
 [node name="timer" type="Timer" parent="."]
+
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
