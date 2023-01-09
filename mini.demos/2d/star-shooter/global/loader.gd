@@ -11,8 +11,8 @@ var offset_y_step = 50
 var offset_x_step = 50
 
 func _ready():
-	resources["rock32"] = preload("res://world/rock32.tscn")
-	resources["rock64"] = preload("res://world/rock64.tscn")
+	resources["rock32"] = preload("res://actor/rock/rock32.tscn")
+	resources["rock64"] = preload("res://actor/rock/rock64.tscn")
 	resources["satelite"] = preload("res://actor/enemy/satelite.tscn")
 	resources["tie"] = preload("res://actor/enemy/tie.tscn")
 
@@ -20,7 +20,8 @@ func build_file_into_level(filename,level):
 	load_filename(filename)
 	for line in data:
 		if line[0]=="info": 
-			print_debug("[INFO] "+ line[1])
+			if DEBUG:
+				print_debug("[INFO] "+ line[1])
 		elif line[0]=="def":
 			define_object_with(line[1],line[2],line[3])
 		elif line[0]=="new":
@@ -83,7 +84,8 @@ func create_map_line(line,level):
 		if k != "." and objects.has(k):
 			var type = objects[k]["type"]
 			var config = objects[k]["config"]+",x="+str(offset_x)
-			print(type, config)
+			if DEBUG:
+				print(type, config)
 			create_new_object(type, config,level)
 		i += 1
 
