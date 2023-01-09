@@ -18,9 +18,9 @@ Godot version 3.2.2:
 1. [Command](2d/command) (En construccion!)
 1. [Multiplayer 2](docs/game-index.md#multiplayer-2)
 1. [Platform](docs/game-index.md#platform)
-1. [Platform-Top-Down](docs/game-index.md#platform-top-down)
+1. [Platform Top Down](docs/game-index.md#platform-top-down)
 1. [Roguelike](docs/game-index.md#roguelike)
-1. [SpaceShooter](docs/game-index.md#spaceshooter)
+1. [Star shooter](docs/game-index.md#star-shooter)
 1. [Tower Defense](docs/game-index.md#tower-defense)
 
 ## Más información

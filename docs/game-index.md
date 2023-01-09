@@ -61,7 +61,7 @@ Se pueden coger unos objetos brillantes, pero por ahora no sirven para nada.
 * Ir a [explicación](roguelike/README.md) para ver un pequeño resumen.
 * Futuro: Crear ventanas de inicio y pausa.
 
-## [SpaceShooter](../2d/spaceshooter)
+## [StarShooter](../2d/star-shooter)
 
 ![](images/spaceshooter.png)
 
