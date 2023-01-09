@@ -40,10 +40,7 @@ margin_top = 316.0
 margin_right = 661.0
 margin_bottom = 356.0
 custom_fonts/font = SubResource( 1 )
-text = "Space SHOOTER"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "STAR SHOOTER"
 
 [connection signal="timeout" from="timer/endgame" to="." method="_on_endgame_timeout"]
 [connection signal="timeout" from="timer/startgame" to="." method="_on_startgame_timeout"]

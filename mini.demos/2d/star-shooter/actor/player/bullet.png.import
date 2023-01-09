@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bullet2.png-30e68181d872e2e8e20a729e97cbb8d2.stex"
+path="res://.import/bullet.png-b871295bec8fbee7cf251b94006b6010.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ship/bullet2.png"
-dest_files=[ "res://.import/bullet2.png-30e68181d872e2e8e20a729e97cbb8d2.stex" ]
+source_file="res://actor/player/bullet.png"
+dest_files=[ "res://.import/bullet.png-b871295bec8fbee7cf251b94006b6010.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

@@ -12,7 +12,7 @@ var bullet_res = null
 var explosion_res = null
 
 func _ready():
-	bullet_res = preload("res://actor/bullet_down.tscn")
+	bullet_res = preload("res://actor/enemy/bullet_down.tscn")
 	explosion_res = preload("res://world/effect/explosion.tscn")
 
 func _process(delta):

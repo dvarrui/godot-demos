@@ -6,7 +6,7 @@ var screen = Vector2.ZERO
 var explosion_res = null
 
 func _ready():
-	bullet_res = preload("res://actor/bullet_up.tscn")
+	bullet_res = preload("res://actor/player/bullet_up.tscn")
 	explosion_res = preload("res://world/effect/explosion.tscn")
 	screen = get_viewport().size
 
