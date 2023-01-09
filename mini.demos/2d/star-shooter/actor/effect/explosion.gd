@@ -1,7 +1,7 @@
 extends Node2D
 
-# Player explosion (Big effect)
 func _ready():
+	$sound.volume_db = (randi() % 10) - 10
 	var items = [ $fire, $fire/pieces, $fire/smoke, $fire/smoke2 ]
 	for item in items:
 		item.visible = true

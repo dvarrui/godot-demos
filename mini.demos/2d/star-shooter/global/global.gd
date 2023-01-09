@@ -1,3 +1,3 @@
 extends Node
 
-var camera_speed = 30
+var camera_speed = 50

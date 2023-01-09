@@ -5,6 +5,7 @@ var state = "play"
 func _ready():
 	Loader.build_file_into_level("data.txt", self)
 	$timer/startgame.start(2)
+	# $music.play(0)
 
 func _process(_delta):
 	if Input.is_action_pressed("exit_game"):

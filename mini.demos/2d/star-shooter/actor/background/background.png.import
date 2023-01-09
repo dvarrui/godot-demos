@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/x-wing64.png-decb180b2489cd47a3086748fc6c33af.stex"
+path="res://.import/background.png-ef1efdac8c40162fd3d1f9be37da3b8c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ship/x-wing64.png"
-dest_files=[ "res://.import/x-wing64.png-decb180b2489cd47a3086748fc6c33af.stex" ]
+source_file="res://actor/background/background.png"
+dest_files=[ "res://.import/background.png-ef1efdac8c40162fd3d1f9be37da3b8c.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true
