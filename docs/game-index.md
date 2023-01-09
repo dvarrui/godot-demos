@@ -1,7 +1,7 @@
 
 # Godot game index
 
-## [Arkanoid](../2d/arkanoid)
+## [Arkanoid](../mini.demos/2d/arkanoid)
 
 ![](images/arkanoid.png)
 
@@ -10,7 +10,7 @@
 * Hay una ventana de menú inicial, y una ventana de pausa creadas con los elementos de GUI(Container, Label y Button).
 * Futuro: añadir efecto de Particle2D a la pelota, aumentar el número de niveles, diseñar varios muros con diferentes comportamientos (Por ejemplo diferente resistencia).
 
-## [Multiplayer 2](../net/multiplayer-2)
+## [Multiplayer 2](../mini.demos/net/multiplayer-2)
 
 ![](images/multiplayer-2.png)
 
@@ -26,7 +26,7 @@
     * net/multiplayer-client: programa que ejecuta cada uno de los clientes.
 * El proyecto está basado en las ideas de [Godot dedicated server tutorial](https://mrminimal.gitlab.io/2018/07/26/godot-dedicated-server-tutorial.html)
 
-## [Platform](../2d/platform)
+## [Platform](../mini.demos/2d/platform)
 
 ![](images/platform.png)
 
@@ -38,7 +38,7 @@
 * Futuro: De momento sólo tenemos un nivel, pero la idea es crear más pantallas formando un mapa más complejo.
 Se pueden coger unos objetos brillantes, pero por ahora no sirven para nada.
 
-## [Platform (Top-Down)](../2d/platform-top-down)
+## [Platform (Top-Down)](../mini.demos/2d/platform-top-down)
 
 ![](images/platform-top-down.png)
 
@@ -49,7 +49,7 @@ Se pueden coger unos objetos brillantes, pero por ahora no sirven para nada.
 * Para representar cada altura del mapa, se usan varios nodos TileMap dentro de `heights`. Donde `h1` representa el mapa de colisiones de la altura 1, `h2` el mapa de colisiones de la altura 2, etc.
 * La lógica de funcionamiento del `player` se ha creado usando máquinas de estados. Donde tenemos los siguientes estados: `state/move`, `states/die`, `states/fall` y `states/jump`.
 
-## [Roguelike](../2d/roguelike)
+## [Roguelike](../mini.demos/2d/roguelike)
 
 ![](images/roguelike.png)
 
@@ -61,16 +61,16 @@ Se pueden coger unos objetos brillantes, pero por ahora no sirven para nada.
 * Ir a [explicación](roguelike/README.md) para ver un pequeño resumen.
 * Futuro: Crear ventanas de inicio y pausa.
 
-## [StarShooter](../2d/star-shooter)
+## [StarShooter](../mini.demos/2d/star-shooter)
 
 ![](images/spaceshooter.png)
 
-* 2d/spaceshooter: Shooter de scroll vertical. Los assets son imágenes de 16x16, hechas con Gimp y luego escaladas a 48x48 para resaltar el efecto de pixelado. Los assets no son muy elaborados. Son de creación propia, usando Gimp para el pixel art.
+* 2d/star-shooter: Shooter de scroll vertical. Los assets son imágenes de 16x16, hechas con Gimp y luego escaladas a 48x48 para resaltar el efecto de pixelado. Los assets no son muy elaborados. Son de creación propia, usando Gimp para el pixel art.
 * Todos los objetos del juego son del tipo Area2D. Actualmente están definidos los siguientes elementos: Rocas (pequeñas y grandes), Satélites, Tie-figther y el X-Wing(Player).
 * Efectos: tenemos efectos de explosiones creados con Particle2D, además se usa Timer y SelfModulate para el efecto flash cuando se recibe un impacto no letal.
 * Hay dos ficheros Singleton: Global y Loader. Global para las variables globales del juego. Loader para contener las funciones de construcción del nivel. El diseño del nivel se hace en un fichero de texto (level/level2.txt) que Loader lee y construye.
 
-## [Tower Defense](../2d/tower-defense)
+## [Tower Defense](../mini.demos/2d/tower-defense)
 
 ![](images/tower-defense.png)
 * 2d/tower-defense: EN CONSTRUCCION. Los assets son de Aarón VJ, creados con Gimp.
