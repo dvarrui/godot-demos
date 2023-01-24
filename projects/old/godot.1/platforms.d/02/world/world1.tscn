@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://floor/floor1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
+
+[node name="world1" type="Node2D"]
+
+[node name="floor" type="Node2D" parent="."]
+
+[node name="floor1" parent="floor" instance=ExtResource( 1 )]
+position = Vector2( 281.991, 465.11 )
+
+[node name="floor2" parent="floor" instance=ExtResource( 1 )]
+position = Vector2( 345.229, 463.997 )
+
+[node name="floor3" parent="floor" instance=ExtResource( 1 )]
+position = Vector2( 410.738, 498.219 )
+
+[node name="floor4" parent="floor" instance=ExtResource( 1 )]
+position = Vector2( 473.526, 497.727 )
+
+[node name="floor5" parent="floor" instance=ExtResource( 1 )]
+position = Vector2( 535.101, 497.727 )
+
+[node name="floor6" parent="floor" instance=ExtResource( 1 )]
+position = Vector2( 598.108, 496.295 )
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 283.423, 150.459 )
+
