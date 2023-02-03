@@ -23,6 +23,10 @@ https://github.com/Vivraan/godot-lang-support
 * Modos gráficos de ZX Spectrum: https://hmong.es/wiki/ZX_Spectrum_graphic_modes
 * ZX Spectrum Palette: https://lospec.com/palette-list/zx-spectrum
 
+# Video
+
+* RogueLike: https://www.microsiervos.com/archivo/juegos-y-diversion/creacion-videojuegos-mazmorras-tecnologia-arte-imaginacion.html
+
 # Shaders
 
 * https://godotshaders.com/shader/
