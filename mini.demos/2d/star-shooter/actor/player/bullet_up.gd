@@ -2,10 +2,12 @@ extends Area2D
 
 export var speed = -500
 var explosion_res = null
+onready var audio = $audio
 
 func _ready():
 	explosion_res = preload("res://actor/effect/explosion2.tscn")
-
+	audio.play()
+	
 func _process(delta):
 	position.y += delta * speed
 
