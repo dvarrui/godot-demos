@@ -1,11 +1,13 @@
 extends Node2D
 
-var Key = preload("res://actors/key.tscn")
-var Button = preload("res://actors/button.tscn")
+var Key = preload("res://ui/key.tscn")
+var Button = preload("res://ui/button.tscn")
+var Axis = preload("res://ui/axis.tscn")
 
 func _ready():
 	add_keys(32, 32)
 	add_buttons(576, 32)
+	add_axis(672,32)
 
 func add_keys(x, y):
 	var key
@@ -31,3 +33,8 @@ func add_buttons(x, y):
 			button.button_id = button_id
 			button_id += 1
 			add_child(button)
+
+func add_axis(x, y):
+	var axis = Axis.instance()
+	axis.global_position = Vector2(x, y)
+	add_child(axis)
