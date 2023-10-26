@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds6soi4lsv5xe"]
+
+[ext_resource type="Script" path="res://pause_mode/main.gd" id="1_llqip"]
+[ext_resource type="Script" path="res://pause_mode/node1.gd" id="2_y2l6n"]
+[ext_resource type="Script" path="res://pause_mode/node2.gd" id="3_f0tms"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_llqip")
+
+[node name="node1" type="Node2D" parent="."]
+script = ExtResource("2_y2l6n")
+
+[node name="node2" type="Node2D" parent="."]
+script = ExtResource("3_f0tms")
