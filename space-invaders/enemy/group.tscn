@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://enemy/group.gd" type="Script" id=1]
+
+[node name="group" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="timer_shot" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="timer_down" type="Timer" parent="."]
+wait_time = 7.0
+autostart = true
+
+[connection signal="timeout" from="timer_shot" to="." method="_on_timer_shot_timeout"]
+[connection signal="timeout" from="timer_down" to="." method="_on_timer_down_timeout"]

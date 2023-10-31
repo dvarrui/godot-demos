@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fonts/atari_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ui/gameover.gd" type="Script" id=2]
+
+[node name="gameover" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="title" type="Label" parent="."]
+margin_left = 89.0
+margin_top = 94.0
+margin_right = 143.0
+margin_bottom = 108.0
+custom_fonts/font = ExtResource( 1 )
+text = "GAME OVER"
+align = 1
+
+[node name="Button" type="Button" parent="."]
+margin_left = 79.0
+margin_top = 125.0
+margin_right = 151.0
+margin_bottom = 145.0
+custom_fonts/font = ExtResource( 1 )
+text = "Try again?"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
