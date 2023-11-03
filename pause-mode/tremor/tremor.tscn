@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcpys7x54g74u"]
+
+[ext_resource type="Texture2D" uid="uid://clgh3g0nbeyv0" path="res://icon.svg" id="1_0o3qj"]
+[ext_resource type="Script" path="res://tremor/tremor.gd" id="1_aikin"]
+
+[node name="tremor" type="Node2D"]
+script = ExtResource("1_aikin")
+
+[node name="timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(233, 130)
+texture = ExtResource("1_0o3qj")
+
+[node name="sprite2" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(437, 276)
+texture = ExtResource("1_0o3qj")
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

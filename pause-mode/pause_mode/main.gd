@@ -13,6 +13,6 @@ func _process(delta):
 	if Input.is_key_pressed(KEY_3):
 		$node1.set_process(true)
 	if Input.is_key_pressed(KEY_2):
-		$node1.set_process(false)
+		$node2.set_process(false)
 	if Input.is_key_pressed(KEY_4):
-		$node1.set_process(true)
+		$node2.set_process(true)

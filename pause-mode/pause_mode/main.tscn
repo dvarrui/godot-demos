@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://pause_mode/node1.gd" id="2_y2l6n"]
 [ext_resource type="Script" path="res://pause_mode/node2.gd" id="3_f0tms"]
 
-[node name="main" type="Node2D"]
+[node name="pause_mode" type="Node2D"]
 script = ExtResource("1_llqip")
 
 [node name="node1" type="Node2D" parent="."]
